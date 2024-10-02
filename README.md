@@ -6,6 +6,6 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 pip install -r requeriments.txt
 
-cd intranet\
+cd server\
 
 py manage.py runserver
