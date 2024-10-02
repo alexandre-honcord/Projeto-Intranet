@@ -1,0 +1,32 @@
+{% load static %}
+<aside class="sidebar">
+    <nav class="sidebar-menu">
+        <a class="sidebar-menu__honcord-button">
+            <img src="{% static 'resources/images/logos/Logo-simpl-red.png' %}" alt="logo">
+        </a>    
+        <span class="sidebar-menu__label">
+            <span class="company">Honcord</span>
+            <span class="function">Intranet</span>
+        </span>
+        <i class="fa-solid fa-caret-left move-sidebar"></i>
+    </nav>
+
+    <ul class="sidebar-apps">
+        {% for tool in tools %}
+        <li class="sidebar-apps-item">
+            <a class="sidebar-apps-item__button"
+            href="{{ tool.link }}"
+            target="_blank"
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="{{ tool.description }}">
+                <img src="{{ tool.image.url }}" alt="{{ tool.name }}">
+            </a>
+            <span class="function-name">{{ tool.name }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="theme-mode">
+        <i class="fa-solid fa-moon theme"></i>
+    </div>
+</aside>

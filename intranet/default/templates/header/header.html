@@ -1,0 +1,78 @@
+{% load static %}
+<header class="header">
+    <ul>
+        {% if user.is_authenticated %}
+            <li>
+                <a href="/home">
+                    <i class="headerButton fa-solid fa-house"data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Página Inicial"></i>
+                </a>
+            </li>
+
+            <li class="more-apps">
+                <i class="headerButton fa-solid fa-compass" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="Funcionalidades"></i>
+                <div class="apps">
+                   
+                    <div class="apps-item">
+                        {% for app in apps %}
+                        <a class="app_item" href="{{ app.links }}" target="{{ app.target }}"><img src="{{ app.image.url }}" alt="{{ app.name }}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="{{ app.description }}">
+                        </a>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+            </li>
+            <li>
+                <i class="headerButton fa-solid fa-clapperboard" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="Tv Honcord"></i>
+            </li>
+            <li>
+                <i class="headerButton fa-solid fa-newspaper" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="Jornal Honcord"></i>
+            </li>
+            <li class="perfil">
+                <a class="user-photo-holder" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Foto de Perfil" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Perfil">
+                </a>
+                
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                        <a class="user-photo-holder off" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Foto de Perfil">
+                        </a>
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <a href="{% url 'intra:logout' %}">Sair</a>
+                        <p>{{ user }}</p>
+                    </div>
+                  </div>
+            </li>
+            <li class="alx">
+                <span class="alx-coin"><i class="fa-solid fa-coins"></i>0</span>
+            </li>
+        {% else %}
+            <li>
+                <i class="headerButton fa-solid fa-clapperboard" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="Tv Honcord"></i>
+            </li>
+            <li>
+                <i class="headerButton fa-solid fa-newspaper" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="Jornal Honcord"></i>
+            </li>
+        {% endif %}
+    </ul>
+</header>

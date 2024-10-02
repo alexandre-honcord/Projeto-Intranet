@@ -1,0 +1,9 @@
+{% extends 'index/index.html' %}
+{% load static %}
+{% block home %}
+<div class="content" data-block="home">
+    <p>User: {{ user.username }}</p>
+    <p>Authenticated: {{ user.is_authenticated }}</p>
+</div>
+
+{% endblock %}

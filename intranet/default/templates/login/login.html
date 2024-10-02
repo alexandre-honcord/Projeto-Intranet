@@ -1,0 +1,29 @@
+{% extends 'index/index.html' %}
+{% load static %}
+{% block login %}
+<div class="login-container" data-block="login">
+    <form method="post">
+        {% csrf_token %}
+        <h1>Bem Vindo</h1> 
+
+        <p>Entre com seu usuário e senha do computador.</p>
+        <div class="user-group">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Digite seu usuário do computador" name="username" id="username" autocomplete="off" required>
+        </div>
+        <div class="password-group">
+            <div class="password-view">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Senha" name="password" id="password" class="input-password" required>
+                <i id="togglePassword" class="fas fa-eye password-icon" onclick="togglePassword('password', 'togglePassword')"></i>
+            </div>
+        </div>
+
+        <button type="submit">ENTRAR</button>
+
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}
