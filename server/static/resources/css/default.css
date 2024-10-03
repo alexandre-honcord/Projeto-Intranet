@@ -332,6 +332,7 @@ section {
 
 .header ul {
     display: flex;
+    align-items: center;
     margin-top: 14px;
     gap: 40px;
 }
