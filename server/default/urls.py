@@ -14,6 +14,6 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('home/', home_view, name='home'),
     path('ordemServico/', ordemServico_view, name='ordemServico'),
-    path('painelOrdemServico/', painelOrdemServico_view, name='painelOrdemServico'),
+    path('painel/OrdemServico', painelOrdemServico_view, name='painelOrdemServico'),
 
 ]

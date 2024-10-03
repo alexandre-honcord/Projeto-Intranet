@@ -123,8 +123,8 @@ function limparERedirecionar() {
         selectedValues[key] = null;
     }
 
-    // Redireciona para /home
-    window.location.href = '/home';
+    // Redireciona para /painelOrdemServico
+    window.location.href = '/painel/OrdemServico';
 };
 
 // Adiciona listener ao botão "Cancelar"
