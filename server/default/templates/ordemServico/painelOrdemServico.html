@@ -1,0 +1,55 @@
+{% extends 'index/index.html' %}
+{% load static %}
+
+{% block ordemServico %}
+<link rel="stylesheet" href="{% static '/resources/css/painelOrdem.css' %}">
+<div class="panel-ordem">
+    <div class="cards-holder">
+        <div class="cards">
+            <span>
+                <span>5</span>
+                Ordens de Serviço Abertas
+            </span>
+        </div>
+        <div class="cards">
+            <span>
+                <span>5</span>
+                Ordens de Serviço Em Processo
+            </span>
+        </div>
+        <div class="cards">
+            <span>
+                <span>5</span>
+                Ordens de Serviço Encerradas
+            </span>
+        </div>
+        <div class="cards">
+            <span>
+                <span>5</span>
+                Ordens de Serviço Não Avaliadas "NPS"
+            </span>
+        </div>
+    </div>
+    <div class="button-holder">
+        <a class="button-ordem" id="addOrdem" href=""></a>
+    </div>
+    <div class="ordens">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="aberta-tab" data-bs-toggle="tab" data-bs-target="#aberta-tab-pane" type="button" role="tab" aria-controls="aberta-tab-pane" aria-selected="true">Abertas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="emProcesso-tab" data-bs-toggle="tab" data-bs-target="#emProcesso-tab-pane" type="button" role="tab" aria-controls="emProcesso-tab-pane" aria-selected="false">Em Processo</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="encerradas-tab" data-bs-toggle="tab" data-bs-target="#encerradas-tab-pane" type="button" role="tab" aria-controls="encerradas-tab-pane" aria-selected="false">Encerradas</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="aberta-tab-pane" role="tabpanel" aria-labelledby="aberta-tab" tabindex="0">aberta</div>
+            <div class="tab-pane fade" id="emProcesso-tab-pane" role="tabpanel" aria-labelledby="emProcesso-tab" tabindex="0">em processo</div>
+            <div class="tab-pane fade" id="encerradas-tab-pane" role="tabpanel" aria-labelledby="encerradas-tab" tabindex="0">encerradas</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

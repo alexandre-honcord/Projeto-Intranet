@@ -16,12 +16,12 @@ def ordemServico_view(request):
     })
 
 
-def ordemServicoClass_view(request):
+def painelOrdemServico_view(request):
     tools = Tool.objects.all()
     apps = AppsTool.objects.all()
     user = request.user
 
-    return render(request, 'ordemServico/ordemServicoClass.html', {
+    return render(request, 'ordemServico/painelOrdemServico.html', {
         'tools': tools,
         'apps': apps,
         'user': user
