@@ -18,7 +18,7 @@
             {% include 'header/header.html' %}
             <div class="main-content">
                 <iframe class="tvHoncord" src="{% static 'resources/file (1).mp4' %}" frameborder="0" allowfullscreen loop="True"></iframe>
-                <iframe class="journalHoncord" src="{% static 'journal.html' %}"></iframe>
+                <iframe class="journalHoncord" src="{% static '/journal.html' %}"></iframe>
                 {% block login %}{% endblock %}
                 {% block home %}{% endblock %}
                 {% block ordemServico %}{% endblock %}

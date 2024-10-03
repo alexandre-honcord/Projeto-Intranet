@@ -3,35 +3,35 @@
 
 {% block ordemServico %}
 <link rel="stylesheet" href="{% static '/resources/css/painelOrdem.css' %}">
-<div class="panel-ordem">
+<div class="panel-ordem" data-block="home">
     <div class="cards-holder">
         <div class="cards">
             <span>
-                <span>5</span>
+                <span>05</span>
                 Ordens de Serviço Abertas
             </span>
         </div>
         <div class="cards">
             <span>
-                <span>5</span>
+                <span>05</span>
                 Ordens de Serviço Em Processo
             </span>
         </div>
         <div class="cards">
             <span>
-                <span>5</span>
+                <span>05</span>
                 Ordens de Serviço Encerradas
             </span>
         </div>
         <div class="cards">
             <span>
-                <span>5</span>
-                Ordens de Serviço Não Avaliadas "NPS"
+                <span>05</span>
+                Ordens de Serviço Não Avaliadas (NPS)
             </span>
         </div>
     </div>
     <div class="button-holder">
-        <a class="button-ordem" id="addOrdem" href=""></a>
+        <a class="button-ordem" id="addOrdem" href="/ordemServico"><i class="fa-solid fa-plus"></i>Ordem de Serviço</a>
     </div>
     <div class="ordens">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

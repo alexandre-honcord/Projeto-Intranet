@@ -57,3 +57,22 @@
     text-align: end;
     font-size: 2rem;
 }
+
+.button-holder {
+    display: flex;
+    align-items: center;
+    padding: 16px 0 16px 0px;
+}
+
+.button-ordem {
+    background-color: #b32325;
+    box-shadow: 0 1.2px 4px rgba(0, 0, 0, 0.4);
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #fafafa;
+    text-decoration: none;
+}
