@@ -1,6 +1,6 @@
 .panel-ordem {
     width: 95%;
-    height: calc(100dvh - 60px);
+    height: 100%;
     background-color: #fafafa;
     padding: 16px;
     border-radius: 8px;
@@ -76,6 +76,8 @@
     color: #fafafa;
     text-decoration: none;
 }
+
+
 
 .ordens ul li button {
     color: #b32325 !important;
