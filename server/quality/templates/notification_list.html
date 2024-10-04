@@ -1,0 +1,29 @@
+<!-- core/templates/notification_list.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Notificações de Eventos Adversos</h2>
+    <ul class="list-group mt-3">
+        {% for notification in notifications %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>{{ notification.title }}</h5>
+                    <p>{{ notification.content }}</p>
+                    <small class="text-muted">Criado em: {{ notification.created_at }}</small><br>
+                    {% if notification.identified_by %}
+                    <small class="text-muted">Identificado por: {{ notification.identified_by }}</small>
+                    {% endif %}
+                </div>
+                <div class="col-md-4 text-right">
+                    <a href="{% url 'core:notification_detail' notification.pk %}" class="btn btn-primary btn-sm">Detalhes</a>
+                    <a href="{% url 'core:notification_update' notification.pk %}" class="btn btn-secondary btn-sm">Editar</a>
+                    <a href="{% url 'core:notification_delete' notification.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'core:notification_create' %}" class="btn btn-success mt-3">Criar Nova Notificação</a>
+</div>
+{% endblock %}

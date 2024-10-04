@@ -1,0 +1,59 @@
+.panel-ordem {
+    width: 95%;
+    height: calc(100dvh - 60px);
+    background-color: #fafafa;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.cards-holder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+}
+
+.cards-holder .cards{
+    padding: 16px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 1.2px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: right;
+}
+
+
+.cards-holder .cards:nth-child(1) {
+    background-color: #a8d6e96b;
+    color: #498fad;
+    font-weight: 700;
+}
+
+.cards-holder .cards:nth-child(2) {
+    background-color: #a8e9b46b;
+    color: #6ead49;
+    font-weight: 700;
+}
+
+.cards-holder .cards:nth-child(3) {
+    background-color: #e9a8a86b;
+    color: #ad4949;
+    font-weight: 700;
+}
+
+.cards-holder .cards:nth-child(4) {
+    background-color: #e9cfa86b;
+    color: #ad7b49;
+    font-weight: 700;
+}
+.cards-holder .cards span {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.cards-holder .cards span span{
+    text-align: end;
+    font-size: 2rem;
+}

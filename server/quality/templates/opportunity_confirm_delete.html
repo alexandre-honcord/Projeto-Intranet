@@ -1,0 +1,17 @@
+<!-- core/templates/opportunity_confirm_delete.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Tem certeza que deseja excluir "{{ opportunity.title }}"?</h5>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                <a href="{% url 'core:opportunity_detail' opportunity.pk %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
