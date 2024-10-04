@@ -1,0 +1,119 @@
+<!-- core/templates/opportunity_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Nova Oportunidade</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Título -->
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            {% if form.title.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.title.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Descrição -->
+        <div class="form-group">
+            {{ form.description.label_tag }}
+            {{ form.description }}
+            {% if form.description.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.description.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Criado por -->
+        <div class="form-group">
+            {{ form.created_by.label_tag }}
+            {{ form.created_by }}
+            {% if form.created_by.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.created_by.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Data de Finalização -->
+        <div class="form-group">
+            {{ form.deadline.label_tag }}
+            {{ form.deadline }}
+            {% if form.deadline.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.deadline.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Tipo -->
+        <div class="form-group">
+            {{ form.tipo.label_tag }}
+            {{ form.tipo }}
+            {% if form.tipo.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.tipo.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Prioridade -->
+        <div class="form-group">
+            {{ form.prioridade.label_tag }}
+            {{ form.prioridade }}
+            {% if form.prioridade.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.prioridade.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Local -->
+        <div class="form-group">
+            {{ form.location.label_tag }}
+            {{ form.location }}
+            {% if form.location.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.location.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Status -->
+        <div class="form-group">
+            {{ form.status.label_tag }}
+            {{ form.status }}
+            {% if form.status.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.status.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Botões -->
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{% url 'core:opportunity_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

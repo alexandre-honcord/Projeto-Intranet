@@ -1,0 +1,26 @@
+<!-- core/templates/opportunity_list.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Oportunidades de Melhoria</h2>
+    <ul class="list-group mt-3">
+        {% for opportunity in opportunities %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>{{ opportunity.title }}</h5>
+                    <p>{{ opportunity.description }}</p>
+                    <small class="text-muted">Criado por: {{ opportunity.created_by.username }}</small>
+                </div>
+                <div class="col-md-4 text-right">
+                    <a href="{% url 'core:opportunity_detail' opportunity.pk %}" class="btn btn-primary btn-sm">Detalhes</a>
+                    <a href="{% url 'core:opportunity_update' opportunity.pk %}" class="btn btn-secondary btn-sm">Editar</a>
+                    <a href="{% url 'core:opportunity_delete' opportunity.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'core:opportunity_create' %}" class="btn btn-success mt-3">Criar Nova Oportunidade</a>
+</div>
+{% endblock %}
