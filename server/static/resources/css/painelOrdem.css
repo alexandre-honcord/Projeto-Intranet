@@ -80,22 +80,23 @@
 
 
 .ordens ul li button {
-    color: #b32325 !important;
+    color: #5e2f32 !important;
 }
 
 .ordens ul li button.active {
-    background-color: #e8e8e8 !important;
+    background-color: #eeeeee !important;
     border: none !important;
     outline: none !important;
-    border: 2px solid #e8e8e8 !important;
-    color: #498fad !important;
+    border: 2px solid #eeeeee !important;
+    color: #B32325 !important;
+    font-weight: 600;
 
 }
 
 #aberta-tab-pane,
 #emProcesso-tab-pane,
 #encerradas-tab-pane {
-    background-color: #e8e8e8 !important;
+    background-color: #eeeeee !important;
     border: none !important;
     padding: 16px;
     border-radius: 0 0 8px 8px;
@@ -117,7 +118,7 @@
     justify-content: space-between;
     gap: 10px;
     padding-bottom: 16px;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #eeeeee;
     font-weight: 700;
 }
 

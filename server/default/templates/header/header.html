@@ -56,6 +56,12 @@
                     <div class="offcanvas-body">
                         <a href="{% url 'intra:logout' %}">Sair</a>
                         <p>{{ user }}</p>
+                        <div class="notification-holder">
+                            <a href="/notificacoes" class="notifications">
+                                <i class="fa-solid fa-bell"></i> Notificações
+                                <span class="qtd-notifications">05</span>
+                            </a>
+                        </div>
                     </div>
                   </div>
             </li>

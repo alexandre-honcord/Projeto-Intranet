@@ -3,10 +3,9 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
-from datetime import datetime
 from default.models.models_links import Tool
 from default.utils import exists_ad
-import logging, time
+import logging
 from django.utils import timezone
 
 logger = logging.getLogger(__name__)

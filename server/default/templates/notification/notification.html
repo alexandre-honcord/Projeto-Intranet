@@ -1,0 +1,29 @@
+{% extends 'index/index.html' %}
+{% load static %}
+
+{% block ordemServico %}
+<link rel="stylesheet" href="{% static '/resources/css/notifications.css' %}">
+<div class="notifications-holder" data-block="home">
+    <div class="notifications-box">
+        <a class="notifications_cards">
+            <div class="cards_bar">
+                <div class="notification-type">
+                    <i class="fa-solid fa-bell"></i>
+                    Notificação de resposta.
+                </div>
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    Há 20 minutos
+                </div>
+            </div>
+            <div class="card_content">
+                <div>
+                    <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Foto de Perfil">
+                </div>
+                @Usuário
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sit ipsam hic repellat at corrupti eveniet. Nobis facilis maxime, similique quo dolores soluta enim? Tenetur dolore magnam enim placeat laboriosam.</p>
+        </a>
+    </div>
+</div>
+{% endblock %}
