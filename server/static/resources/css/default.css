@@ -390,6 +390,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: calc(100dvh - 60px);
     z-index: 99;
 }
 
@@ -602,7 +603,6 @@ form button:hover {
     box-shadow: var(--box-shadow-effect);
     cursor: pointer;
 }
-
 
 .notifications {
     padding: 8px;
