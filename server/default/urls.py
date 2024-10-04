@@ -4,6 +4,7 @@ from default.views.views_login import login_view, logout_view
 from default.views.views_home import home_view
 from default.views.views_ordem_servico import ordemServico_view, painelOrdemServico_view
 from default.views.views_notification import   notification_view
+from quality.views import OpportunityListView
 
 
 
@@ -17,5 +18,5 @@ urlpatterns = [
     path('ordemServico/', ordemServico_view, name='ordemServico'),
     path('notificacoes/', notification_view, name='notifications'),
     path('painel/OrdemServico', painelOrdemServico_view, name='painelOrdemServico'),
-
+    path('quality/', OpportunityListView.as_view(), name='quality' )
 ]

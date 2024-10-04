@@ -1,0 +1,10 @@
+.list-group-item {
+    background-color: #fafafa !important;
+    border: ;
+}
+
+.mt-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
