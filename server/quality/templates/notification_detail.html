@@ -15,8 +15,8 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                <a href="{% url 'core:notification_list' %}" class="btn btn-secondary">Voltar para Lista</a>
-                <a href="{% url 'core:notification_delete' notification.pk %}" class="btn btn-danger float-right">Excluir</a>
+                <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary">Voltar para Lista</a>
+                <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger float-right">Excluir</a>
             </form>
         </div>
     </div>

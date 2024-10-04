@@ -1,4 +1,4 @@
-<!-- core/templates/notification_list.html -->
+<!-- quality/templates/notification_list.html -->
 {% extends 'base.html' %}
 {% block content %}
 <div class="container mt-4">
@@ -16,14 +16,14 @@
                     {% endif %}
                 </div>
                 <div class="col-md-4 text-right">
-                    <a href="{% url 'core:notification_detail' notification.pk %}" class="btn btn-primary btn-sm">Detalhes</a>
-                    <a href="{% url 'core:notification_update' notification.pk %}" class="btn btn-secondary btn-sm">Editar</a>
-                    <a href="{% url 'core:notification_delete' notification.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                    <a href="{% url 'quality:notification_detail' notification.pk %}" class="btn btn-primary btn-sm">Detalhes</a>
+                    <a href="{% url 'quality:notification_update' notification.pk %}" class="btn btn-secondary btn-sm">Editar</a>
+                    <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger btn-sm">Excluir</a>
                 </div>
             </div>
         </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'core:notification_create' %}" class="btn btn-success mt-3">Criar Nova Notificação</a>
+    <a href="{% url 'quality:notification_create' %}" class="btn btn-success mt-3">Criar Nova Notificação</a>
 </div>
 {% endblock %}
