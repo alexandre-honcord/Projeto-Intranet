@@ -13,9 +13,9 @@
                     <small class="text-muted">Criado por: {{ opportunity.created_by.username }}</small>
                 </div>
                 <div class="col-md-4 text-right">
-                    <a href="{% url 'quality:opportunity_detail' opportunity.pk %}" class="btn btn-primary btn-sm">Detalhes</a>
-                    <a href="{% url 'quality:opportunity_update' opportunity.pk %}" class="btn btn-secondary btn-sm">Editar</a>
-                    <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                    <a href="{% url 'quality:opportunity_detail' opportunity.pk %}" class="btn btn-primary btn-sm"><i class="fa-solid fa-list-check"></i></a>
+                    <a href="{% url 'quality:opportunity_update' opportunity.pk %}" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
         </li>
