@@ -5,9 +5,9 @@
 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ opportunities.title }}</h5>
-            <p class="card-text">{{ opportunities.content }}</p>
-            <p class="card-text"><small class="text-muted">Identificado por: {{ opportunities.identified_by }}</small></p>
+            <h5 class="card-title">{{ opportunity.title }}</h5>
+            <p class="card-text">{{ opportunity.description }}</p>
+            <p class="card-text"><small class="text-muted">Identificado por: {{ opportunity.created_by.username }}</small></p>
             <hr>
             
             <!-- Formulário de Edição da Notificação -->
@@ -16,7 +16,7 @@
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                 <a href="{% url 'quality:opportunity_list' %}" class="btn btn-secondary">Voltar para Lista</a>
-                <a href="{% url 'quality:opportunity_delete' opportunities.pk %}" class="btn btn-danger float-right">Excluir</a>
+                <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-danger float-right">Excluir</a>
             </form>
         </div>
     </div>
