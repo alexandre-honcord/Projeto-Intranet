@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
 <div class="container mt-4">
     <h2>Notificações de Eventos Adversos</h2>
+    <a href="{% url 'quality:notification_create' %}" class="btn btn-success mt-3"><i class="fa-solid fa-plus"></i> Notificação</a>
     <ul class="list-group mt-3">
         {% for notification in notifications %}
         <li class="list-group-item">
@@ -17,15 +18,16 @@
                     <small class="text-muted">Identificado por: {{ notification.identified_by }}</small>
                     {% endif %}
                 </div>
-                <div class="col-md-4 text-right">
+                <div class="col-md-4 text-end">
+                    <a class="btn btn-primary btn-sm badges">Encerrada</a>
                     <a href="{% url 'quality:notification_detail' notification.pk %}" class="btn btn-primary btn-sm">Detalhes</a>
-                    <a href="{% url 'quality:notification_update' notification.pk %}" class="btn btn-secondary btn-sm">Editar</a>
-                    <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                    <a href="{% url 'quality:notification_update' notification.pk %}" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
         </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'quality:notification_create' %}" class="btn btn-success mt-3"><i class="fa-solid fa-plus"></i> Notificação</a>
+    
 </div>
 {% endblock %}

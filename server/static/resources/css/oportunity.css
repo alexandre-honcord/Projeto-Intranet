@@ -1,9 +1,33 @@
-.list-group-item {
-    background-color: #fafafa !important;
-}
-
-.mt-3 {
+.list-group {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 32px;
+    background-color: #eeeeee;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+}
+
+.list-group-item {
+    background-color: #fafafa !important;
+    border: none !important;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.btn-success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    width: fit-content;
+}
+
+.badges {
+    background-color: #A8D6E96B !important;
+    color: #0d4055 !important;
+    border-color: #A8D6E96B !important;
+    outline: none !important;
+    text-align: center !important;
+    cursor: default;
 }

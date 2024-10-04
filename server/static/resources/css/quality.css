@@ -1,7 +1,8 @@
 .quality-holder {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 96%;
     height: 100%;
-    background-color: #fafafa;
+    border-radius: 8px !important;
+    background-color: #eeeeee;
 }
