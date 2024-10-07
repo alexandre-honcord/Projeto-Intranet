@@ -36,15 +36,7 @@
         
         <!-- Identificado por -->
         <div class="form-group">
-            {{ form.identified_by.label_tag }}
-            {{ form.identified_by }}
-            {% if form.identified_by.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.identified_by.errors %}
-                        <div>{{ error }}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
+            {{ form.anonymous.label_tag }} {{ form.anonymous }} <!-- Checkbox para anonimato -->
         </div>
         
         <!-- Prioridade -->
