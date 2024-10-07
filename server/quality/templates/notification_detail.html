@@ -1,7 +1,8 @@
 <!-- core/templates/notification_detail.html -->
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
@@ -14,8 +15,7 @@
             <form method="post" class="mt-4">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary">Voltar para Lista</a>
+                <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary"><i class="fa-solid fa-arrow-rotate-left"></i></a>
                 <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger float-right">Excluir</a>
             </form>
         </div>

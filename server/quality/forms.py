@@ -30,7 +30,7 @@ class OpportunityForm(forms.ModelForm):
         return instance
 
 class NotificationForm(forms.ModelForm):
-    anonymous = forms.BooleanField(required=False, label="Marque para permanecer anônimo ")  # Novo campo para permitir anonimato
+    anonymous = forms.BooleanField(required=False, label="Marque para permanecer anônimo.")  # Novo campo para permitir anonimato
 
     class Meta:
         model = Notification

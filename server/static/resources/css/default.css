@@ -390,7 +390,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100dvh - 60px);
     z-index: 99;
 }
 
