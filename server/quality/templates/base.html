@@ -18,7 +18,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'quality:notification_list' %}">Notificações</a>
                     </li>
-                    <!-- Adicione outros itens de menu conforme necessário -->
+                    {% if user.is_authenticated %}
+                        {% for grupo in user.grupos_set.all %}
+                            {% if grupo.gestor %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Ferramentas</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
         </div>
