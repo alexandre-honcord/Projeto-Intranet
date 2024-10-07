@@ -1,6 +1,12 @@
-# core/models.py
+# quality/models.py
+
 from django.db import models
 from django.contrib.auth.models import User
+
+class Grupos(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    gestor = models.BooleanField(default=False)
 
 class Client(models.Model):
     name = models.CharField(max_length=50, unique=True)
