@@ -15,8 +15,6 @@
             <form method="post" class="mt-4">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <a type="submit" class="btn btn-primary">Salvar Alterações</a>
-                <a href="{% url 'quality:opportunity_list' %}" class="btn btn-secondary"><i class="fa-solid fa-arrow-rotate-left"></i></a>
                 <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-danger float-right">Excluir</a>
             </form>
         </div>

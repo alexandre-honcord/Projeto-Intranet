@@ -9,7 +9,7 @@
             <h5 class="card-title">Tem certeza que deseja excluir "{{ opportunity.title }}"?</h5>
             <form method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                <a type="submit" class="btn btn-danger">Confirmar Exclusão</a>
                 <a href="{% url 'quality:opportunity_detail' opportunity.pk %}" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
