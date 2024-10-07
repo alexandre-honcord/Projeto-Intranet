@@ -96,7 +96,9 @@
 .form-control {
     box-shadow: none !important;
 }
-
+.card-text {
+    white-space: pre-wrap;
+}
 .form-control:active,
 .form-control:focus {
     border-color: #e98e8f77 !important;
