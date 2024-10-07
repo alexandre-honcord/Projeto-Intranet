@@ -30,11 +30,23 @@ class OpportunityCreateView(BaseContextView, CreateView):
     template_name = 'opportunity_form.html'
     success_url = reverse_lazy('quality:notification_list')
 
+    def get_form_kwargs(self):
+        # Adiciona o user nos kwargs do formulário
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user  # Passa o usuário autenticado
+        return kwargs
+
 class OpportunityUpdateView(BaseContextView, UpdateView):
     model = Opportunity
     form_class = OpportunityForm
     template_name = 'opportunity_form.html'
     success_url = reverse_lazy('quality:notification_list')
+
+    def get_form_kwargs(self):
+        # Adiciona o user nos kwargs do formulário
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user  # Passa o usuário autenticado
+        return kwargs
 
 class OpportunityDeleteView(BaseContextView, DeleteView):
     model = Opportunity
@@ -61,19 +73,27 @@ class NotificationCreateView(BaseContextView, CreateView):
     template_name = 'notification_form.html'
     success_url = reverse_lazy('quality:notification_list')
 
-    def form_valid(self, form):
-        if form.cleaned_data['identified_by'] == '':
-            form.instance.identified_by = None
-        return super().form_valid(form)
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user  # Passa o usuário autenticado
+        return kwargs
 
-    def form_invalid(self, form):
-        return self.render_to_response(self.get_context_data(form=form))
+    def form_valid(self, form):
+        return super().form_valid(form)
 
 class NotificationUpdateView(BaseContextView, UpdateView):
     model = Notification
     form_class = NotificationForm
     template_name = 'notification_form.html'
     success_url = reverse_lazy('quality:notification_list')
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user  # Passa o usuário autenticado
+        return kwargs
+    
+    def form_valid(self, form):
+        return super().form_valid(form)
 
 class NotificationDeleteView(BaseContextView, DeleteView):
     model = Notification
