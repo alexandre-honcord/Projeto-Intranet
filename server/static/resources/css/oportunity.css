@@ -1,26 +1,88 @@
+
+.container.mt-4 {
+    height: 100%;
+    padding: 0;
+}
+
+.card {
+    margin-bottom: 16px;
+}
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: fit-content;
+}
+
 .list-group {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 32px;
-    background-color: #eeeeee;
+    background-color: #f6f6f6;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 16px;
 }
 
 .list-group-item {
-    background-color: #fafafa !important;
+    background-image: linear-gradient(to radial, #fafafa, #f7f7f7, #f4f4f4, #f1f1f1, #eeeeee) !important;
     border: none !important;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
     border-radius: 8px;
 }
 
-.btn-success {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
+.delete {
+    background-color: #e98e8f !important;
     border: none;
-    width: fit-content;
+    color: #550d0d;
+}
+.delete:hover {
+    background-color: #b32325 !important;
+    border: none;
+    color: #fafafa;
+}
+
+.delete:active,
+.delete:focus {
+    background-color: #b32325 !important;
+    border: none;
+    color: #fafafa;
+}
+
+.edit {
+    background-color: #8ea6e9 !important;
+    border: none;
+    color: #0d1855;
+}
+.edit:hover {
+    background-color: #2334b3 !important;
+    border: none;
+    color: #fafafa;
+}
+
+.edit:active,
+.edit:focus {
+    background-color: #2334b3 !important;
+    border: none;
+    color: #fafafa;
+}
+.details {
+    background-color: #8ee9ab !important;
+    border: none;
+    color: #0d5530;
+}
+.details:hover {
+    background-color: #23b35d !important;
+    border: none;
+    color: #fafafa;
+}
+
+.details:active,
+.details:focus {
+    background-color: #23b35d !important;
+    border: none;
+    color: #fafafa;
 }
 
 .badges {
@@ -30,4 +92,33 @@
     outline: none !important;
     text-align: center !important;
     cursor: default;
+}
+
+.col-md-8 p{
+    white-space: pre-wrap;
+}
+
+.form-control {
+    box-shadow: none !important;
+}
+
+.form-control:active,
+.form-control:focus {
+    border-color: #e98e8f77 !important;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.buttons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100px;
 }

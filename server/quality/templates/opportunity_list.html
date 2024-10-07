@@ -1,8 +1,11 @@
 <!-- core/templates/opportunity_list.html -->
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="container mt-4">
+    <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
     <h2>Oportunidades de Melhoria</h2>
+    <a href="{% url 'quality:opportunity_create' %}" class="btn btn-success mt-3 add"><i class="fa-solid fa-plus"></i> Oportunidade</a>
     <ul class="list-group mt-3">
         {% for opportunity in opportunities %}
         <li class="list-group-item">
@@ -12,15 +15,15 @@
                     <p>{{ opportunity.description }}</p>
                     <small class="text-muted">Criado por: {{ opportunity.created_by.username }}</small>
                 </div>
-                <div class="col-md-4 text-right">
-                    <a href="{% url 'quality:opportunity_detail' opportunity.pk %}" class="btn btn-primary btn-sm"><i class="fa-solid fa-list-check"></i></a>
-                    <a href="{% url 'quality:opportunity_update' opportunity.pk %}" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen"></i></a>
-                    <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                <div class="col-md-4 text-end">
+                    <a href="{% url 'quality:opportunity_detail' opportunity.pk %}" class="btn btn-primary btn-sm details"><i class="fa-solid fa-list-check"></i></a>
+                    <a href="{% url 'quality:opportunity_update' opportunity.pk %}" class="btn btn-primary btn-sm edit"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-primary btn-sm delete"><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
         </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'quality:opportunity_create' %}" class="btn btn-success mt-3">Criar Nova Oportunidade</a>
+    
 </div>
 {% endblock %}
