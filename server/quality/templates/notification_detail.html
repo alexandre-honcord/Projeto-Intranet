@@ -15,7 +15,7 @@
             <form method="post" class="mt-4">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                <a type="submit" class="btn btn-primary">Salvar Alterações</a>
                 <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary">Voltar para Lista</a>
                 <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger float-right">Excluir</a>
             </form>
