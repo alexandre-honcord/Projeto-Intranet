@@ -93,8 +93,10 @@
         
 
         <!-- Botões -->
-        <a type="submit" class="btn btn-primary">Salvar</a>
-        <a href="{% url 'quality:opportunity_list' %}" class="btn btn-secondary">Cancelar</a>
+        <div class="buttons">
+            <a type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar</a>
+            <a href="{% url 'quality:opportunity_list' %}" class="btn btn-secondary"><i class="fa-solid fa-xmark"></i> Cancelar</a>
+        </div>
     </form>
 </div>
 {% endblock %}
