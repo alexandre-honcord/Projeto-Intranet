@@ -122,3 +122,17 @@
     gap: 6px;
     width: 100px;
 }
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.checkbox label {
+    position: relative;
+    top: -8px;
+}
+#id_anonymous {
+    display: flex;
+    width: 18px;
+}

@@ -35,8 +35,8 @@
         </div>
         
         <!-- Identificado por -->
-        <div class="form-group">
-            {{ form.anonymous.label_tag }} {{ form.anonymous }} <!-- Checkbox para anonimato -->
+        <div class="form-group checkbox">
+            {{ form.anonymous }} {{ form.anonymous.label_tag }}<!-- Checkbox para anonimato -->
         </div>
         
         <!-- Prioridade -->
@@ -93,7 +93,7 @@
         
 
         <!-- Botões -->
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a type="submit" class="btn btn-primary">Salvar</a>
         <a href="{% url 'quality:opportunity_list' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
