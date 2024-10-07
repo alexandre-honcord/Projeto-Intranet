@@ -1,5 +1,5 @@
 :root {
-    --body-bg-color:#f1f1f2;
+    --body-bg-color:#f1f1f1;
     --sidebar-bg-color:var(--form-button-color);
     --sidebar-button-bg-color:#b32325;
     --sidebar-button-bg-color-hover:#fafafa;
@@ -318,7 +318,6 @@
 section {
     margin-left: 200px;
     width: calc(100% - 200px);
-    height: 100%;
 }
 
 .header {

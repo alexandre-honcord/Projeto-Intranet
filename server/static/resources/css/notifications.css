@@ -1,11 +1,10 @@
 .notifications-holder {
 width: 96%;
 height: calc(100dvh - 60px);
-
-
 }
 
 .notifications-box {
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;

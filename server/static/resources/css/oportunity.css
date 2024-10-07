@@ -1,12 +1,7 @@
-
-.container.mt-4 {
-    height: 100%;
-    padding: 0;
-}
-
 .card {
     margin-bottom: 16px;
 }
+
 .add {
     display: flex;
     align-items: center;
@@ -16,11 +11,10 @@
 }
 
 .list-group {
-    display: flex;
-    flex-direction: column;
+    width: 100% !important;
     gap: 20px;
     padding: 32px;
-    background-color: #f6f6f6;
+    background-color: #e2e2e2;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
     margin-bottom: 16px;
 }
@@ -98,6 +92,7 @@
     white-space: pre-wrap;
 }
 
+
 .form-control {
     box-shadow: none !important;
 }
@@ -115,12 +110,14 @@
     padding-bottom: 16px;
 }
 
-.buttons a{
+.buttons a,
+.buttons button{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    width: 100px;
+    width: fit-content;
+    height: fit-content;
 }
 
 .checkbox {
@@ -128,11 +125,10 @@
     align-items: center;
     gap: 6px;
 }
+
 .checkbox label {
     position: relative;
     top: -8px;
 }
-#id_anonymous {
-    display: flex;
-    width: 18px;
-}
+
+
