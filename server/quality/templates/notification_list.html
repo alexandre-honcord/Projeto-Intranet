@@ -15,7 +15,9 @@
                     <p>{{ notification.content }}</p>
                     <small class="text-muted">Criado em: {{ notification.created_at }}</small><br>
                     {% if notification.identified_by %}
-                    <small class="text-muted">Identificado por: {{ notification.identified_by }}</small>
+                        <small class="text-muted">Identificado por: {{ notification.identified_by }}</small>
+                    {% else %}
+                        <small class="text-muted">Notificação anônima</small>
                     {% endif %}
                 </div>
                 <div class="col-md-4 text-end">

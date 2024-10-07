@@ -30,6 +30,8 @@ class OpportunityForm(forms.ModelForm):
         return instance
 
 class NotificationForm(forms.ModelForm):
+    anonymous = forms.BooleanField(required=False, label="Marque para permanecer anônimo ")  # Novo campo para permitir anonimato
+
     class Meta:
         model = Notification
         fields = ['title', 'content', 'priority', 'client', 'location']
@@ -39,17 +41,18 @@ class NotificationForm(forms.ModelForm):
             'priority': forms.Select(attrs={'class': 'form-control'}),
             'client': forms.Select(attrs={'class': 'form-control'}),
             'location': forms.Select(attrs={'class': 'form-control'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop('user', None)  # Remove o usuário dos kwargs
+        self.user = kwargs.pop('user', None)  # Captura o usuário autenticado
         super().__init__(*args, **kwargs)
 
     def save(self, commit=True):
         instance = super().save(commit=False)
-        if self.user:
-            instance.identified_by = self.user  # Atribui o usuário autenticado
+        if self.cleaned_data.get('anonymous'):
+            instance.identified_by = None  # Se o checkbox estiver marcado, deixa anônimo
+        else:
+            instance.identified_by = self.user  # Caso contrário, atribui o usuário autenticado
         if commit:
             instance.save()
         return instance
