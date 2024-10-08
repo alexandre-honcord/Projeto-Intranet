@@ -33,8 +33,8 @@
                             <td>{{ ferramenta.porque4 }}</td>
                             <td>{{ ferramenta.porque5 }}</td>
                             <td>
-                                <a href="{% url 'ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                                <a href="{% url 'ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                                <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
+                                <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -44,7 +44,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="{% url 'ferramenta5porques-create' %}" class="btn btn-primary">Adicionar</a>
+            <a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-primary">Adicionar</a>
         </div>
     </div>
 </div>

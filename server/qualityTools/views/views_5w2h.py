@@ -15,20 +15,20 @@ class Ferramenta5W2HCreateView(CreateView):
     model = Ferramenta5W2H
     form_class = Ferramenta5W2HForm
     template_name = 'ferramentas/ferramenta5w2h/ferramenta5w2h_form.html'
-    success_url = reverse_lazy('ferramenta5w2h_list')
+    success_url = reverse_lazy('qualityTools:qualityTools:ferramenta5w2h_list')
 
 
 class Ferramenta5W2HUpdateView(UpdateView):
     model = Ferramenta5W2H
     form_class = Ferramenta5W2HForm
     template_name = 'ferramentas/ferramenta5w2h/ferramenta5w2h_form.html'
-    success_url = reverse_lazy('ferramenta5w2h_list')
+    success_url = reverse_lazy('qualityTools:ferramenta5w2h_list')
 
 
 class Ferramenta5W2HDeleteView(DeleteView):
     model = Ferramenta5W2H
     template_name = 'ferramentas/ferramenta5w2h/ferramenta5w2h_confirm_delete.html'
-    success_url = reverse_lazy('ferramenta5w2h_list')
+    success_url = reverse_lazy('qualityTools:ferramenta5w2h_list')
 
 
 class Ferramenta5W2HViewSet(viewsets.ModelViewSet):

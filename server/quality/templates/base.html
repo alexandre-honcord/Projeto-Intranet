@@ -26,10 +26,10 @@
                                     Ferramentas
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="ferramentasDropdown">
-                                    <li><a class="dropdown-item" href="#">5 porquês</a></li>
-                                    <li><a class="dropdown-item" href="#">5W2H</a></li>
-                                    <li><a class="dropdown-item" href="#">Ishikawa</a></li>
-                                    <li><a class="dropdown-item" href="#">SWOT</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'qualityTools:ferramenta5porques_list' %}">5 porquês</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'qualityTools:ferramenta5w2h_list' %}">5W2H</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'qualityTools:ferramentaishikawa_list' %}">Ishikawa</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'qualityTools:ferramentaswot_list' %}">SWOT</a></li>
                                 </ul>
                             </li>                            
                             {% endif %}

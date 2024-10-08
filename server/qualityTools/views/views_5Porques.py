@@ -14,18 +14,18 @@ class Ferramenta5PorquesCreateView(CreateView):
     model = Ferramenta5Porques
     template_name = 'ferramentas/ferramenta5Porques/ferramenta5Porques_form.html'
     form_class = Ferramenta5PorquesForm
-    success_url = reverse_lazy('ferramenta5porques_list')
+    success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
 
 class Ferramenta5PorquesUpdateView(UpdateView):
     model = Ferramenta5Porques
     template_name = 'ferramentas/ferramenta5Porques/ferramenta5Porques_form.html'
     form_class = Ferramenta5PorquesForm
-    success_url = reverse_lazy('ferramenta5porques_list')
+    success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
 
 class Ferramenta5PorquesDeleteView(DeleteView):
     model = Ferramenta5Porques
     template_name = 'ferramentas/ferramenta5Porques/ferramenta5Porques_confirm_delete.html'
-    success_url = reverse_lazy('ferramenta5porques_list')
+    success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
 
 class Ferramenta5PorquesViewSet(viewsets.ModelViewSet):
     queryset = Ferramenta5Porques.objects.all()

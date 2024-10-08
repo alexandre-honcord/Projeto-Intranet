@@ -40,6 +40,8 @@ router.register(r'ferramenta-ishikawa', FerramentaIshikawaViewSet)
 router.register(r'ferramenta-swot', FerramentaSWOTViewSet)
 router.register(r'ferramenta-5porques', Ferramenta5PorquesViewSet)
 
+app_name = 'qualityTools'
+
 urlpatterns = [
     # URLs para as views baseadas em classes do Django
     path('5w2h/', Ferramenta5W2HListView.as_view(), name='ferramenta5w2h_list'),

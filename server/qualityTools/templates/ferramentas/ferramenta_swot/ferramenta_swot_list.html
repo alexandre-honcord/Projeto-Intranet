@@ -30,8 +30,8 @@
                         <td>{{ ferramenta.oportunidades }}</td>
                         <td>{{ ferramenta.ameacas }}</td>
                         <td>
-                            <a href="{% url 'ferramentaswot-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="{% url 'ferramentaswot-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="{% url 'qualityTools:ferramentaswot-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{% url 'qualityTools:ferramentaswot-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -41,7 +41,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="{% url 'ferramentaswot-create' %}" class="btn btn-primary">Adicionar</a>
+            <a href="{% url 'qualityTools:ferramentaswot-create' %}" class="btn btn-primary">Adicionar</a>
         </div>
     </div>
 </div>

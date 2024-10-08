@@ -14,18 +14,18 @@ class FerramentaIshikawaCreateView(CreateView):
     model = FerramentaIshikawa
     form_class = FerramentaIshikawaForm
     template_name = 'ferramentas/ferramentaishikawa/ferramentaishikawa_form.html'
-    success_url = reverse_lazy('ferramentaishikawa_list')
+    success_url = reverse_lazy('qualityTools:ferramentaishikawa_list')
 
 class FerramentaIshikawaUpdateView(UpdateView):
     model = FerramentaIshikawa
     form_class = FerramentaIshikawaForm
     template_name = 'ferramentas/ferramentaishikawa/ferramentaishikawa_form.html'
-    success_url = reverse_lazy('ferramentaishikawa_list')
+    success_url = reverse_lazy('qualityTools:ferramentaishikawa_list')
 
 class FerramentaIshikawaDeleteView(DeleteView):
     model = FerramentaIshikawa
     template_name = 'ferramentas/ferramentaishikawa/ferramentaishikawa_confirm_delete.html'
-    success_url = reverse_lazy('ferramentaishikawa_list')
+    success_url = reverse_lazy('qualityTools:ferramentaishikawa_list')
 
 class FerramentaIshikawaViewSet(viewsets.ModelViewSet):
     queryset = FerramentaIshikawa.objects.all()

@@ -39,8 +39,8 @@
                         <td>{{ ferramenta.how }}</td>
                         <td>{{ ferramenta.how_much }}</td>
                         <td>
-                            <a href="{% url 'ferramenta5w2h-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="{% url 'ferramenta5w2h-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="{% url 'qualityTools:ferramenta5w2h-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{% url 'qualityTools:ferramenta5w2h-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -50,7 +50,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="{% url 'ferramenta5w2h-create' %}" class="btn btn-primary">Adicionar</a>
+            <a href="{% url 'qualityTools:ferramenta5w2h-create' %}" class="btn btn-primary">Adicionar</a>
         </div>
     </div>
 </div>
