@@ -14,7 +14,31 @@
             {% if not form.instance.id %}
                 {% include 'select_qualidade.html' %}
             {% endif %}
-            <div class="row">
+            <!-- Oportunidade de Melhoria ou Notificação de Evento Adverso -->
+            {% if form.oportunidade_melhoria %}
+                <div class="form-group">
+                    <label for="{{ form.oportunidade_melhoria.id_for_label }}">Oportunidade de Melhoria:</label>
+                    {% if form.oportunidade_melhoria.value %}
+                        {% for option in form.oportunidade_melhoria.field.choices %}
+                            {% if option.0 == form.oportunidade_melhoria.value %}
+                                <span>{{ option.1 }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% elif form.notificacao_evento_adverso %}
+                <div class="form-group">
+                    <label for="{{ form.notificacao_evento_adverso.id_for_label }}">Notificação de Evento Adverso:</label>
+                    {% if form.notificacao_evento_adverso.value %}
+                        {% for option in form.notificacao_evento_adverso.field.choices %}
+                            {% if option.0 == form.notificacao_evento_adverso.value %}
+                                <span>{{ option.1 }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endif %}
+            <div class="row my-3">
                 <!-- Problema -->
                 <div class="col-md-6">
                     <h5>Problema:</h5>

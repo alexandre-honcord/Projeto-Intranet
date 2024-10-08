@@ -21,7 +21,29 @@
         {% if not form.instance.id %}
             {% include 'select_qualidade.html' %}
         {% endif %}
+        <!-- Oportunidade de Melhoria ou Notificação de Evento Adverso -->
+        {% if form.oportunidade_melhoria.value %}
             <div class="form-group">
+                <label for="{{ form.oportunidade_melhoria.id_for_label }}">Oportunidade de Melhoria:</label>
+                {% for option in form.oportunidade_melhoria.field.choices %}
+                    {% if option.0 == form.oportunidade_melhoria.value %}
+                        <span>{{ option.1 }}</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if form.notificacao_evento_adverso.value %}
+            <div class="form-group">
+                <label for="{{ form.notificacao_evento_adverso.id_for_label }}">Notificação de Evento Adverso:</label>
+                {% for option in form.notificacao_evento_adverso.field.choices %}
+                    {% if option.0 == form.notificacao_evento_adverso.value %}
+                        <span>{{ option.1 }}</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+            <div class="form-group my-3">
                 <label for="{{ form.porque1.id_for_label }}">1º Por quê ?:</label>
                 {{ form.porque1 }}
             </div>
