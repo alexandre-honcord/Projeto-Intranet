@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
 <div class="delet-confirm">
     <div>
-        <h5>Realmente deseja excluir "{{ ferramenta }}"</h5>
+        <h3>Realmente deseja excluir "{{ ferramenta }}" ?</h3>
         <form method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-sm btn-danger confirm"><i class="fa-solid fa-check"></i></button>
