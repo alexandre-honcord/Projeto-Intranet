@@ -12,7 +12,7 @@
         <form method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-sm btn-danger confirm"><i class="fa-solid fa-check"></i></button>
-            <button href="{% url 'qualityTools:ferramentaishikawa_list' %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></button>
+            <a href="{% url 'qualityTools:ferramentaishikawa_list' %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></a>
         </form>
     </div>
 </div>
