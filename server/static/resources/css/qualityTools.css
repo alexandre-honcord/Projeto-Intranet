@@ -209,3 +209,23 @@ cursor: pointer;
     align-items: center;
     justify-content: space-around;
 }
+
+.card .row {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.row textarea {
+    box-shadow: none !important;
+}
+
+.row textarea:nth-child(1),
+.row textarea:nth-child(3) {
+    border-color: #236b43 !important;
+}
+.row textarea:nth-child(),
+.row textarea:nth-child(3) {
+    border-color: #236b43 !important;
+}
