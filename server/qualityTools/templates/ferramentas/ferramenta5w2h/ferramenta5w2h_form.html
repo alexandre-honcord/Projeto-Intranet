@@ -4,50 +4,50 @@
 {% block title %}5W2H{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %}</h1>
 
-    <form id="ferramentaForm" method="post">
-        {% csrf_token %}
-        <div class="card">
-            <div class="card-body">
-                <!-- Opções -->
-                {% include 'select_qualidade.html' %}
-                <div class="form-group">
-                    <label for="{{ form.what.id_for_label }}">O quê?:</label>
-                    {{ form.what }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.why.id_for_label }}">Por quê?:</label>
-                    {{ form.why }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.where.id_for_label }}">Onde?:</label>
-                    {{ form.where }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.when.id_for_label }}">Quando?:</label>
-                    {{ form.when }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.who.id_for_label }}">Quem?:</label>
-                    {{ form.who }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.how.id_for_label }}">Como?:</label>
-                    {{ form.how }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.how_much.id_for_label }}">Quanto?:</label>
-                    {{ form.how_much }}
-                </div>
+<h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %}</h1>
+
+<form id="ferramentaForm" method="post">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+            <!-- Opções -->
+            {% include 'select_qualidade.html' %}
+            <div class="form-group">
+                <label for="{{ form.what.id_for_label }}">O quê?:</label>
+                {{ form.what }}
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+            <div class="form-group">
+                <label for="{{ form.why.id_for_label }}">Por quê?:</label>
+                {{ form.why }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.where.id_for_label }}">Onde?:</label>
+                {{ form.where }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.when.id_for_label }}">Quando?:</label>
+                {{ form.when }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.who.id_for_label }}">Quem?:</label>
+                {{ form.who }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.how.id_for_label }}">Como?:</label>
+                {{ form.how }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.how_much.id_for_label }}">Quanto?:</label>
+                {{ form.how_much }}
             </div>
         </div>
-    </form>
-</div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </div>
+</form>
+
 
 <script src="{% static 'js/form_toggle.js' %}"></script>
 {% endblock %}

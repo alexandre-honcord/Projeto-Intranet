@@ -5,13 +5,13 @@
 {% block title %}Confirmar Exclusão do Ishikawa{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Tem certeza que deseja excluir ?"{{ ferramenta }}"?</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Exclusão</button>
-        <a href="{% url 'ferramentaishikawa_list' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
-</div>
+<h1>Tem certeza que deseja excluir ?"{{ ferramenta }}"?</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Exclusão</button>
+    <a href="{% url 'ferramentaishikawa_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
 {% endblock %}

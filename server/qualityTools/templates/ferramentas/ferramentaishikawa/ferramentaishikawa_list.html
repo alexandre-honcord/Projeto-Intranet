@@ -3,55 +3,51 @@
 {% block title %}Ishikawa{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Ishikawa</h1>
-    <div class="row">
-        <div class="col">
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Oportunidade de Melhoria</th>
-                        <th>Notificação de Evento Adverso</th>
-                        <th>Problema</th>
-                        <th>Causas</th>
-                        <th>Método</th>
-                        <th>Mão de Obra</th>
-                        <th>Máquina</th>
-                        <th>Material</th>
-                        <th>Medição</th>
-                        <th>Meio Ambiente</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for ferramenta in ferramentas_ishikawa %}
-                    <tr>
-                        <td>{{ ferramenta.id }}</td>
-                        <td>{{ ferramenta.oportunidade_melhoria }}</td>
-                        <td>{{ ferramenta.notificacao_evento_adverso }}</td>
-                        <td>{{ ferramenta.problema }}</td>
-                        <td>{{ ferramenta.causas }}</td>
-                        <td>{{ ferramenta.metodo }}</td>
-                        <td>{{ ferramenta.mao_de_obra }}</td>
-                        <td>{{ ferramenta.maquina }}</td>
-                        <td>{{ ferramenta.material }}</td>
-                        <td>{{ ferramenta.medicao }}</td>
-                        <td>{{ ferramenta.meio_ambiente }}</td>
-                        <td>
-                            <a href="{% url 'qualityTools:ferramentaishikawa-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="{% url 'qualityTools:ferramentaishikawa-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <a href="{% url 'qualityTools:ferramentaishikawa-create' %}" class="btn btn-primary">Adicionar</a>
-        </div>
+
+<h1>Ishikawa</h1>
+<a href="{% url 'qualityTools:ferramentaishikawa-create' %}" class="btn btn-primary">Adicionar</a>
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Oportunidade de Melhoria</th>
+                    <th>Notificação de Evento Adverso</th>
+                    <th>Problema</th>
+                    <th>Causas</th>
+                    <th>Método</th>
+                    <th>Mão de Obra</th>
+                    <th>Máquina</th>
+                    <th>Material</th>
+                    <th>Medição</th>
+                    <th>Meio Ambiente</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ferramenta in ferramentas_ishikawa %}
+                <tr>
+                    <td>{{ ferramenta.id }}</td>
+                    <td>{{ ferramenta.oportunidade_melhoria }}</td>
+                    <td>{{ ferramenta.notificacao_evento_adverso }}</td>
+                    <td>{{ ferramenta.problema }}</td>
+                    <td>{{ ferramenta.causas }}</td>
+                    <td>{{ ferramenta.metodo }}</td>
+                    <td>{{ ferramenta.mao_de_obra }}</td>
+                    <td>{{ ferramenta.maquina }}</td>
+                    <td>{{ ferramenta.material }}</td>
+                    <td>{{ ferramenta.medicao }}</td>
+                    <td>{{ ferramenta.meio_ambiente }}</td>
+                    <td>
+                        <a href="{% url 'qualityTools:ferramentaishikawa-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="{% url 'qualityTools:ferramentaishikawa-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
+
 {% endblock %}

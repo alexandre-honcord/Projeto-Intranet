@@ -3,49 +3,46 @@
 {% block title %}5 Porquês{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>5 Porquês</h1>
-    <div class="row">
-        <div class="col">
-            <table class="table table-striped">
-                <thead class="thead-dark">
+
+<h1>5 Porquês</h1>
+<a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-primary">Adicionar</a>
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Oportunidade de Melhoria</th>
+                    <th>Notificação de Evento Adverso</th>
+                    <th>1º Por quê?</th>
+                    <th>2º Por quê?</th>
+                    <th>3º Por quê?</th>
+                    <th>4º Por quê?</th>
+                    <th>5º Por quê?</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ferramenta in ferramentas_5porques %}
                     <tr>
-                        <th>ID</th>
-                        <th>Oportunidade de Melhoria</th>
-                        <th>Notificação de Evento Adverso</th>
-                        <th>1º Por quê?</th>
-                        <th>2º Por quê?</th>
-                        <th>3º Por quê?</th>
-                        <th>4º Por quê?</th>
-                        <th>5º Por quê?</th>
-                        <th>Ações</th>
+                        <td>{{ ferramenta.id }}</td>
+                        <td>{{ ferramenta.oportunidade_melhoria }}</td>
+                        <td>{{ ferramenta.notificacao_evento_adverso }}</td>
+                        <td>{{ ferramenta.porque1 }}</td>
+                        <td>{{ ferramenta.porque2 }}</td>
+                        <td>{{ ferramenta.porque3 }}</td>
+                        <td>{{ ferramenta.porque4 }}</td>
+                        <td>{{ ferramenta.porque5 }}</td>
+                        <td>
+                            <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    {% for ferramenta in ferramentas_5porques %}
-                        <tr>
-                            <td>{{ ferramenta.id }}</td>
-                            <td>{{ ferramenta.oportunidade_melhoria }}</td>
-                            <td>{{ ferramenta.notificacao_evento_adverso }}</td>
-                            <td>{{ ferramenta.porque1 }}</td>
-                            <td>{{ ferramenta.porque2 }}</td>
-                            <td>{{ ferramenta.porque3 }}</td>
-                            <td>{{ ferramenta.porque4 }}</td>
-                            <td>{{ ferramenta.porque5 }}</td>
-                            <td>
-                                <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                                <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-primary">Adicionar</a>
-        </div>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
+
+
 {% endblock %}

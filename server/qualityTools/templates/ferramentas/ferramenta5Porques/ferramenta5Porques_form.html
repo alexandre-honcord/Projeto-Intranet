@@ -10,42 +10,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %}</h1>
 
-    <form id="ferramenta5PorquesForm" method="post">
-        {% csrf_token %}
-        <div class="card">
-            <div class="card-body">
-            <!-- Opções -->
-            {% include 'select_qualidade.html' %}
-                <div class="form-group">
-                    <label for="{{ form.porque1.id_for_label }}">1º Por quê ?:</label>
-                    {{ form.porque1 }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.porque2.id_for_label }}">2º Por quê ?:</label>
-                    {{ form.porque2 }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.porque3.id_for_label }}">3º Por quê ?:</label>
-                    {{ form.porque3 }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.porque4.id_for_label }}">4º Por quê  ?:</label>
-                    {{ form.porque4 }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.porque5.id_for_label }}">5º Por quê  ?:</label>
-                    {{ form.porque5 }}
-                </div>
+<h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %}</h1>
+
+<form id="ferramenta5PorquesForm" method="post">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+        <!-- Opções -->
+        {% include 'select_qualidade.html' %}
+            <div class="form-group">
+                <label for="{{ form.porque1.id_for_label }}">1º Por quê ?:</label>
+                {{ form.porque1 }}
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+            <div class="form-group">
+                <label for="{{ form.porque2.id_for_label }}">2º Por quê ?:</label>
+                {{ form.porque2 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.porque3.id_for_label }}">3º Por quê ?:</label>
+                {{ form.porque3 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.porque4.id_for_label }}">4º Por quê  ?:</label>
+                {{ form.porque4 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.porque5.id_for_label }}">5º Por quê  ?:</label>
+                {{ form.porque5 }}
             </div>
         </div>
-    </form>
-</div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </div>
+</form>
+
 
 <script src="{% static 'js/form_toggle.js' %}"></script>
 {% endblock %}
