@@ -1,10 +1,6 @@
 :root {
-    --color1: #B32325;
-    --color2: #dc425e;
-    --color3: #D95970;
-    --color4: #A66851;
-    --color5: #F2F2F2;
-    --color6: #FAFAFA;
+    --primary-color: #B32325;
+
 
     --body-bg-color:#f1f1f1;
     --sidebar-bg-color:var(--form-button-color);
