@@ -1,0 +1,57 @@
+<!-- ferramentas/ferramenta5w2h_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}5W2H{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>5W2H</h1>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Oportunidade de Melhoria</th>
+                        <th>Notificação de Evento Adverso</th>
+                        <th>O quê?</th>
+                        <th>Por quê?</th>
+                        <th>Onde?</th>
+                        <th>Quando?</th>
+                        <th>Quem?</th>
+                        <th>Como?</th>
+                        <th>Quanto?</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ferramenta in ferramentas_5w2h %}
+                    <tr>
+                        <td>{{ ferramenta.id }}</td>
+                        <td>{{ ferramenta.oportunidade_melhoria }}</td>
+                        <td>{{ ferramenta.notificacao_evento_adverso }}</td>
+                        <td>{{ ferramenta.what }}</td>
+                        <td>{{ ferramenta.why }}</td>
+                        <td>{{ ferramenta.where }}</td>
+                        <td>{{ ferramenta.when }}</td>
+                        <td>{{ ferramenta.who }}</td>
+                        <td>{{ ferramenta.how }}</td>
+                        <td>{{ ferramenta.how_much }}</td>
+                        <td>
+                            <a href="{% url 'ferramenta5w2h-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{% url 'ferramenta5w2h-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'ferramenta5w2h-create' %}" class="btn btn-primary">Adicionar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
