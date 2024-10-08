@@ -5,11 +5,10 @@ from django.contrib.auth.models import User
 
 class Grupos(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
     gestor = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return str(self.user)
 
 class Client(models.Model):
     name = models.CharField(max_length=50, unique=True)
