@@ -5,7 +5,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
 <h1>5 Porquês</h1>
-<a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Novo</a>
+<a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
 <div class="row">
     <div class="col">
         <table class="table table-striped">
@@ -34,8 +34,8 @@
                         <td>{{ ferramenta.porque4 }}</td>
                         <td>{{ ferramenta.porque5 }}</td>
                         <td>
-                            <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
+                            <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -6,32 +6,206 @@
 h1 {
     text-align: center;
 }
-
 td {
-    white-space: pre-wrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 150px;
 }
-
 .content a {
     width: fit-content;
     font-size:0.8rem;
     font-weight: 600;
-    color: #b32325;
-    background-color: #fafafa;
-    border: 1px solid #b32325;
+    color: #fafafa;
+    background-color: #49956b;
+    border: 1px solid #49956b;
     margin-bottom: 16px;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
 }
-
+.content a::before {
+    content: 'Novo ';
+}
 .content a:hover {
-    background-color: #b32325;
-    border-color: #b32325;
+    background-color: #fafafa;
+    border-color: #49956b;
+    color: #49956b;
 }
 .content a:active,
 .content a:focus,
 .content a:target {
-    background-color: #661416 !important;
-    border-color: #661416 !important;
+    background-color: #236b43 !important;
+    border-color: #236b43 !important;
+}
+a.edit::before {
+    content: 'Editar ';
+}
+
+a.edit {
+    color: #fafafa !important;
+    background-color: #496795 !important;
+    border: 1px solid #496795 !important;
+}
+
+a.edit:hover {
+    background-color: #fafafa !important;
+    color: #496795 !important;
+}
+a.edit:active,
+a.edit:focus,
+a.edit:target,
+a.edit::selection {
+background-color: #232f6b!important;
+border-color: #232f6b!important;
+color: #fafafa !important;
+}
+
+a.delet::before {
+    content: 'Excluir ';
+}
+a.delet {
+    color: #fafafa !important;
+    background-color: #952b2b !important;
+    border: 1px solid #952b2b !important;
+}
+
+a.delet:hover {
+    background-color: #fafafa !important;
+    color: #952b2b !important;
+}
+a.delet:active,
+a.delet:focus,
+a.delet:target,
+a.delet::selection {
+background-color: #6b2323!important;
+border-color: #6b2323!important;
+color: #fafafa !important;
+}
+
+button.confirm::before {
+    content: 'Excluir ';
+}
+button.confirm {
+    color: #fafafa !important;
+    background-color: #49956b !important;
+    border: 1px solid #49956b !important;
+    width: 120px;
+    height: fit-content;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+}
+
+button.confirm:hover {
+    background-color: #fafafa !important;
+    color: #49956b !important;
+}
+button.confirm:active,
+button.confirm:focus
+button.confirm:target,
+button.confirm::selection {
+background-color: #236b43!important;
+border-color: #236b43!important;
+color: #fafafa !important;
+}
+
+
+
+button.cancel::before {
+    content: 'Cancelar ';
+}
+button.cancel {
+    color: #fafafa !important;
+    background-color: #952b2b !important;
+    border: 1px solid #952b2b !important;
+    width: 120px;
+    height: fit-content;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+}
+
+button.cancel:hover {
+    background-color: #fafafa !important;
+    color: #952b2b !important;
+}
+button.cancel:active,
+button.cancel:focus
+button.cancel:target,
+button.cancel::selection {
+background-color: #6b2323!important;
+border-color: #6b2323!important;
+color: #fafafa !important;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 16px;
+}
+
+#opportunityOption,
+#notificationOption {
+all: unset;
+width: 20px;
+height: 20px;
+border: 0.5px solid rgba(17, 34, 85, .3);
+border-radius: 50%;
+cursor: pointer;
+}
+
+
+#opportunityOption:focus,
+#notificationOption:focus,
+#opportunityOption:active,
+#notificationOption:active,
+#opportunityOption:checked,
+#notificationOption:checked {
+    background: radial-gradient(circle, rgba(179,35,37,1) 0%, rgba(179,35,37,1) 40%, rgba(250,250,250,1) 50%);
+    border-color: rgba(149, 43, 43, .8);
+}
+#opportunityOption:focus + .form-check-label,
+#notificationOption:focus + .form-check-label,
+#opportunityOption:checked+ .form-check-label,
+#notificationOption:checked + .form-check-label {
+    font-weight: 600 !important;
+    color: #2a1e1e !important;
+}
+
+.delet-confirm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.delet-confirm div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 50%;
+    background-color: #fafafa;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    border-radius: 16px;
+    padding: 32px;
+}
+.delet-confirm div h3 {
+    text-align: center;
+}
+.delet-confirm  div form {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
 }

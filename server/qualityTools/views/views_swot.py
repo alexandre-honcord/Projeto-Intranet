@@ -21,13 +21,13 @@ class FerramentaSWOTListView(BaseContextView, ListView):
 class FerramentaSWOTCreateView(BaseContextView, CreateView):
     model = FerramentaSWOT
     template_name = 'ferramentas/ferramenta_swot/ferramenta_swot_form.html'
-    fields = ['oportunidade_melhoria', 'notificacao_evento_adverso', 'forcas', 'fraquezas', 'oportunidades', 'ameacas']
+    form_class = FerramentaSWOTForm
     success_url = reverse_lazy('qualityTools:ferramentaswot_list')
 
 class FerramentaSWOTUpdateView(BaseContextView, UpdateView):
     model = FerramentaSWOT
     template_name = 'ferramentas/ferramenta_swot/ferramenta_swot_form.html'
-    fields = ['oportunidade_melhoria', 'notificacao_evento_adverso', 'forcas', 'fraquezas', 'oportunidades', 'ameacas']
+    form_class = FerramentaSWOTForm
     success_url = reverse_lazy('qualityTools:ferramentaswot_list')
 
 class FerramentaSWOTDeleteView(BaseContextView, DeleteView):

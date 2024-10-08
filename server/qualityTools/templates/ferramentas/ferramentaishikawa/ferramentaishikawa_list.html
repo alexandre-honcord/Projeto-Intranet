@@ -6,7 +6,7 @@
 
 <h1>Ishikawa</h1>
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
-<a href="{% url 'qualityTools:ferramentaishikawa-create' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Novo</a>
+<a href="{% url 'qualityTools:ferramentaishikawa-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
 <div class="row">
     <div class="col">
         <table class="table table-striped">
@@ -41,8 +41,8 @@
                     <td>{{ ferramenta.medicao }}</td>
                     <td>{{ ferramenta.meio_ambiente }}</td>
                     <td>
-                        <a href="{% url 'qualityTools:ferramentaishikawa-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary">Editar</a>
-                        <a href="{% url 'qualityTools:ferramentaishikawa-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                        <a href="{% url 'qualityTools:ferramentaishikawa-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{% url 'qualityTools:ferramentaishikawa-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
                 {% endfor %}
