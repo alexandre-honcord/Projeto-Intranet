@@ -111,7 +111,8 @@
         </div>
     </div>
 
-    <form>
+    <form id="ordemServicoForm" method="POST" action="{% url 'intra:processar_ordem_servico' %}">
+        {% csrf_token %}
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Descrição <span class="obrigatorio">*</span></label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="descricao" required>
