@@ -10,8 +10,10 @@
     {% csrf_token %}
     <div class="card">
         <div class="card-body">
-            <!-- Opções -->
-            {% include 'select_qualidade.html' %}
+            <!-- Opções, mostrar apenas ao criar -->
+            {% if not form.instance.id %}
+                {% include 'select_qualidade.html' %}
+            {% endif %}
             <div class="row">
                 <!-- Forças e Fraquezas -->
                 <div class="col-md-6">

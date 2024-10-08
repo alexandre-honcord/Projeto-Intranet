@@ -11,8 +11,10 @@
     {% csrf_token %}
     <div class="card">
         <div class="card-body">
-            <!-- Opções -->
-            {% include 'select_qualidade.html' %}
+            <!-- Opções, mostrar apenas ao criar -->
+            {% if not form.instance.id %}
+                {% include 'select_qualidade.html' %}
+            {% endif %}
             <div class="form-group">
                 <label for="{{ form.what.id_for_label }}">O quê?:</label>
                 {{ form.what }}
