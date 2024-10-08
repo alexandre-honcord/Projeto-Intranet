@@ -14,4 +14,6 @@ class Ferramenta5W2H(models.Model):
     how_much = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
+        if self.notificacao_evento_adverso:
+            return f"{self.notificacao_evento_adverso} - {self.what}"
         return f"{self.oportunidade_melhoria} - {self.what}"

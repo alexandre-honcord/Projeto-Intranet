@@ -11,4 +11,6 @@ class Ferramenta5Porques(models.Model):
     porque5 = models.TextField(blank=True, null=True)
 
     def __str__(self):
+        if self.notificacao_evento_adverso:
+            return f"{self.notificacao_evento_adverso} - 5 Porquês"
         return f"{self.oportunidade_melhoria} - 5 Porquês"

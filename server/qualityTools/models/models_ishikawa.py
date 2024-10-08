@@ -15,4 +15,6 @@ class FerramentaIshikawa(models.Model):
     meio_ambiente = models.TextField(blank=True, null=True)
 
     def __str__(self):
+        if self.notificacao_evento_adverso:
+            return f"{self.notificacao_evento_adverso} - {self.problema}"
         return f"{self.oportunidade_melhoria} - {self.problema}"
