@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Confirmar Exclusão do 5 Porquês{% endblock %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
 <h1>Tem certeza que deseja excluir "{{ ferramenta }}"?</h1>
 
 <form method="post">

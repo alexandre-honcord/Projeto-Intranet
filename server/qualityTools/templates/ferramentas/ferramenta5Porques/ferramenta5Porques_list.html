@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}5 Porquês{% endblock %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
 <h1>5 Porquês</h1>
-<a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> 5 Porquês</a>
+<a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Novo</a>
 <div class="row">
     <div class="col">
         <table class="table table-striped">
