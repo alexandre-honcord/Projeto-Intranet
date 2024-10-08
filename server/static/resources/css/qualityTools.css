@@ -114,10 +114,10 @@ color: #fafafa !important;
 
 
 
-button.cancel::before {
+a.cancel::before {
     content: 'Cancelar ';
 }
-button.cancel {
+a.cancel {
     color: #fafafa !important;
     background-color: #952b2b !important;
     border: 1px solid #952b2b !important;
@@ -131,14 +131,14 @@ button.cancel {
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
 }
 
-button.cancel:hover {
+a.cancel:hover {
     background-color: #fafafa !important;
     color: #952b2b !important;
 }
-button.cancel:active,
-button.cancel:focus
-button.cancel:target,
-button.cancel::selection {
+a.cancel:active,
+a.cancel:focus
+a.cancel:target,
+a.cancel::selection {
 background-color: #6b2323!important;
 border-color: #6b2323!important;
 color: #fafafa !important;
