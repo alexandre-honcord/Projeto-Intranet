@@ -8,6 +8,9 @@ class Grupos(models.Model):
 
     gestor = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.name
+
 class Client(models.Model):
     name = models.CharField(max_length=50, unique=True)
 

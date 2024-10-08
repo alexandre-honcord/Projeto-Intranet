@@ -5,7 +5,7 @@ class Tool(models.Model):
     description = models.TextField()
     links = models.TextField()
     image = models.ImageField(upload_to='default/tools/images/')
-
+    target = models.TextField(default='#')
     def __str__(self):
         return self.name
     
