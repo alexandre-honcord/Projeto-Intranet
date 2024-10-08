@@ -216,16 +216,37 @@ cursor: pointer;
     justify-content: center;
     height: fit-content;
 }
-
-.row textarea {
+textarea {
     box-shadow: none !important;
+    border: 0.5px solid rgba(17, 34, 85, .3) !important;
+    color: #404040 !important;
+    margin: 2px 0 2px 0;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
 }
 
-.row textarea:nth-child(1),
-.row textarea:nth-child(3) {
-    border-color: #236b43 !important;
+
+#id_forcas:focus,
+#id_oportunidades:focus {
+    border-color: #49956b;
 }
-.row textarea:nth-child(),
-.row textarea:nth-child(3) {
-    border-color: #236b43 !important;
+
+#id_fraquezas:focus,
+#id_ameacas:focus {
+    border-color: #952b2b;
 }
+
+input[type='text'], 
+input[type='number'],
+input[type='date']  {
+    box-shadow: none !important;
+    border: 0.5px solid rgba(17, 34, 85, .3) !important;
+    height: 40px !important;
+    color: #404040 !important;
+    margin: 2px 0 2px 0;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+}
+
+.card-footer {
+    background-color: #236b43 !important;
+}
+
