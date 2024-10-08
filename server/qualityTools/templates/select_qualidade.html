@@ -1,0 +1,35 @@
+{% load static %}
+
+{% block content %}
+    <form id="ferramentaForm" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Opções:</label><br>
+            <div class="form-check form-check-inline">
+                <input type="radio" id="opportunityOption" name="options" value="True" class="form-check-input">
+                <label class="form-check-label" for="opportunityOption">Oportunidade de Melhoria</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" id="notificationOption" name="options" value="False" class="form-check-input">
+                <label class="form-check-label" for="notificationOption">Notificação de Evento Adverso</label>
+            </div>
+            <div id="errorOptions" class="invalid-feedback"></div>
+        </div>
+
+        <div id="opportunityFields" style="display: none;">
+            <div class="form-group">
+                <label for="{{ form.oportunidade_melhoria.id_for_label }}">Escolha a Oportunidade de Melhoria:</label>
+                {{ form.oportunidade_melhoria }}
+            </div>
+        </div>
+
+        <div id="notificationFields" style="display: none;">
+            <div class="form-group">
+                <label for="{{ form.notificacao_evento_adverso.id_for_label }}">Escolha a Notificação de Evento Adverso:</label>
+                {{ form.notificacao_evento_adverso }}
+            </div>
+        </div>
+
+    </form>
+<script src="{% static 'js/form_toggle.js' %}"></script>
+{% endblock %}

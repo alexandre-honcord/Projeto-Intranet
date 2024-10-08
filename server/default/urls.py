@@ -6,8 +6,6 @@ from default.views.views_ordem_servico import ordemServico_view, painelOrdemServ
 from default.views.views_notification import   notification_view
 from quality.views import OpportunityListView
 
-
-
 app_name = 'intra'
 
 urlpatterns = [

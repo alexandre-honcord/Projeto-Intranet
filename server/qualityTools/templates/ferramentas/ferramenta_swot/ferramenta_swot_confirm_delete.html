@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Exclusão da SWOT{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Tem certeza que deseja excluir ? "{{ object }}"?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'ferramentaswot_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
