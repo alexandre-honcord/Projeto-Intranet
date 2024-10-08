@@ -82,7 +82,6 @@ a.edit {
 a.edit:hover {
     background-color: #fafafa !important;
     color: #496795 !important;
-    margin: 0;
 }
 a.edit:active,
 a.edit:focus,
