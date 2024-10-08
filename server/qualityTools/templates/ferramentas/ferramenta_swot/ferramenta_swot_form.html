@@ -77,6 +77,29 @@
     </div>
 </form>
 
+<script>
+    // Função para alternar a exibição dos campos com base na opção selecionada
+    function toggleFields() {
+        var opportunityFields = document.getElementById('opportunityFields');
+        var notificationFields = document.getElementById('notificationFields');
+        var opportunityOption = document.getElementById('opportunityOption');
+        var notificationOption = document.getElementById('notificationOption');
+
+        if (opportunityOption.checked) {
+            opportunityFields.classList.remove('d-none');
+            notificationFields.classList.add('d-none');
+        } else if (notificationOption.checked) {
+            notificationFields.classList.remove('d-none');
+            opportunityFields.classList.add('d-none');
+        }
+    }
+
+    // Chamada inicial para ajustar a visibilidade com base no estado atual do formulário
+    window.onload = function() {
+        toggleFields();
+    };
+</script>
+
 
 <script src="{% static 'js/form_toggle.js' %}"></script>
 {% endblock %}
