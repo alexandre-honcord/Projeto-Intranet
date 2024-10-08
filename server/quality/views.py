@@ -28,7 +28,7 @@ class OpportunityCreateView(BaseContextView, CreateView):
     model = Opportunity
     form_class = OpportunityForm
     template_name = 'opportunity_form.html'
-    success_url = reverse_lazy('quality:notification_list')
+    success_url = reverse_lazy('quality:opportunity_create')
 
     def get_form_kwargs(self):
         # Adiciona o user nos kwargs do formulário
@@ -71,7 +71,7 @@ class NotificationCreateView(BaseContextView, CreateView):
     model = Notification
     form_class = NotificationForm
     template_name = 'notification_form.html'
-    success_url = reverse_lazy('quality:notification_list')
+    success_url = reverse_lazy('quality:notification_create')
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()

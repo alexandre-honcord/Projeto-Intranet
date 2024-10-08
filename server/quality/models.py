@@ -56,7 +56,7 @@ class Opportunity(models.Model):
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Data de Finalização')
     tipo = models.CharField(max_length=50,null=False, blank=False, choices=TIPO_CHOICES, default='Melhoria')
     prioridade = models.CharField(max_length=50, choices=PRIORIDADE_CHOICES, default='Média')
-    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Local')
+    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Setor')
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Status')
 
     def __str__(self):
@@ -76,7 +76,7 @@ class Notification(models.Model):
     identified_by = models.CharField(max_length=100, blank=True, null=True, verbose_name='Caso queira se identificar')
     priority = models.CharField(max_length=50, choices=PRIORIDADE_CHOICES, default='Média', verbose_name='Prioridade')
     client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Cliente')
-    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Local')
+    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Setor')
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Status')
 
     def __str__(self):
