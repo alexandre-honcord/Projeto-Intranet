@@ -1,4 +1,11 @@
 :root {
+    --color1: #B32325;
+    --color2: #dc425e;
+    --color3: #D95970;
+    --color4: #A66851;
+    --color5: #F2F2F2;
+    --color6: #FAFAFA;
+
     --body-bg-color:#f1f1f1;
     --sidebar-bg-color:var(--form-button-color);
     --sidebar-button-bg-color:#b32325;
@@ -38,7 +45,7 @@
     --transition-color: 1.5s color;
     --transition-color2: 1.2s color;
     --transition-width-close: 1.2s ease;
-    --transition-width-open: 1.5s ease;
+    --transition-width-open: 1.2s ease;
 
     --border-effect: 0.5px solid rgba(17, 34, 85, 0.1);
 

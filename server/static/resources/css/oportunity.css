@@ -20,7 +20,7 @@
 }
 
 .list-group-item {
-    background-image: linear-gradient(to radial, #fafafa, #f7f7f7, #f4f4f4, #f1f1f1, #eeeeee) !important;
+    background-color: #fafafa;
     border: none !important;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
     border-radius: 8px;
