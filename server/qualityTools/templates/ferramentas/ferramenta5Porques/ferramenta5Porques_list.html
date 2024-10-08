@@ -26,8 +26,8 @@
                 {% for ferramenta in ferramentas_5porques %}
                     <tr>
                         <td>{{ ferramenta.id }}</td>
-                        <td>{{ ferramenta.oportunidade_melhoria }}</td>
-                        <td>{{ ferramenta.notificacao_evento_adverso }}</td>
+                        <td>{{ ferramenta.oportunidade_melhoria|default_if_none:"N/A" }}</td>
+                        <td>{{ ferramenta.notificacao_evento_adverso|default_if_none:"N/A" }}</td>
                         <td>{{ ferramenta.porque1 }}</td>
                         <td>{{ ferramenta.porque2 }}</td>
                         <td>{{ ferramenta.porque3 }}</td>
