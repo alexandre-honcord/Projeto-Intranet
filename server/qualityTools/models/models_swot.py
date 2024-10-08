@@ -11,4 +11,6 @@ class FerramentaSWOT(models.Model):
     ameacas = models.TextField(blank=True, null=True)
 
     def __str__(self):
+        if self.notificacao_evento_adverso:
+            return f"{self.notificacao_evento_adverso} - SWOT"
         return f"{self.oportunidade_melhoria} - SWOT"

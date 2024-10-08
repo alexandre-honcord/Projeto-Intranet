@@ -17,50 +17,52 @@
     {% csrf_token %}
     <div class="card">
         <div class="card-body">
-        <!-- Opções, mostrar apenas ao criar -->
-        {% if not form.instance.id %}
-            {% include 'select_qualidade.html' %}
-        {% endif %}
-        <!-- Oportunidade de Melhoria ou Notificação de Evento Adverso -->
-        {% if form.oportunidade_melhoria.value %}
-            <div class="form-group">
-                <label for="{{ form.oportunidade_melhoria.id_for_label }}">Oportunidade de Melhoria:</label>
-                {% for option in form.oportunidade_melhoria.field.choices %}
-                    {% if option.0 == form.oportunidade_melhoria.value %}
-                        <span>{{ option.1 }}</span>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        {% endif %}
+            <fieldset>
+                <legend>Opções:</legend>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="opportunityOption" name="options" value="True" class="form-check-input" {% if form.instance.oportunidade_melhoria %} checked {% endif %} onchange="toggleFields()">
+                        <label class="form-check-label" for="opportunityOption">Oportunidade de Melhoria</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="notificationOption" name="options" value="False" class="form-check-input" {% if form.instance.notificacao_evento_adverso %} checked {% endif %} onchange="toggleFields()">
+                        <label class="form-check-label" for="notificationOption">Notificação de Evento Adverso</label>
+                    </div>
+                </div>
+            </fieldset>
 
-        {% if form.notificacao_evento_adverso.value %}
-            <div class="form-group">
-                <label for="{{ form.notificacao_evento_adverso.id_for_label }}">Notificação de Evento Adverso:</label>
-                {% for option in form.notificacao_evento_adverso.field.choices %}
-                    {% if option.0 == form.notificacao_evento_adverso.value %}
-                        <span>{{ option.1 }}</span>
-                    {% endif %}
-                {% endfor %}
+            <div id="opportunityFields" class="d-none">
+                <div class="form-group">
+                    <label for="{{ form.oportunidade_melhoria.id_for_label }}">Escolha a Oportunidade de Melhoria:</label>
+                    {{ form.oportunidade_melhoria }}
+                </div>
             </div>
-        {% endif %}
+
+            <div id="notificationFields" class="d-none">
+                <div class="form-group">
+                    <label for="{{ form.notificacao_evento_adverso.id_for_label }}">Escolha a Notificação de Evento Adverso:</label>
+                    {{ form.notificacao_evento_adverso }}
+                </div>
+            </div>
+
             <div class="form-group my-3">
-                <label for="{{ form.porque1.id_for_label }}">1º Por quê ?:</label>
+                <label for="{{ form.porque1.id_for_label }}">1º Por quê?</label>
                 {{ form.porque1 }}
             </div>
             <div class="form-group">
-                <label for="{{ form.porque2.id_for_label }}">2º Por quê ?:</label>
+                <label for="{{ form.porque2.id_for_label }}">2º Por quê?</label>
                 {{ form.porque2 }}
             </div>
             <div class="form-group">
-                <label for="{{ form.porque3.id_for_label }}">3º Por quê ?:</label>
+                <label for="{{ form.porque3.id_for_label }}">3º Por quê?</label>
                 {{ form.porque3 }}
             </div>
             <div class="form-group">
-                <label for="{{ form.porque4.id_for_label }}">4º Por quê  ?:</label>
+                <label for="{{ form.porque4.id_for_label }}">4º Por quê?</label>
                 {{ form.porque4 }}
             </div>
             <div class="form-group">
-                <label for="{{ form.porque5.id_for_label }}">5º Por quê  ?:</label>
+                <label for="{{ form.porque5.id_for_label }}">5º Por quê?</label>
                 {{ form.porque5 }}
             </div>
         </div>
@@ -69,6 +71,31 @@
         </div>
     </div>
 </form>
+
+<script>
+    // Função para alternar a exibição dos campos com base na opção selecionada
+    function toggleFields() {
+        var opportunityFields = document.getElementById('opportunityFields');
+        var notificationFields = document.getElementById('notificationFields');
+        var opportunityOption = document.getElementById('opportunityOption');
+        var notificationOption = document.getElementById('notificationOption');
+
+        if (opportunityOption.checked) {
+            opportunityFields.classList.remove('d-none');
+            notificationFields.classList.add('d-none');
+        } else if (notificationOption.checked) {
+            notificationFields.classList.remove('d-none');
+            opportunityFields.classList.add('d-none');
+        }
+    }
+
+    // Chamada inicial para ajustar a visibilidade com base no estado atual do formulário
+    window.onload = function() {
+        toggleFields();
+    };
+</script>
+
+
 
 
 <script src="{% static 'js/form_toggle.js' %}"></script>

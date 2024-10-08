@@ -24,22 +24,31 @@ class Ferramenta5PorquesCreateView(BaseContextView, CreateView):
     form_class = Ferramenta5PorquesForm
     success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
 
-class Ferramenta5PorquesUpdateView(BaseContextView, UpdateView):
+class Ferramenta5PorquesUpdateView(UpdateView):
     model = Ferramenta5Porques
     template_name = 'ferramentas/ferramenta5Porques/ferramenta5Porques_form.html'
     form_class = Ferramenta5PorquesForm
     success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
 
+    def form_valid(self, form):
+        # Captura a opção selecionada
+        if 'options' in self.request.POST:
+            selected_option = self.request.POST['options']
+
+            # Atribui o valor correto com base na opção selecionada
+            if selected_option == 'True':
+                # Salva oportunidade de melhoria
+                form.instance.notificacao_evento_adverso = None  # Limpa notificação se estiver selecionada a oportunidade
+            elif selected_option == 'False':
+                # Salva notificação de evento adverso
+                form.instance.oportunidade_melhoria = None  # Limpa oportunidade se estiver selecionada a notificação
+
+        return super().form_valid(form)
+
 class Ferramenta5PorquesDeleteView(BaseContextView, DeleteView):
     model = Ferramenta5Porques
     template_name = 'ferramentas/ferramenta5Porques/ferramenta5Porques_confirm_delete.html'
-    context_object_name = 'ferramenta'  # Define o nome do objeto no template
     success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['ferramenta'] = self.get_object()  # Passa o objeto para o template
-        return context
 
 class Ferramenta5PorquesViewSet(BaseContextView, viewsets.ModelViewSet):
     queryset = Ferramenta5Porques.objects.all()

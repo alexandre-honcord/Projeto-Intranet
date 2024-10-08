@@ -17,3 +17,10 @@ class FerramentaIshikawaForm(forms.ModelForm):
             'medicao': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'meio_ambiente': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
+        
+        def __init__(self, *args, **kwargs):
+            super(FerramentaIshikawa, self).__init__(*args, **kwargs)
+            if self.instance and self.instance.pk:
+                # Verifique se a instância contém valores e se os campos estão corretamente populados
+                self.fields['oportunidade_melhoria'].initial = self.instance.oportunidade_melhoria
+                self.fields['notificacao_evento_adverso'].initial = self.instance.notificacao_evento_adverso
