@@ -92,11 +92,13 @@ button.confirm {
     width: 120px;
     height: fit-content;
     font-size: 1.1rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin: 0;
 }
 
 button.confirm:hover {
@@ -124,11 +126,13 @@ a.cancel {
     width: 120px;
     height: fit-content;
     font-size: 1.1rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin: 0;
 }
 
 a.cancel:hover {
