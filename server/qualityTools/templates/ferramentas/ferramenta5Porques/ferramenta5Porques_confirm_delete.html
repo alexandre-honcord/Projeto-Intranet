@@ -6,11 +6,15 @@
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
 <div class="delet-confirm">
     <div>
-        <h3>Realmente deseja excluir "{{ ferramenta }}"</h3>
+        <h3>Realmente deseja excluir "{{ ferramenta }}"?</h3>
         <form method="post">
             {% csrf_token %}
-            <button type="submit" class="btn btn-sm btn-danger confirm"><i class="fa-solid fa-check"></i></button>
-            <button href="{% url 'qualityTools:ferramenta5porques_list' %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></button>
+            <button type="submit" class="btn btn-sm btn-danger confirm">
+                <i class="fa-solid fa-check"></i> Confirmar
+            </button>
+            <a href="{% url 'qualityTools:ferramenta5porques_list' %}" class="btn btn-sm btn-secondary cancel">
+                <i class="fa-solid fa-ban"></i> Cancelar
+            </a>
         </form>
     </div>
 </div>
