@@ -33,7 +33,13 @@ class FerramentaSWOTUpdateView(BaseContextView, UpdateView):
 class FerramentaSWOTDeleteView(BaseContextView, DeleteView):
     model = FerramentaSWOT
     template_name = 'ferramentas/ferramenta_swot/ferramenta_swot_confirm_delete.html'
+    context_object_name = 'ferramenta'  # Define o nome do objeto no template
     success_url = reverse_lazy('qualityTools:ferramentaswot_list')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ferramenta'] = self.get_object()  # Passa o objeto para o template
+        return context
 
 class FerramentaSWOTViewSet(BaseContextView, viewsets.ModelViewSet):
     queryset = FerramentaSWOT.objects.all()

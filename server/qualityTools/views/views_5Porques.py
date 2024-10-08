@@ -33,7 +33,13 @@ class Ferramenta5PorquesUpdateView(BaseContextView, UpdateView):
 class Ferramenta5PorquesDeleteView(BaseContextView, DeleteView):
     model = Ferramenta5Porques
     template_name = 'ferramentas/ferramenta5Porques/ferramenta5Porques_confirm_delete.html'
+    context_object_name = 'ferramenta'  # Define o nome do objeto no template
     success_url = reverse_lazy('qualityTools:ferramenta5porques_list')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ferramenta'] = self.get_object()  # Passa o objeto para o template
+        return context
 
 class Ferramenta5PorquesViewSet(BaseContextView, viewsets.ModelViewSet):
     queryset = Ferramenta5Porques.objects.all()
