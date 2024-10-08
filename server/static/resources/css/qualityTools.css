@@ -1,16 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
 .content {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    font-style: normal;
     display: flex;
     flex-direction: column;
+    background-color: #f6f4f4;
+}
+
+
+.card {
+    background-color: #f1f1f1;
 }
 
 h1 {
     text-align: center;
 }
+
+tr {
+    background-color: #fafefe !important;
+}
+th {
+
+}
 td {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 150px;
+    max-width: 100px;
+    text-align: center;
+    text-justify: auto;
+}
+
+
+td:last-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .content a {
     width: fit-content;
@@ -50,6 +82,7 @@ a.edit {
 a.edit:hover {
     background-color: #fafafa !important;
     color: #496795 !important;
+    margin: 0;
 }
 a.edit:active,
 a.edit:focus,
@@ -67,6 +100,7 @@ a.delet {
     color: #fafafa !important;
     background-color: #952b2b !important;
     border: 1px solid #952b2b !important;
+    margin: 0;
 }
 
 a.delet:hover {
@@ -114,7 +148,37 @@ border-color: #236b43!important;
 color: #fafafa !important;
 }
 
+button.save::before {
+    content: 'Salvar ';
+}
+button.save {
+    color: #fafafa !important;
+    background-color: #49956b !important;
+    border: 1px solid #49956b !important;
+    width: 120px;
+    height: fit-content;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin: 0;
+}
 
+button.save:hover {
+    background-color: #fafafa !important;
+    color: #49956b !important;
+}
+button.save:active,
+button.save:focus
+button.save:target,
+button.save::selection {
+background-color: #236b43!important;
+border-color: #236b43!important;
+color: #fafafa !important;
+}
 
 a.cancel::before {
     content: 'Cancelar ';
@@ -251,6 +315,16 @@ input[type='date']  {
 }
 
 .card-footer {
-    background-color: #236b43 !important;
+    background-color: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+h5 {
+    position: relative;
+    top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #343434 !important;
+}

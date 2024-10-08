@@ -132,6 +132,7 @@ ul.nav button:hover {
 }
 
 .mb-3 {
+width: 100%;
     background-color: var(--form-bg-color) !important;
     padding: 16px !important;
     box-shadow: var(--box-shadow-effect);    
