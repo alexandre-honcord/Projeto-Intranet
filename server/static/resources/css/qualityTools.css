@@ -22,9 +22,24 @@ h1 {
     text-align: center;
 }
 
-tr {
-    background-color: #fafefe !important;
+th {
+    background-color: #343434 !important;
+    color: #fafafa !important;
 }
+
+tr {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #343434 !important;
+}
+
+table {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 th {
 
 }
@@ -35,14 +50,13 @@ td {
     max-width: 100px;
     text-align: center;
     text-justify: auto;
+    margin: 0;
+    padding: 0;
 }
 
 
 td:last-child{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
 }
 .content a {
     width: fit-content;
