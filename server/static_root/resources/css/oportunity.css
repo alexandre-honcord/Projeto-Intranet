@@ -1,0 +1,306 @@
+.card {
+    margin-bottom: 16px;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: fit-content;
+}
+
+.list-group {
+    width: 100% !important;
+    gap: 20px;
+    padding: 32px;
+    background-color: #e2e2e2;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 16px;
+}
+
+.list-group-item {
+    background-color: #fafafa;
+    border: none !important;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.col-md-8 p{
+    white-space: pre-wrap;
+}
+
+
+.form-control {
+    box-shadow: none !important;
+}
+.card-text {
+    white-space: pre-wrap;
+}
+.form-control:active,
+.form-control:focus {
+    border-color: #e98e8f77 !important;
+}
+
+button.save::before {
+    content: 'Salvar ';
+}
+button.save {
+    color: #fafafa !important;
+    background-color: #49956b !important;
+    border: 1px solid #49956b !important;
+    width: fit-content;
+    height: 32px;
+    display: flex;
+    font-size: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 6px 12px;
+    gap: 6px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+button.save:hover {
+    background-color: #fafafa !important;
+    color: #49956b !important;
+}
+button.save:active,
+button.save:focus
+button.save:target,
+button.save::selection {
+background-color: #236b43!important;
+border-color: #236b43!important;
+color: #fafafa !important;
+}
+
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.checkbox label {
+    position: relative;
+    top: -8px;
+}
+#id_anonymous {
+    display: flex;
+    width: 18px;
+}
+
+.content a {
+    justify-content: center;
+    width: fit-content;
+    font-size:0.8rem;
+    font-weight: 600;
+    color: #fafafa;
+    background-color: #49956b;
+    border: 1px solid #49956b;
+    margin-bottom: 16px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+    text-align: center;
+    vertical-align: middle;
+}
+.content a::before {
+    content: 'Novo ';
+}
+.content a:hover {
+    background-color: #fafafa;
+    border-color: #49956b;
+    color: #49956b;
+}
+.content a:active,
+.content a:focus,
+.content a:target {
+    background-color: #236b43 !important;
+    border-color: #236b43 !important;
+}
+
+
+a.edit::before {
+    content: 'Editar ';
+}
+
+a.edit {
+    color: #fafafa !important;
+    background-color: #496795 !important;
+    border: 1px solid #496795 !important;
+    margin: 8px;
+}
+
+a.edit:hover {
+    background-color: #fafafa !important;
+    color: #496795 !important;
+}
+a.edit:active,
+a.edit:focus,
+a.edit:target,
+a.edit::selection {
+background-color: #232f6b!important;
+border-color: #232f6b!important;
+color: #fafafa !important;
+}
+
+a.delet::before {
+    content: 'Excluir ';
+}
+a.delet {
+    color: #fafafa !important;
+    background-color: #952b2b !important;
+    border: 1px solid #952b2b !important;
+    margin: 0;
+}
+
+a.delet:hover {
+    background-color: #fafafa !important;
+    color: #952b2b !important;
+}
+a.delet:active,
+a.delet:focus,
+a.delet:target,
+a.delet::selection {
+background-color: #6b2323!important;
+border-color: #6b2323!important;
+color: #fafafa !important;
+}
+
+a.details::before {
+    content: 'Detalhes ';
+}
+
+a.details {
+    color: #fafafa !important;
+    background-color: #794995 !important;
+    border: 1px solid #794995 !important;
+    margin: 8px;
+}
+
+a.details:hover {
+    background-color: #fafafa !important;
+    color: #794995 !important;
+}
+a.details:active,
+a.details:focus,
+a.details:target,
+a.details::selection {
+background-color: #421c58!important;
+border-color: #421c58!important;
+color: #fafafa !important;
+}
+
+
+a.badges::before {
+    content: '';
+}
+
+a.badges {
+    color: #fafafa !important;
+    background-color: #497795 !important;
+    border: 1px solid #497795 !important;
+    margin: 8px;
+    pointer-events: none;
+}
+
+a.badges:hover {
+    background-color: #fafafa !important;
+    color: #497795 !important;
+}
+
+
+a.back::before {
+    content: 'Voltar ';
+}
+
+a.back {
+    color: #fafafa !important;
+    background-color: #794995 !important;
+    border: 1px solid #794995 !important;
+    margin: 8px;
+}
+
+a.back:hover {
+    background-color: #fafafa !important;
+    color: #794995 !important;
+}
+a.back:active,
+a.back:focus,
+a.back:target,
+a.back::selection {
+background-color: #421c58!important;
+border-color: #421c58!important;
+color: #fafafa !important;
+}
+
+.confirm::before {
+    content: 'Excluir ';
+}
+.confirm {
+    color: #fafafa !important;
+    background-color: #49956b !important;
+    border: 1px solid #49956b !important;
+    width: 120px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+.confirm:hover {
+    background-color: #fafafa !important;
+    color: #49956b !important;
+}
+.confirm:active,
+.confirm:focus
+.confirm:target,
+.confirm::selection {
+background-color: #236b43!important;
+border-color: #236b43!important;
+color: #fafafa !important;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 16px 16px 16px 0;
+    gap: 10px;
+}
+
+
+a.cancel::before {
+    content: 'Cancelar ';
+}
+a.cancel {
+    color: #fafafa !important;
+    background-color: #952b2b !important;
+    border: 1px solid #952b2b !important;
+    width: fit-content;
+    height: 32px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+a.cancel:hover {
+    background-color: #fafafa !important;
+    color: #952b2b !important;
+}
+a.cancel:active,
+a.cancel:focus
+a.cancel:target,
+a.cancel::selection {
+background-color: #6b2323!important;
+border-color: #6b2323!important;
+color: #fafafa !important;
+}

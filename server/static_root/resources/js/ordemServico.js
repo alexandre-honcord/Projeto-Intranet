@@ -78,12 +78,12 @@ document.getElementById('ordemServicoForm').addEventListener('submit', function(
 
     // Envia os dados para o Django usando fetch
     const formData = new FormData(this);
-    formData.append('tipoOrdem', selectedValues.tipoOrdem);
-    formData.append('classificacao', selectedValues.classificacao);
-    formData.append('descricao', selectedValues.descricao);
-    formData.append('dano', selectedValues.dano);
+    formData.append('tipo_ordem', selectedValues.tipoOrdem);
+    formData.append('classificacao_ordem', selectedValues.classificacao);
+    formData.append('descricao_ordem', selectedValues.descricao);
+    formData.append('dano_ordem', selectedValues.dano);
 
-    fetch('/sua-url-django/', {
+    fetch('/processar-ordem/', {
         method: 'POST',
         body: formData,
         headers: {
@@ -123,8 +123,8 @@ function limparERedirecionar() {
         selectedValues[key] = null;
     }
 
-    // Redireciona para /home
-    window.location.href = '/home';
+    // Redireciona para /painelOrdemServico
+    window.location.href = '/painel/OrdemServico';
 };
 
 // Adiciona listener ao botão "Cancelar"
