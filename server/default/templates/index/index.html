@@ -17,18 +17,18 @@
         {% include 'sidebar/sidebar.html' %}
         <section>
             {% include 'header/header.html' %}
-            <div class="main-content">
                 <iframe class="tvHoncord" src="{% static 'resources/file (1).mp4' %}" frameborder="0" allowfullscreen loop="True"></iframe>
                 <iframe class="journalHoncord" src="{% static 'journal.html' %}"></iframe>
+                
                 {% block login %}{% endblock %}
+
+
                 {% block home %}{% endblock %}
+
                 {% block ordemServico %}{% endblock %}
                 {% block contentQuality %}{% endblock %}
-                <div class="chat-content">
                 {% block contentChat %}{% endblock %}
-                </div>
 
-            </div>
         </section>
         <script src="{% static '/resources/js/theme.js' %}"></script>
         <script src="{% static '/resources/js/sidebar.js' %}"></script>

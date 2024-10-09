@@ -1,6 +1,6 @@
 .panel-ordem {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: #fafafa;
     padding: 16px;
 }
@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
 }
 
 .cards-holder .cards{
