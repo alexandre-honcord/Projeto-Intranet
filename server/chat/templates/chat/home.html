@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block contentChat %}
+<link rel="stylesheet" href="{% static '/chat/css/chat.css' %}">
     <div class="d-flex h-100">
         <!-- Salas -->
         <div class="chat-rooms h-100 w-25">
@@ -33,8 +34,9 @@
     </div>
 
     {% include 'chat/create-room.html' %}
+    <script src="{% static '/chat/js/utils.js' %}"></script>
+    <script src="{% static '/chat/js/chatus.js' %}"></script>
 {% endblock %}
 
-{% block js %}
-    <script defer src="{% static '/chat/js/chatus.js' %}"></script>
-{% endblock %}
+
+   
