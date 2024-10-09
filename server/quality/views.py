@@ -12,6 +12,7 @@ class BaseContextView:
         context = super().get_context_data(**kwargs)
         context['tools'] = Tool.objects.all()
         context['apps'] = AppsTool.objects.all()
+        context['user'] = self.request.user
         return context
 
 class OpportunityListView(BaseContextView, ListView):
