@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'default',
     'quality',
     'qualityTools',
+    'chat',
 ]
 
 MIDDLEWARE = [
