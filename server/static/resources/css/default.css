@@ -394,7 +394,10 @@ section {
     justify-content: center;
     z-index: 99;
 }
-
+.chat-content {
+    width: 100dvw;
+    height: 100dvh;
+}
 .login-container {
     width: 450px;
     height: 480px;
