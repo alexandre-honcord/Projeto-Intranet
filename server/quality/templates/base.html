@@ -15,10 +15,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 {% if user.is_authenticated %}
-<<<<<<< HEAD
-                        {% for grupo in user.grupos_set.all %}
-                            {% if grupo.gestor %}
-=======
                     {% if user.grupos_set.count == 0 %}
                         <!-- If the user has no groups -->
                         <ul class="navbar-nav">
@@ -33,7 +29,6 @@
                         {% for grupo in user.grupos_set.all %}
                             {% if grupo.gestor %}
                                 <!-- Show these options if the user is a manager -->
->>>>>>> c31d0673cbc913f16410916158733fc74c37cf23
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'quality:opportunity_list' %}">Oportunidades</a>
@@ -53,10 +48,6 @@
                                         </ul>
                                     </li>
                                 </ul>
-<<<<<<< HEAD
-                            {% endif %}
-                        {% endfor %}
-=======
                             {% else %}
                                 <!-- If user is not a manager, show these options -->
                                 <ul class="navbar-nav">
@@ -70,7 +61,6 @@
                             {% endif %}
                         {% endfor %}
                     {% endif %}
->>>>>>> c31d0673cbc913f16410916158733fc74c37cf23
                 {% else %}
                     <!-- If user is not authenticated -->
                     <ul class="navbar-nav">
