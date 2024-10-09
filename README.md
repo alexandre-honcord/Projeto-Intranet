@@ -8,4 +8,4 @@ pip install -r requeriments.txt
 
 cd server\
 
-py manage.py runserver
+python manage.py runserver
