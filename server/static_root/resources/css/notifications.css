@@ -1,0 +1,75 @@
+.notifications-holder {
+width: 96%;
+height: calc(100dvh - 60px);
+}
+
+.notifications-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    width:  100%;
+    padding: 16px;
+    border: 0.5px solid rgba(17, 34, 85, 0.1);
+    background-color: #e2e2e2;
+
+}
+
+.notifications_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #897be8;
+    background-color: #fafafa;
+    cursor: default;
+    transition: all 0.4s ease;
+    
+}
+
+.notifications_cards:hover {
+    transform: translateY(-10px);
+    color: #3623b3;
+    box-shadow: 0 0 0 2px rgba(54, 35, 179, 0.25);
+}
+
+.cards_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(17, 34, 85, 0.1);
+}
+
+.card_content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card_content div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer;
+}
+
+.card_content div img{
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    display: block; 
+    border-radius: 50%;
+}
+
+.card_content p {
+
+}

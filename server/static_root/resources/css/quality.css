@@ -1,0 +1,28 @@
+.quality-holder {
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    height: calc(100dvh - 60px);
+    background-color: #fafafa;
+}
+.container {
+    display: flex;
+    margin: 0;
+}
+
+.navbar {
+
+    background-color: #e2e2e2 !important;
+    border-bottom: 0.5px solid rgba(17, 34, 85, 0.1);   
+}
+
+.navbar .nav-link {
+    font-weight: 800 !important;
+    color: #343434 !important;
+
+}
+.content {
+    padding: 16px;
+    height: 100%;
+    overflow-y: scroll;
+}
