@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{% static '/resources/css/default.css' %}">
-        <link rel="stylesheet" href="{% static '/chat/css/chat.css' %}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
@@ -18,24 +17,27 @@
         {% include 'sidebar/sidebar.html' %}
         <section>
             {% include 'header/header.html' %}
-            <div class="main-content">
                 <iframe class="tvHoncord" src="{% static 'resources/file (1).mp4' %}" frameborder="0" allowfullscreen loop="True"></iframe>
                 <iframe class="journalHoncord" src="{% static 'journal.html' %}"></iframe>
+                
                 {% block login %}{% endblock %}
+
+
                 {% block home %}{% endblock %}
+
                 {% block ordemServico %}{% endblock %}
                 {% block contentQuality %}{% endblock %}
-                <div class="chat-content">
                 {% block contentChat %}{% endblock %}
-                </div>
 
-            </div>
         </section>
         <script src="{% static '/resources/js/theme.js' %}"></script>
         <script src="{% static '/resources/js/sidebar.js' %}"></script>
         <script src="{% static '/resources/js/default.js' %}"></script>
+<<<<<<< HEAD
         <script src="{% static '/chat/js/utils.js' %}"></script>
         <script src="{% static '/chat/js/chat.js' %}"></script>
+=======
+>>>>>>> 4d403bac05a1578d1aa200aa3bf3022160ced12e
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         
 
