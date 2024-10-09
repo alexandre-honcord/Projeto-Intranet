@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Grupos(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     gestor = models.BooleanField(default=False)
+    qualidade = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.user)
