@@ -11,7 +11,7 @@
             {% csrf_token %}
             <div class="buttons">
                 <button type="submit" class="btn btn-sm btn-danger confirm"><i class="fa-solid fa-check"></i></button>
-                <a href="{% url 'quality:opportunity_detail' opportunity.pk %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></a>
+                <a href="{% url 'quality:opportunity_list' %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></a>
             </div>
         </form>
     </div>
