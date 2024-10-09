@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label for="{{ form.when.id_for_label }}">Quando?:</label>
-                {{ form.when }}
+                <input type="date" name="when" value="{{ form.when.value|date:"Y-m-d" }}" class="form-control" required="" id="id_when">
             </div>
             <div class="form-group">
                 <label for="{{ form.who.id_for_label }}">Quem?:</label>

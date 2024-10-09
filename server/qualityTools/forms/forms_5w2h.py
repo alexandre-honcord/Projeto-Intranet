@@ -11,15 +11,16 @@ class Ferramenta5W2HForm(forms.ModelForm):
             'what': forms.TextInput(attrs={'class': 'form-control'}),
             'why': forms.TextInput(attrs={'class': 'form-control'}),
             'where': forms.TextInput(attrs={'class': 'form-control'}),
-            'when': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'when': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),  # Campo de data
             'who': forms.TextInput(attrs={'class': 'form-control'}),
             'how': forms.TextInput(attrs={'class': 'form-control'}),
             'how_much': forms.TextInput(attrs={'class': 'form-control', 'type': 'number', 'step': '0.01'}),
         }
 
-        def __init__(self, *args, **kwargs):
-            super(Ferramenta5W2HForm, self).__init__(*args, **kwargs)
-            if self.instance and self.instance.pk:
-                # Verifique se a instância contém valores e se os campos estão corretamente populados
-                self.fields['oportunidade_melhoria'].initial = self.instance.oportunidade_melhoria
-                self.fields['notificacao_evento_adverso'].initial = self.instance.notificacao_evento_adverso
+    def __init__(self, *args, **kwargs):
+        super(Ferramenta5W2HForm, self).__init__(*args, **kwargs)
+        if self.instance and self.instance.pk:
+            # Verifique se a instância contém valores e se os campos estão corretamente populados
+            self.fields['oportunidade_melhoria'].initial = self.instance.oportunidade_melhoria
+            self.fields['notificacao_evento_adverso'].initial = self.instance.notificacao_evento_adverso
+            self.fields['when'].initial = self.instance.when.strftime('%Y-%m-%d')
