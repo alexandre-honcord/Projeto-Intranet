@@ -4,12 +4,14 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
-<h1>SWOT</h1>
-<a href="{% url 'qualityTools:ferramentaswot-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+
+
 <div class="row">
     <div class="col">
         <table class="table">
             <thead>
+                <h1>SWOT</h1>
+                <a href="{% url 'qualityTools:ferramentaswot-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
                 <tr>
                     <th>ID</th>
                     <th>Oportunidade de Melhoria</th>
@@ -18,7 +20,7 @@
                     <th>Fraquezas</th>
                     <th>Oportunidades</th>
                     <th>Ameaças</th>
-                    <th></th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>

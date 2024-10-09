@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
 <h2>Notificações de Eventos Adversos</h2>
-<a href="{% url 'quality:notification_create' %}" class="btn btn-success mt-3 add"><i class="fa-solid fa-plus"></i> Notificação</a>
+<a href="{% url 'quality:notification_create' %}" class="btn btn-success mt-3 add"><i class="fa-solid fa-plus"></i></a>
 <ul class="list-group mt-3">
     {% for notification in notifications %}
     <li class="list-group-item">
@@ -23,7 +23,7 @@
                 <a class="btn btn-primary btn-sm badges">Encerrada</a>
                 <a href="{% url 'quality:notification_detail' notification.pk %}" class="btn btn-primary btn-sm details"><i class="fa-solid fa-list-check"></i></a>
                 <a href="{% url 'quality:notification_update' notification.pk %}" class="btn btn-primary btn-sm edit"><i class="fa-solid fa-pen"></i></a>
-                <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger btn-sm delete"><i class="fa-solid fa-trash"></i></a>
+                <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger btn-sm delet"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>
     </li>

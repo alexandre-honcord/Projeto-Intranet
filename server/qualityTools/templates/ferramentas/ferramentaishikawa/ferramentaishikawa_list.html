@@ -4,13 +4,15 @@
 {% load static %}
 {% block content %}
 
-<h1>Ishikawa</h1>
+
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
-<a href="{% url 'qualityTools:ferramentaishikawa-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+
 <div class="row">
     <div class="col">
         <table class="table">
             <thead>
+                <h1>Ishikawa</h1>
+                <a href="{% url 'qualityTools:ferramentaishikawa-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
                 <tr>
                     <th>ID</th>
                     <th>Oportunidade de Melhoria</th>

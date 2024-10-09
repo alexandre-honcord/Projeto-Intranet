@@ -12,9 +12,15 @@
 
 .navbar {
 
-    border-bottom: 0.5px solid rgba(17, 34, 85, 0.1);
+    background-color: #e2e2e2 !important;
+    border-bottom: 0.5px solid rgba(17, 34, 85, 0.1);   
 }
 
+.navbar .nav-link {
+    font-weight: 800 !important;
+    color: #343434 !important;
+
+}
 .content {
     padding: 16px;
     height: 100%;

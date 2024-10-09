@@ -4,12 +4,14 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
-<h1>5 Porquês</h1>
-<a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+
+
 <div class="row">
     <div class="col">
         <table class="table">
             <thead>
+                <h1>5 Porquês</h1>
+                <a href="{% url 'qualityTools:ferramenta5porques-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
                 <tr>
                     <th>ID</th>
                     <th>Oportunidade de Melhoria</th>
