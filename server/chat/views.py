@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render
 from .models import Message, Room
 from django.views.generic.detail import DetailView
+from django.http import JsonResponse
 
 def home(request):
     rooms = Room.objects.all().order_by('-created_at')
@@ -18,18 +19,21 @@ class RoomDetailView(DetailView):
         return context
 
 def send_message(request, pk):
-    data = json.loads(request.body)
-    room = Room.objects.get(id=pk)
-    new_message = Message.objects.create(user = request.user, text=data['message'])
-    room.messages.add(new_message)
-    return render(request, 'chat/message.html', {
-        'm': new_message
-    })
-
+    if request.method == "POST":
+        data = json.loads(request.body)
+        room = Room.objects.get(id=pk)  # Obtenha a sala pelo ID
+        new_message = Message.objects.create(user=request.user, room=room, text=data['message'])  # Cria a nova mensagem
+        return render(request, 'chat/message.html', {
+            'm': new_message
+        })
+    return JsonResponse({'error': 'Método não permitido'}, status=405)
 
 def create_room(request):
-    data = json.loads(request.body)
-    room = Room.objects.create(user=request.user, title=data['title'])
-    return render(request, 'chat/room.html', {
-        'r': room
-    })
+    if request.method == "POST":
+        data = json.loads(request.body)
+        print("Dados recebidos:", data)  # Debugging
+        room = Room.objects.create(user=request.user, title=data['title'])
+        return render(request, 'chat/room.html', {
+            'r': room
+        })
+    return JsonResponse({'error': 'Método não permitido'}, status=405)
