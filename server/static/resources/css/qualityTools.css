@@ -340,3 +340,22 @@ h5 {
     color: #343434 !important;
 }
 
+.mapeamento {
+    display: flex;
+    background-color: #236b43;
+    justify-content: space-around;
+    padding: 16px;
+
+}
+.colum-1 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.colum-1 input {
+    height: 100%;
+}
+.colum-2 {
+    display: flex;
+    flex-direction: column;
+}
