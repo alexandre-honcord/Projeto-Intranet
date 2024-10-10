@@ -13,7 +13,7 @@ class Grupos(models.Model):
         verbose_name_plural = "Grupos"  # Nome plural
 
     def __str__(self):
-        return self.user.username  # Ou qualquer outra representação que você deseje
+        return self.user.username
 
 class Client(models.Model):
     name = models.CharField(max_length=50, unique=True)
