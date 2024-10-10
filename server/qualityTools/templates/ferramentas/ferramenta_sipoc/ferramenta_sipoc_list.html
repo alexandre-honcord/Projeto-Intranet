@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ferramenta SIPOC{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <h1>Ferramenta SIPOC</h1>
+                <a href="{% url 'qualityTools:ferramentasipoc_create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+                <tr>
+                    <th>#</th>
+                    <th>Missão</th>
+                    <th>Sistema</th>
+                    <th>Equipe</th>
+                    <th>Equipamentos</th>
+                    <th>Produto</th>
+                    <th>Cliente</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ferramenta in ferramentas_sipoc %}
+                <tr>
+                    <td>{{ ferramenta.id }}</td>
+                    <td>{{ ferramenta.missao }}</td>
+                    <td>{{ ferramenta.sistema }}</td>
+                    <td>{{ ferramenta.equipe }}</td>
+                    <td>{{ ferramenta.equipamentos }}</td>
+                    <td>{{ ferramenta.produto }}</td>
+                    <td>{{ ferramenta.cliente }}</td>
+                    <td>
+                        <a href="{% url 'qualityTools:ferramentasipoc_update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{% url 'qualityTools:ferramentasipoc_delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

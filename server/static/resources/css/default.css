@@ -122,14 +122,14 @@ body {
     position: sticky;
     top: 0;
     align-self: start;
-    width: 200px;
+    width: 250px;
     height: 100%;
     display: flex;
     flex-direction: column;
     z-index: 1;
     border-right: var(--border-effect);
     background-color: var(--sidebar-bg-color);
-    transition: width .3s ease;
+    transition: width .5s ease;
 }
 
 .sidebar-menu {
@@ -382,6 +382,7 @@ section {
 .journalHoncord {
     display: none;
     width: 100%;
+    object-fit: fill;
     height: calc(100dvh - 60px);
 }
 

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ferramenta SIPOC{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
+<h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %} SIPOC</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+            
+            {% if not form.instance.id %}
+                <h5>Cadastrar Novo Mapeamento SIPOC:</h5>
+                <div class="form-group">
+                    <label for="{{ mapeamento_form.macroprocesso.id_for_label }}">Macroprocesso:</label>
+                    {{ mapeamento_form.macroprocesso }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ mapeamento_form.versao.id_for_label }}">Versão:</label>
+                    {{ mapeamento_form.versao }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ mapeamento_form.vigenca.id_for_label }}">Vigência:</label>
+                    {{ mapeamento_form.vigenca }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ mapeamento_form.gestor.id_for_label }}">Gestor:</label>
+                    {{ mapeamento_form.gestor }}
+                </div>
+                <hr>
+            {% else %}
+                <!-- Exibir o mapeamento já selecionado, sem permitir edição -->
+                <h5>Mapeamento SIPOC Selecionado:</h5>
+                <p><strong>Macroprocesso:</strong> {{ form.instance.mapeamento.macroprocesso }}</p>
+                <p><strong>Versão:</strong> {{ form.instance.mapeamento.versao }}</p>
+                <p><strong>Vigência:</strong> {{ form.instance.mapeamento.vigenca }}</p>
+                <p><strong>Gestor:</strong> {{ form.instance.mapeamento.gestor }}</p>
+                <hr>
+            {% endif %}
+            
+            <!-- Formulário de FerramentaSIPOC -->
+            <div class="form-group">
+                <label for="{{ form.missao.id_for_label }}">Missão:</label>
+                {{ form.missao }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.sistema.id_for_label }}">Sistema:</label>
+                {{ form.sistema }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.equipe.id_for_label }}">Equipe:</label>
+                {{ form.equipe }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.equipamentos.id_for_label }}">Equipamentos:</label>
+                {{ form.equipamentos }}
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <label for="{{ form.produto.id_for_label }}">Produto:</label>
+                {{ form.produto }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.resultado.id_for_label }}">Resultado:</label>
+                {{ form.resultado }}
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <label for="{{ form.fornecedor.id_for_label }}">Fornecedor:</label>
+                {{ form.fornecedor }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.entrada.id_for_label }}">Entrada:</label>
+                {{ form.entrada }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.processo.id_for_label }}">Processo (Imagem):</label>
+                {{ form.processo }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.saida.id_for_label }}">Saída:</label>
+                {{ form.saida }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.cliente.id_for_label }}">Cliente:</label>
+                {{ form.cliente }}
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary save"><i class="fa-solid fa-floppy-disk"></i></button>
+        </div>
+    </div>
+</form>
+{% endblock %}
