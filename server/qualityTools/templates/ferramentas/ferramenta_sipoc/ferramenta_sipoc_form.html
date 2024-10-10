@@ -8,7 +8,7 @@
 <h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %} SIPOC</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="card">
+    <div class="card sipoc">
         <div class="card-body">
             
             {% if not form.instance.id %}
@@ -40,7 +40,7 @@
                 <hr>
             {% endif %}
             
-            <!-- Formulário de FerramentaSIPOC -->
+                <!-- Formulário de FerramentaSIPOC -->
                 <div class="form-group mapeamento1">
                     <div>
                         <label for="{{ form.missao.id_for_label }}">Missão:</label>
@@ -59,51 +59,58 @@
                         {{ form.equipamentos }}
                     </div>
                 </div>
-            </div>
+
+                <hr>
+                <div class="form-group mapeamento2">
+                    <div>
+                        <label for="{{ form.produto.id_for_label }}">Produto:</label>
+                        {{ form.produto }}
+                    </div>
+                    <div>
+                        <label for="{{ form.resultado.id_for_label }}">Resultado:</label>
+                        {{ form.resultado }}
+                    </div>
+                </div>
+
             <hr>
+            <div class="mapeamento3">
+                <div>
+                    <label for="{{ form.fornecedor.id_for_label }}">Fornecedor:</label>
+                    {{ form.fornecedor }}
+                </div>
+                <div>
+                    <label for="{{ form.entrada.id_for_label }}">Entrada:</label>
+                    {{ form.entrada }}
+                </div>
 
-            <div class="form-group">
-                <label for="{{ form.produto.id_for_label }}">Produto:</label>
-                {{ form.produto }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.resultado.id_for_label }}">Resultado:</label>
-                {{ form.resultado }}
-            </div>
-
-            <hr>
-
-            <div class="form-group">
-                <label for="{{ form.fornecedor.id_for_label }}">Fornecedor:</label>
-                {{ form.fornecedor }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.entrada.id_for_label }}">Entrada:</label>
-                {{ form.entrada }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.processo.id_for_label }}">Processo (Imagem):</label>
-                {{ form.processo }}
-                
-                <!-- Exibição da imagem já existente, se houver -->
-                {% if form.instance.processo %}
+                <div>
+                    {% if form.instance.processo %}
                     <img id="previewImage" src="{{ form.instance.processo.url }}" alt="Preview" class="img-thumbnail mt-2" />
-                {% else %}
-                    <img id="previewImage" src="#" alt="Preview" class="img-thumbnail mt-2 d-none" />
-                {% endif %}
+                    {% else %}
+                        <img id="previewImage" src="#" alt="Preview" class="img-thumbnail mt-2 d-none" />
+                    {% endif %}
+                    <div id="button-img">
+                        <label for="{{ form.processo.id_for_label }}" class="btn btn-sm btn-primary">
+                            Escolher Imagem <i class="fas fa-upload"></i> 
+                        </label>
+                        <input type="file" id="{{ form.processo.id_for_label }}" name="{{ form.processo.name }}" class="d-none" onchange="previewImage(event)">    
+                    </div>
+                </div>
+                <div>
+                    <label for="{{ form.saida.id_for_label }}">Saída:</label>
+                    {{ form.saida }}
+                </div>
+                <div>
+                    <label for="{{ form.cliente.id_for_label }}">Cliente:</label>
+                    {{ form.cliente }}
+                </div>
             </div>
-            <div class="form-group">
-                <label for="{{ form.saida.id_for_label }}">Saída:</label>
-                {{ form.saida }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.cliente.id_for_label }}">Cliente:</label>
-                {{ form.cliente }}
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary save"><i class="fa-solid fa-floppy-disk"></i></button>
             </div>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary save"><i class="fa-solid fa-floppy-disk"></i></button>
-        </div>
+        
+
     </div>
 </form>
 
