@@ -26,4 +26,4 @@ class FerramentaSIPOC(models.Model):
     cliente = models.TextField()
 
     def __str__(self):
-        return f"{self.mapeamento} - SIPOC"
+        return f"{self.produto} - SIPOC"
