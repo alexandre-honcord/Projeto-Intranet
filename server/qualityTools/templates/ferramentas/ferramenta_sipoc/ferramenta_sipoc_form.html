@@ -13,21 +13,21 @@
             
             {% if not form.instance.id %}
                 <h5>Cadastrar Novo Mapeamento SIPOC:</h5>
-                <div class="form-group">
-                    <label for="{{ mapeamento_form.macroprocesso.id_for_label }}">Macroprocesso:</label>
-                    {{ mapeamento_form.macroprocesso }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ mapeamento_form.versao.id_for_label }}">Versão:</label>
-                    {{ mapeamento_form.versao }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ mapeamento_form.vigenca.id_for_label }}">Vigência:</label>
-                    {{ mapeamento_form.vigencia }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ mapeamento_form.gestor.id_for_label }}">Gestor:</label>
-                    {{ mapeamento_form.gestor }}
+                <div class="mapeamento">
+                    <div class="form-group colum-1">
+                        <label for="{{ mapeamento_form.macroprocesso.id_for_label }}">Macroprocesso:</label>
+                        {{ mapeamento_form.macroprocesso }}
+                    </div>
+                    <div class="form-group colum-2">
+                        <label for="{{ mapeamento_form.versao.id_for_label }}">Versão:</label>
+                        {{ mapeamento_form.versao }}
+
+                        <label for="{{ mapeamento_form.vigenca.id_for_label }}">Vigência:</label>
+                        {{ mapeamento_form.vigencia }}
+
+                        <label for="{{ mapeamento_form.gestor.id_for_label }}">Gestor:</label>
+                        {{ mapeamento_form.gestor }}
+                    </div>
                 </div>
                 <hr>
             {% else %}
