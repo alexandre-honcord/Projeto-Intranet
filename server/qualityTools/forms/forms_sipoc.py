@@ -5,6 +5,12 @@ class MapeamentoSIPOCForm(forms.ModelForm):
     class Meta:
         model = MapeamentoSIPOC
         fields = ['macroprocesso', 'versao', 'vigencia', 'gestor']
+        widgets = {
+            'macroprocesso': forms.Textarea(attrs={'class': 'form-control'}),
+            'versao': forms.TextInput(attrs={'class': 'form-control'}),
+            'vigencia': forms.TextInput(attrs={'class': 'form-control'}),
+            'gestor': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
 class FerramentaSIPOCForm(forms.ModelForm):
     class Meta:

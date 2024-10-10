@@ -10,7 +10,7 @@ admin.site.register(Client)
 class GruposAdmin(admin.ModelAdmin):
     list_display = ('user', 'gestor')  # Campos a serem exibidos na lista
     list_filter = ('gestor',)  # Filtro para o campo 'gestor'
-    search_fields = ('user__username', 'user__name')  # Pesquisa por username e nome do usuário
+    search_fields = ('user__username', 'user__first_name')  # Pesquisa por username e nome do usuário
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
