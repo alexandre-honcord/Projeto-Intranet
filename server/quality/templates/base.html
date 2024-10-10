@@ -16,7 +16,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 {% if user.is_authenticated %}
                     {% if user.grupos_set.count == 0 %}
-                        <!-- If the user has no groups -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'quality:opportunity_create' %}">Oportunidades</a>
@@ -28,7 +27,6 @@
                     {% else %}
                         {% for grupo in user.grupos_set.all %}
                             {% if grupo.gestor %}
-                                <!-- Show these options if the user is a manager -->
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'quality:opportunity_list' %}">Oportunidades</a>
@@ -49,7 +47,6 @@
                                     </li>
                                 </ul>
                             {% else %}
-                                <!-- If user is not a manager, show these options -->
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'quality:opportunity_create' %}">Oportunidades</a>
@@ -62,7 +59,6 @@
                         {% endfor %}
                     {% endif %}
                 {% else %}
-                    <!-- If user is not authenticated -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'quality:opportunity_create' %}">Oportunidades</a>
@@ -81,5 +77,19 @@
         {% endblock %}
     </div>
 </div>
-{% endblock %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = window.location.pathname;
 
+        // Selecione todos os links
+        const links = document.querySelectorAll('.nav-link');
+
+        links.forEach(link => {
+            // Verifique se o href do link corresponde ao caminho atual
+            if (link.href === window.location.origin + currentPath) {
+                link.classList.add('active'); // Adicione a classe active
+            }
+        });
+    });
+</script>
+{% endblock %}

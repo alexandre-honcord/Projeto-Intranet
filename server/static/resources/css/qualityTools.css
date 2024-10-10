@@ -103,6 +103,8 @@ td:last-child{
 }
 a.edit::before {
     content: '';
+    text-align: center;
+    vertical-align: middle;
 }
 
 a.edit {
@@ -150,6 +152,7 @@ color: #fafafa !important;
 
 button.confirm::before {
     content: 'Excluir ';
+
 }
 button.confirm {
     color: #fafafa !important;
@@ -157,10 +160,7 @@ button.confirm {
     border: 1px solid #49956b !important;
     width: fit-content;
     height: 30px !important;
-    display: flex;
     gap: 6px;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
     margin: 0;
 }
@@ -217,9 +217,6 @@ a.cancel {
     border: 1px solid #952b2b !important;
     width: fit-content;
     height: 30px ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 6px;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
     margin: 0;
@@ -287,9 +284,7 @@ cursor: pointer;
     border-radius: 16px;
     padding: 32px;
 }
-.delet-confirm div h3 {
 
-}
 .delet-confirm  div form {
     display: flex;
     gap: 10px;

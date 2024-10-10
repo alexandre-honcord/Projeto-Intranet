@@ -11,9 +11,8 @@
 }
 
 .navbar {
-
+    padding: 8px 0 0 0;
     background-color: #e2e2e2 !important;
-    border-bottom: 0.5px solid rgba(17, 34, 85, 0.1);   
 }
 
 .navbar .nav-link {
@@ -21,8 +20,19 @@
     color: #343434 !important;
 
 }
+
+.nav-item:hover {
+    background-color: #fafafa;
+    border-radius: 8px 8px 0 0px;
+}
+
 .content {
     padding: 16px;
     height: 100%;
     overflow-y: scroll;
+}
+
+
+.dropdown-item:hover {
+    background-color: #d8d8d8;
 }

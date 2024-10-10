@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
 <h2>Notificações de Eventos Adversos</h2>
-<a href="{% url 'quality:notification_create' %}" class="btn btn-success mt-3 add"><i class="fa-solid fa-plus"></i></a>
+<a href="{% url 'quality:notification_create' %}" class="btn btn-sm btn-success mt-3 add"><i class="fa-solid fa-plus"></i></a>
 <ul class="list-group mt-3">
     {% for notification in notifications %}
     <li class="list-group-item">
