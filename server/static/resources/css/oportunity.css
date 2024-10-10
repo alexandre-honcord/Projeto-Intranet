@@ -44,6 +44,8 @@
 
 button.save::before {
     content: 'Salvar ';
+    text-align: center;
+    vertical-align: middle;
 }
 button.save {
     color: #fafafa !important;
@@ -107,6 +109,8 @@ color: #fafafa !important;
 }
 .content a::before {
     content: 'Novo ';
+    text-align: center;
+    vertical-align: middle;
 }
 .content a:hover {
     background-color: #fafafa;
@@ -123,6 +127,8 @@ color: #fafafa !important;
 
 a.edit::before {
     content: 'Editar ';
+    text-align: center;
+    vertical-align: middle;
 }
 
 a.edit {
@@ -147,6 +153,8 @@ color: #fafafa !important;
 
 a.delet::before {
     content: 'Excluir ';
+    text-align: center;
+    vertical-align: middle;
 }
 a.delet {
     color: #fafafa !important;
@@ -170,6 +178,8 @@ color: #fafafa !important;
 
 a.details::before {
     content: 'Detalhes ';
+    text-align: center;
+    vertical-align: middle;
 }
 
 a.details {
@@ -213,6 +223,8 @@ a.badges:hover {
 
 a.back::before {
     content: 'Voltar ';
+    text-align: center;
+    vertical-align: middle;
 }
 
 a.back {
@@ -237,6 +249,8 @@ color: #fafafa !important;
 
 .confirm::before {
     content: 'Excluir ';
+    text-align: center;
+    vertical-align: middle;
 }
 .confirm {
     color: #fafafa !important;
@@ -273,9 +287,10 @@ color: #fafafa !important;
     gap: 10px;
 }
 
-
 a.cancel::before {
     content: 'Cancelar ';
+    text-align: center;
+    vertical-align: middle;
 }
 a.cancel {
     color: #fafafa !important;

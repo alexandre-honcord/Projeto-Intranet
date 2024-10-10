@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
 <h2>Oportunidades de Melhoria</h2>
-<a href="{% url 'quality:opportunity_create' %}" class="btn btn-success mt-3 add"><i class="fa-solid fa-plus"></i></a>
+<a href="{% url 'quality:opportunity_create' %}" class="btn btn-sm btn-success mt-3 add"><i class="fa-solid fa-plus"></i></a>
 <ul class="list-group mt-3">
     {% for opportunity in opportunities %}
     <li class="list-group-item">
