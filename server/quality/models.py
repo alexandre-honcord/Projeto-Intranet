@@ -4,8 +4,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Grupos(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     gestor = models.BooleanField(default=False)
+    qualidade = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Grupo"  # Nome singular
