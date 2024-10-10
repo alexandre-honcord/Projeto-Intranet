@@ -363,5 +363,16 @@ h5 {
 .colum-2 label {
     position: relative;
     top: 16px;
+}
+
+.mapeamento1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.mapeamento1 div {
+    display: flex;
+    flex-direction: column;
 
 }

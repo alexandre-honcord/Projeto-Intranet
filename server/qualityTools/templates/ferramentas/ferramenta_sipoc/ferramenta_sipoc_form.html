@@ -41,23 +41,25 @@
             {% endif %}
             
             <!-- Formulário de FerramentaSIPOC -->
-            <div class="form-group">
-                <label for="{{ form.missao.id_for_label }}">Missão:</label>
-                {{ form.missao }}
+                <div class="form-group mapeamento1">
+                    <div>
+                        <label for="{{ form.missao.id_for_label }}">Missão:</label>
+                        {{ form.missao }}
+                    </div>
+                    <div>
+                        <label for="{{ form.sistema.id_for_label }}">Sistema:</label>
+                        {{ form.sistema }}
+                    </div>
+                    <div>
+                        <label for="{{ form.equipe.id_for_label }}">Equipe:</label>
+                        {{ form.equipe }}
+                    </div> 
+                    <div>
+                        <label for="{{ form.equipamentos.id_for_label }}">Equipamentos:</label>
+                        {{ form.equipamentos }}
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="{{ form.sistema.id_for_label }}">Sistema:</label>
-                {{ form.sistema }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.equipe.id_for_label }}">Equipe:</label>
-                {{ form.equipe }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.equipamentos.id_for_label }}">Equipamentos:</label>
-                {{ form.equipamentos }}
-            </div>
-
             <hr>
 
             <div class="form-group">
