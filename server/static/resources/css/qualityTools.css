@@ -443,3 +443,9 @@ h5 {
     top: 318px;
     height: 10px !important;
 }
+.card-body h5 {
+    padding-bottom: 16px;
+}
+.card-body p {
+    text-align: left;
+}
