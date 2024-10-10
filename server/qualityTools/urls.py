@@ -66,16 +66,16 @@ urlpatterns = [
     path('swot/editar/<int:pk>/', FerramentaSWOTUpdateView.as_view(), name='ferramentaswot-update'),
     path('swot/deletar/<int:pk>/', FerramentaSWOTDeleteView.as_view(), name='ferramentaswot-delete'),
 
-    path('5porques/', Ferramenta5PorquesListView.as_view(), name='ferramenta5porques_list'),
-    path('5porques/cadastrar/', Ferramenta5PorquesCreateView.as_view(), name='ferramenta5porques-create'),
-    path('5porques/editar/<int:pk>/', Ferramenta5PorquesUpdateView.as_view(), name='ferramenta5porques-update'),
-    path('5porques/deletar/<int:pk>/', Ferramenta5PorquesDeleteView.as_view(), name='ferramenta5porques-delete'),
+    path('5-porques/', Ferramenta5PorquesListView.as_view(), name='ferramenta5porques_list'),
+    path('5-porques/cadastrar/', Ferramenta5PorquesCreateView.as_view(), name='ferramenta5porques-create'),
+    path('5-porques/editar/<int:pk>/', Ferramenta5PorquesUpdateView.as_view(), name='ferramenta5porques-update'),
+    path('5-porques/deletar/<int:pk>/', Ferramenta5PorquesDeleteView.as_view(), name='ferramenta5porques-delete'),
 
     # FerramentaSIPOC URLs
-    path('ferramentasipoc/', FerramentaSIPOCListView.as_view(), name='ferramentasipoc_list'),
-    path('ferramentasipoc/create/', FerramentaSIPOCCreateView.as_view(), name='ferramentasipoc_create'),
-    path('ferramentasipoc/update/<int:pk>/', FerramentaSIPOCUpdateView.as_view(), name='ferramentasipoc_update'),
-    path('ferramentasipoc/delete/<int:pk>/', FerramentaSIPOCDeleteView.as_view(), name='ferramentasipoc_delete'),
+    path('ferramenta-sipoc/', FerramentaSIPOCListView.as_view(), name='ferramentasipoc_list'),
+    path('ferramenta-sipoc/create/', FerramentaSIPOCCreateView.as_view(), name='ferramentasipoc_create'),
+    path('ferramenta-sipoc/update/<int:pk>/', FerramentaSIPOCUpdateView.as_view(), name='ferramentasipoc_update'),
+    path('ferramenta-sipoc/delete/<int:pk>/', FerramentaSIPOCDeleteView.as_view(), name='ferramentasipoc_delete'),
 
     
     # Incluindo as rotas da API

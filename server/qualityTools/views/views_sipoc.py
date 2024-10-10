@@ -38,8 +38,8 @@ class FerramentaSIPOCCreateView(CreateView):
     def form_valid(self, form):
         mapeamento_form = MapeamentoSIPOCForm(self.request.POST)
         if mapeamento_form.is_valid():
-            mapeamento = mapeamento_form.save()
-            form.instance.mapeamento = mapeamento
+            mapeamento = mapeamento_form.save()  # Salva o mapeamento corretamente
+            form.instance.mapeamento = mapeamento  # Associa o mapeamento ao FerramentaSIPOC
             return super().form_valid(form)
         else:
             return self.form_invalid(form)
@@ -50,6 +50,11 @@ class FerramentaSIPOCUpdateView(BaseContextView, UpdateView):
     template_name = 'ferramentas/ferramenta_sipoc/ferramenta_sipoc_form.html'
     form_class = FerramentaSIPOCForm
     success_url = reverse_lazy('qualityTools:ferramentasipoc_list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mapeamento_form'] = MapeamentoSIPOCForm(instance=self.object.mapeamento)
+        return context
 
 # Delete View for FerramentaSIPOC
 class FerramentaSIPOCDeleteView(BaseContextView, DeleteView):

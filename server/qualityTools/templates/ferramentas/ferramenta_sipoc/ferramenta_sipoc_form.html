@@ -35,8 +35,11 @@
                 <h5>Mapeamento SIPOC Selecionado:</h5>
                 <p><strong>Macroprocesso:</strong> {{ form.instance.mapeamento.macroprocesso }}</p>
                 <p><strong>Versão:</strong> {{ form.instance.mapeamento.versao }}</p>
-                <p><strong>Vigência:</strong> {{ form.instance.mapeamento.vigenca }}</p>
+                <p><strong>Vigência:</strong> {{ form.instance.mapeamento.vigencia }}</p>
                 <p><strong>Gestor:</strong> {{ form.instance.mapeamento.gestor }}</p>
+
+                <!-- Campos ocultos para manter o ID do mapeamento -->
+                <input type="hidden" name="mapeamento" value="{{ form.instance.mapeamento.id }}">
                 <hr>
             {% endif %}
             
