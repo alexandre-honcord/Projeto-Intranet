@@ -323,7 +323,6 @@ select {
 input[type='text'], 
 input[type='number'],
 input[type='date']  {
-    box-shadow: none !important;
     border: 0.5px solid rgba(17, 34, 85, .3) !important;
     height: 40px !important;
     color: #404040 !important;
