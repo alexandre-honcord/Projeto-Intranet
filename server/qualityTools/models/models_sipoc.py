@@ -3,7 +3,7 @@ from django.db import models
 class MapeamentoSIPOC(models.Model):
     macroprocesso = models.CharField(max_length=255)
     versao = models.CharField(max_length=255)
-    vigenca = models.CharField(max_length=255)
+    vigencia = models.CharField(max_length=255)
     gestor = models.CharField(max_length=255)
 
     def __str__(self):

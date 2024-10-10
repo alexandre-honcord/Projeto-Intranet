@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from qualityTools.forms.forms_sipoc import FerramentaSIPOCForm, MapeamentoSIPOCForm
-from qualityTools.models.models_sipoc import FerramentaSIPOC
+from qualityTools.models.models_sipoc import FerramentaSIPOC, MapeamentoSIPOC
 from default.models.models_links import Tool, AppsTool
 
 class BaseContextView:
@@ -11,11 +11,14 @@ class BaseContextView:
         context['apps'] = AppsTool.objects.all()
         return context
 
-# List View for FerramentaSIPOC
 class FerramentaSIPOCListView(BaseContextView, ListView):
     model = FerramentaSIPOC
     template_name = 'ferramentas/ferramenta_sipoc/ferramenta_sipoc_list.html'
     context_object_name = 'ferramentas_sipoc'
+
+    def get_queryset(self):
+        # Retornar FerramentaSIPOC com dados do MapeamentoSIPOC relacionados
+        return FerramentaSIPOC.objects.select_related('mapeamento')
 
 # Create View for FerramentaSIPOC
 class FerramentaSIPOCCreateView(CreateView):
