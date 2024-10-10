@@ -25,15 +25,18 @@
                 {% for ferramenta in ferramentas_sipoc %}
                 <tr>
                     <td>{{ ferramenta.id }}</td>
-                    <!-- Acessa os atributos do mapeamento associado -->
-                    <td>{{ ferramenta.mapeamento.macroprocesso }}</td>
-                    <td>{{ ferramenta.mapeamento.versao }}</td>
-                    <td>{{ ferramenta.mapeamento.vigencia }}</td>
-                    <td>{{ ferramenta.mapeamento.gestor }}</td>
+                    <td>{{ ferramenta.mapeamento.macroprocesso|default_if_none:"N/A" }}</td>
+                    <td>{{ ferramenta.mapeamento.versao|default_if_none:"N/A" }}</td>
+                    <td>{{ ferramenta.mapeamento.vigencia|default_if_none:"N/A" }}</td>
+                    <td>{{ ferramenta.mapeamento.gestor|default_if_none:"N/A" }}</td>
                     <td>
                         <a href="{% url 'qualityTools:ferramentasipoc_update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
                         <a href="{% url 'qualityTools:ferramentasipoc_delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
                     </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">Nenhum registro encontrado.</td>
                 </tr>
                 {% endfor %}
             </tbody>
