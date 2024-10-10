@@ -27,6 +27,13 @@ from qualityTools.views.views_5Porques import (
     Ferramenta5PorquesViewSet,
 )
 
+from qualityTools.views.views_sipoc import (
+    FerramentaSIPOCListView,
+    FerramentaSIPOCCreateView,
+    FerramentaSIPOCUpdateView,
+    FerramentaSIPOCDeleteView,
+)
+
 # Views da API usando Django REST Framework
 from qualityTools.views.views_5w2h import Ferramenta5W2HViewSet
 from qualityTools.views.views_ishikawa import FerramentaIshikawaViewSet
@@ -63,6 +70,12 @@ urlpatterns = [
     path('5porques/cadastrar/', Ferramenta5PorquesCreateView.as_view(), name='ferramenta5porques-create'),
     path('5porques/editar/<int:pk>/', Ferramenta5PorquesUpdateView.as_view(), name='ferramenta5porques-update'),
     path('5porques/deletar/<int:pk>/', Ferramenta5PorquesDeleteView.as_view(), name='ferramenta5porques-delete'),
+
+    # FerramentaSIPOC URLs
+    path('ferramentasipoc/', FerramentaSIPOCListView.as_view(), name='ferramentasipoc_list'),
+    path('ferramentasipoc/create/', FerramentaSIPOCCreateView.as_view(), name='ferramentasipoc_create'),
+    path('ferramentasipoc/update/<int:pk>/', FerramentaSIPOCUpdateView.as_view(), name='ferramentasipoc_update'),
+    path('ferramentasipoc/delete/<int:pk>/', FerramentaSIPOCDeleteView.as_view(), name='ferramentasipoc_delete'),
 
     
     # Incluindo as rotas da API
