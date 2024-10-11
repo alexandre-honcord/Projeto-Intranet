@@ -13,9 +13,7 @@
 .list-group {
     width: 100% !important;
     gap: 20px;
-    padding: 32px;
-    background-color: #e2e2e2;
-    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+
     margin-bottom: 16px;
 }
 
