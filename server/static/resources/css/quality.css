@@ -13,13 +13,12 @@
 .navbar {
 
     padding: 8px 0 0 0;
-    background-color: #e2e2e2 !important;
+
     
 }
 .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 .navbar .nav-link {
     font-weight: 600 !important;
@@ -40,6 +39,7 @@
     padding: 16px;
     height: 100%;
     overflow-y: scroll;
+    background-color: #eee;
 }
 
 
