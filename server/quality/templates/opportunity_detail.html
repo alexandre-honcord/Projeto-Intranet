@@ -21,7 +21,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <div class="buttons">
-                <a href="{% url 'quality:opportunity_list' %}" class="btn btn-secondary back"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+                <a href="{% url 'quality:opportunity_list' %}" class="btn btn-sm btn-primary back">Voltar <i class="fa-solid fa-arrow-rotate-left"></i></a>
             </div>
             <!-- <a href="{% url 'quality:opportunity_delete' opportunity.pk %}" class="btn btn-danger float-right">Excluir</a> -->
         </form>

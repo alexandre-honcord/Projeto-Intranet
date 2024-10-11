@@ -43,9 +43,7 @@
 }
 
 button.save::before {
-    content: 'Salvar ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 button.save {
     color: #fafafa !important;
@@ -109,8 +107,6 @@ color: #fafafa !important;
 }
 .content a::before {
     content: 'Novo ';
-    text-align: center;
-    vertical-align: middle;
 }
 .content a:hover {
     background-color: #fafafa;
@@ -126,9 +122,7 @@ color: #fafafa !important;
 
 
 a.edit::before {
-    content: 'Editar ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 
 a.edit {
@@ -152,9 +146,7 @@ color: #fafafa !important;
 }
 
 a.delet::before {
-    content: 'Excluir ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 a.delet {
     color: #fafafa !important;
@@ -177,9 +169,7 @@ color: #fafafa !important;
 }
 
 a.details::before {
-    content: 'Detalhes ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 
 a.details {
@@ -203,28 +193,50 @@ color: #fafafa !important;
 }
 
 
-a.badges::before {
-    content: '';
-}
+
 
 a.badges {
+    position: relative;
     color: #fafafa !important;
-    background-color: #d18f58 !important;
+    background-color: rgb(209, 143, 88) !important;
     border: 1px solid #d18f58 !important;
     margin: 8px;
-    pointer-events: none;
+    pointer-events: none; /* Consider changing this if you want the hover effect */
+    overflow: hidden; /* Para garantir que o brilho não saia do botão */
 }
-
+a.badges::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    width: 90px;
+    background: rgba(255, 255, 255, 0.9);
+    filter: blur(30px);
+    animation: shine-alt1 3s ease-in-out infinite; /* Duração da animação */
+}
 a.badges:hover {
     background-color: #fafafa !important;
     color: #497795 !important;
 }
 
+@keyframes shine-alt1 {
+    0% {
+        opacity: 0.5;
+        transform: translateX(-100px) skewX(-15deg);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateX(300px) skewX(-15deg);
+    }
+    100% {
+        opacity: 0.5; /* Para fazer a animação voltar */
+        transform: translateX(400px) skewX(-15deg);
+    }
+}
 
 a.back::before {
-    content: 'Voltar ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 
 a.back {
@@ -248,9 +260,7 @@ color: #fafafa !important;
 }
 
 .confirm::before {
-    content: 'Excluir ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 .confirm {
     color: #fafafa !important;
@@ -293,11 +303,12 @@ color: #fafafa !important;
     padding: 16px 16px 16px 0;
     gap: 10px;
 }
-
+.buttons button {
+    display: flex;
+    align-items: center;
+}
 a.cancel::before {
-    content: 'Cancelar ';
-    text-align: center;
-    vertical-align: middle;
+    content: '';
 }
 a.cancel {
     color: #fafafa !important;
@@ -354,3 +365,40 @@ color: #fafafa !important;
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(41, 41, 41, 0.2);
 }
+.options span a {
+    margin: 0;
+}
+
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+
+
+  a:hover > i {
+    animation: jello-vertical 1s both;
+  }
+
+  button:hover > i {
+    animation: jello-vertical 1s both;
+  }

@@ -40,8 +40,8 @@
                         <td>{{ ferramenta.porque4 }}</td>
                         <td>{{ ferramenta.porque5 }}</td>
                         <td>
-                            <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
-                            <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
+                            <a href="{% url 'qualityTools:ferramenta5porques-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Editar"><i class="fa-solid fa-pen"></i></a>
+                            <a href="{% url 'qualityTools:ferramenta5porques-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-primary delet"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Excluir"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

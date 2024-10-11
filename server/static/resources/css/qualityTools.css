@@ -32,10 +32,7 @@ tr {
     padding: 0;
     border: none;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
-
-
 }
-
 
 td {
     white-space: nowrap;
@@ -97,8 +94,6 @@ td:last-child{
 }
 a.edit::before {
     content: '';
-    text-align: center;
-    vertical-align: middle;
 }
 
 a.edit {
@@ -145,8 +140,7 @@ color: #fafafa !important;
 }
 
 button.confirm::before {
-    content: 'Excluir ';
-
+    content: '';
 }
 button.confirm {
     color: #fafafa !important;
@@ -173,7 +167,7 @@ color: #fafafa !important;
 }
 
 button.save::before {
-    content: 'Salvar ';
+    content: '';
 }
 button.save {
     color: #fafafa !important;
@@ -203,7 +197,7 @@ color: #fafafa !important;
 }
 
 a.cancel::before {
-    content: 'Cancelar ';
+    content: '';
 }
 a.cancel {
     color: #fafafa !important;
