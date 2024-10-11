@@ -43,7 +43,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <div class="buttons">
-                <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary back"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+                Voltar <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary back"><i class="fa-solid fa-arrow-rotate-left"></i></a>
                 <!-- <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger float-right">Excluir</a> -->
             </div>
         </form>
