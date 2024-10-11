@@ -50,7 +50,7 @@ class OpportunityUpdateView(BaseContextView, UpdateView):
     model = Opportunity
     form_class = OpportunityForm
     template_name = 'opportunity_form.html'
-    success_url = reverse_lazy('quality:notification_list')
+    success_url = reverse_lazy('quality:opportunity_list')
 
     def get_form_kwargs(self):
         # Adiciona o user nos kwargs do formulário
