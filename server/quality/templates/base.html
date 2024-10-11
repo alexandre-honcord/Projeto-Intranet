@@ -74,13 +74,13 @@
     </nav>
 
     {% if messages %}
-        <div>
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-            {% endfor %}
+    <div>
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
         </div>
+        {% endfor %}
+    </div>
     {% endif %}
 
     <div class="content">
@@ -101,6 +101,18 @@
                 link.classList.add('active'); // Adicione a classe active
             }
         });
+    });
+</script>
+<script>
+    //Fehca a mensagem de criação sozinha
+    // Tempo em milissegundos antes de fechar automaticamente (ex: 5000ms = 5s)
+    const autoCloseTime = 5000;
+
+    document.querySelectorAll('.alert').forEach(alert => {
+        setTimeout(() => {
+            alert.classList.remove('show');
+            alert.classList.add('fade');
+        }, autoCloseTime);
     });
 </script>
 {% endblock %}
