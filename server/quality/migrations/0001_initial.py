@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
                 ('deadline', models.DateTimeField(blank=True, null=True, verbose_name='Data de Finalização')),
                 ('tipo', models.CharField(choices=[('sugestao', 'Sugestão'), ('problema', 'Problema Identificado'), ('inovacao', 'Oportunidade de Inovação'), ('eficiencia', 'Melhoria de Eficiência'), ('custos', 'Redução de Custos'), ('qualidade', 'Aumento de Qualidade'), ('experiencia', 'Aprimoramento de Experiência do Cliente'), ('tecnologia', 'Implementação de Tecnologia'), ('treinamento', 'Capacitação ou Treinamento'), ('sustentabilidade', 'Sustentabilidade')], default='Melhoria', max_length=50)),
                 ('prioridade', models.CharField(choices=[('Baixa', 'Baixa'), ('Média', 'Média'), ('Alta', 'Alta')], default='Média', max_length=50)),
-                ('created_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Criado por:')),
+                ('created_by', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Criado por:')),
                 ('location', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='quality.location', verbose_name='Local')),
                 ('status', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='quality.status', verbose_name='Status')),
             ],
