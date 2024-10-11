@@ -395,10 +395,16 @@ color: #fafafa !important;
 
 
 
-  a:hover > i {
+  .content a:hover > i {
     animation: jello-vertical 1s both;
   }
 
-  button:hover > i {
+  .content button:hover > i {
     animation: jello-vertical 1s both;
   }
+
+  .content .options span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
