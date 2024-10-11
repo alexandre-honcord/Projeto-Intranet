@@ -16,15 +16,15 @@ class OpportunityForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop('user', None)  # Remove o usuário dos kwargs
+        self.user = kwargs.pop('user', None)  # Remove the user from kwargs
         super().__init__(*args, **kwargs)
 
     def save(self, commit=True):
         instance = super().save(commit=False)
         if self.user and self.user.is_authenticated:
-            instance.created_by = self.user  # Atribui o usuário autenticado
+            instance.created_by = self.user  # Set the user if authenticated
         else:
-            instance.created_by = None  # Armazena como anônimo se o usuário não estiver logado
+            instance.created_by = None  # Set to None if anonymous
         if commit:
             instance.save()
         return instance

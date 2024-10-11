@@ -33,12 +33,11 @@ class OpportunityCreateView(BaseContextView, CreateView):
     model = Opportunity
     form_class = OpportunityForm
     template_name = 'opportunity_form.html'
-    success_url = reverse_lazy('quality:opportunity_create')
+    success_url = reverse_lazy('quality:opportunity_list')
 
     def get_form_kwargs(self):
-        # Adiciona o user nos kwargs do formulário
         kwargs = super().get_form_kwargs()
-        kwargs['user'] = self.request.user  # Passa o usuário autenticado
+        kwargs['user'] = self.request.user  # Pass the authenticated user to the form
         return kwargs
 
     def form_valid(self, form):
