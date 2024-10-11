@@ -87,7 +87,9 @@
 
 div.alert {
     position: absolute;
-    top: 30%;
+    background-color: #49956B;
+    color: #fafafa;
+    top: 219px;
     left: 50%;
     z-index: 9999;
     width: 50%;
