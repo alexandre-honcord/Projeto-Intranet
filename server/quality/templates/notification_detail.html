@@ -26,15 +26,13 @@
         <p class="card-text"><strong>Localização:</strong> {{ notification.location }}</p>
         
         <!-- Identificação e Data de Criação -->
-        <p class="card-text">
-            <small class="text-muted">
-                {% if notification.identified_by %}
-                    Identificado por: {{ notification.identified_by }} em {{ notification.created_at }}
-                {% else %}
-                    Identificação anônima criada em {{ notification.created_at }}
-                {% endif %}
-            </small>
-        </p>
+        
+        
+        {% if notification.identified_by %}
+        <small class="text-muted">Identificado por: {{ notification.identified_by }} em {{ notification.created_at }}</small>
+        {% else %}
+        <small class="text-muted">Identificação anônima criada em {{ notification.created_at }}</small>
+        {% endif %}
         
         <hr>
         

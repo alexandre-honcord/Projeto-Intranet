@@ -19,15 +19,12 @@
         <p class="card-text"><strong>Setor:</strong> {{ opportunity.location }}</p>
         
         <!-- Identificação e Data -->
-        <p class="card-text">
-            <small class="text-muted">
-                {% if opportunity.created_by %}
-                    Identificado por: {{ opportunity.created_by.username }} em {{ opportunity.created_at }}
-                {% else %}
-                    Identificação anônima criada em {{ opportunity.created_at }}
-                {% endif %}
-            </small>
-        </p>
+        {% if opportunity.created_by %}
+        <small class="text-muted">Identificado por: {{ opportunity.created_by.username }} em {{ opportunity.created_at }}</small>
+        {% else %}
+        <small class="text-muted">Identificação anônima criada em {{ opportunity.created_at }}</small>
+        {% endif %}
+
 
         <hr>
 
