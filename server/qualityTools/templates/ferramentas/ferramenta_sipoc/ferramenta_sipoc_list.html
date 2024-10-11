@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Ferramenta SIPOC{% endblock %}
+{% block title %}SIPOC{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
@@ -10,8 +10,8 @@
     <div class="col">
         <table class="table">
             <thead>
-                <h1>Ferramenta SIPOC</h1>
-                <a href="{% url 'qualityTools:ferramentasipoc_create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+                <h1>SIPOC</h1>
+                <a href="{% url 'qualityTools:ferramentasipoc-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
                 <tr>
                     <th>#</th>
                     <th>Macroprocesso</th>
@@ -30,8 +30,8 @@
                     <td>{{ ferramenta.mapeamento.vigencia|default_if_none:"N/A" }}</td>
                     <td>{{ ferramenta.mapeamento.gestor|default_if_none:"N/A" }}</td>
                     <td>
-                        <a href="{% url 'qualityTools:ferramentasipoc_update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="{% url 'qualityTools:ferramentasipoc_delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
+                        <a href="{% url 'qualityTools:ferramentasipoc-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{% url 'qualityTools:ferramentasipoc-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
                 {% empty %}

@@ -6,6 +6,7 @@ from .forms import OpportunityForm, NotificationForm
 from rest_framework import viewsets
 from .serializers import OpportunitySerializer, NotificationSerializer
 from default.models.models_links import Tool, AppsTool
+from django.contrib import messages
 
 class BaseContextView:
     def get_context_data(self, **kwargs):
@@ -18,6 +19,10 @@ class OpportunityListView(BaseContextView, ListView):
     model = Opportunity
     template_name = 'opportunity_list.html'
     context_object_name = 'opportunities'
+
+    def get_queryset(self):
+        # Ordena as notificações da mais nova para a mais antiga
+        return Opportunity.objects.all().order_by('-created_at')
 
 class OpportunityDetailView(BaseContextView, DetailView):
     model = Opportunity
@@ -36,6 +41,11 @@ class OpportunityCreateView(BaseContextView, CreateView):
         kwargs['user'] = self.request.user  # Passa o usuário autenticado
         return kwargs
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Oportunidade criada com sucesso!')  # Adiciona a mensagem de sucesso
+        return response
+
 class OpportunityUpdateView(BaseContextView, UpdateView):
     model = Opportunity
     form_class = OpportunityForm
@@ -47,6 +57,11 @@ class OpportunityUpdateView(BaseContextView, UpdateView):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user  # Passa o usuário autenticado
         return kwargs
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Oportunidade atualizada com sucesso!')  # Adiciona a mensagem de sucesso
+        return response
 
 class OpportunityDeleteView(BaseContextView, DeleteView):
     model = Opportunity
@@ -61,6 +76,10 @@ class NotificationListView(BaseContextView, ListView):
     model = Notification
     template_name = 'notification_list.html'
     context_object_name = 'notifications'
+
+    def get_queryset(self):
+        # Ordena as notificações da mais nova para a mais antiga
+        return Notification.objects.all().order_by('-created_at')
 
 class NotificationDetailView(BaseContextView, DetailView):
     model = Notification
@@ -79,7 +98,9 @@ class NotificationCreateView(BaseContextView, CreateView):
         return kwargs
 
     def form_valid(self, form):
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        messages.success(self.request, 'Notificação criada com sucesso!')  # Adiciona a mensagem de sucesso
+        return response
 
 class NotificationUpdateView(BaseContextView, UpdateView):
     model = Notification
@@ -93,7 +114,9 @@ class NotificationUpdateView(BaseContextView, UpdateView):
         return kwargs
     
     def form_valid(self, form):
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        messages.success(self.request, 'Notificação atualizada com sucesso!')  # Adiciona a mensagem de sucesso
+        return response
 
 class NotificationDeleteView(BaseContextView, DeleteView):
     model = Notification

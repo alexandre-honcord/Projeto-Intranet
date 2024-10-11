@@ -1,4 +1,3 @@
-<!-- core/templates/notification_detail.html -->
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
@@ -6,9 +5,32 @@
 
 <div class="card">
     <div class="card-body">
+        <!-- Título -->
         <h5 class="card-title">{{ notification.title }}</h5>
+        
+        <!-- Conteúdo -->
         <p class="card-text">{{ notification.content }}</p>
-        <p class="card-text"><small class="text-muted">Identificado por: {{ notification.identified_by }}</small></p>
+        
+        <!-- Prioridade -->
+        <p class="card-text"><strong>Prioridade:</strong> {{ notification.priority }}</p>
+        
+        <!-- Cliente -->
+        <p class="card-text"><strong>Cliente:</strong> {{ notification.client }}</p>
+        
+        <!-- Localização (Setor) -->
+        <p class="card-text"><strong>Localização:</strong> {{ notification.location }}</p>
+        
+        <!-- Identificação e Data de Criação -->
+        <p class="card-text">
+            <small class="text-muted">
+                {% if notification.identified_by %}
+                    Identificado por: {{ notification.identified_by }} em {{ notification.created_at }}
+                {% else %}
+                    Identificação anônima criada em {{ notification.created_at }}
+                {% endif %}
+            </small>
+        </p>
+        
         <hr>
         
         <!-- Formulário de Edição da Notificação -->
@@ -16,8 +38,9 @@
             {% csrf_token %}
             {{ form.as_p }}
             <div class="buttons">
-                <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary back"><i class="fa-solid fa-arrow-rotate-left"></i></a>
-                <!-- <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger float-right">Excluir</a> -->
+                <a href="{% url 'quality:notification_list' %}" class="btn btn-secondary back">
+                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                </a>
             </div>
         </form>
     </div>
