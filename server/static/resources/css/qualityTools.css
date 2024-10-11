@@ -321,7 +321,7 @@ input[type='date']  {
 
 .card-footer {
     padding: 16px;
-    background-color: #fff !important;
+    background-color: transparent !important;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -443,9 +443,23 @@ h5 {
     top: 318px;
     height: 10px !important;
 }
+.card-body {
+    box-shadow: 0 1.2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .card-body h5 {
     padding-bottom: 16px;
 }
 .card-body p {
     text-align: left;
+}
+
+.card-body h1,
+.col h1 {
+padding-top: 16px !important;
+padding-bottom: 32px !important;
+color: #3b0505 !important;
+border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+text-transform: capitalize;
+font-weight: 600;
 }

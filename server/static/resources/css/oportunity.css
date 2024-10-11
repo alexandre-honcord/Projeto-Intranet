@@ -279,6 +279,13 @@ border-color: #236b43!important;
 color: #fafafa !important;
 }
 
+
+.content h2 {
+    padding-top: 16px !important;
+    padding-bottom: 32px !important;
+    color: #3b0505 !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+}
 .buttons {
     display: flex;
     align-items: center;
