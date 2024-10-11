@@ -56,7 +56,7 @@ class Opportunity(models.Model):
     
     title = models.CharField(max_length=100, verbose_name='Titulo')
     description = models.TextField( verbose_name='Descrição')
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Criado por:')
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Criado por:', default='Não identificado')
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Data de Finalização')
     tipo = models.CharField(max_length=50,null=False, blank=False, choices=TIPO_CHOICES, default='Melhoria')
