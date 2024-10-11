@@ -3,6 +3,12 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
+<style>
+    li.nav-item:nth-child(2) {
+    background-color: #eee !important;
+    border-radius: 6px 6px 0 0;
+}
+</style>
 <h2>Notificações de Eventos Adversos</h2>
 <a href="{% url 'quality:notification_create' %}" class="btn btn-sm btn-success mt-3 add"><i class="fa-solid fa-plus"></i></a>
 <ul class="list-group mt-3">
@@ -11,9 +17,9 @@
         <div class="col-md-4 options">
             <a class="btn btn-primary btn-sm badges">Encerrada</a>
             <span>
-                <a href="{% url 'quality:notification_detail' notification.pk %}" class="btn btn-primary btn-sm details"><i class="fa-solid fa-list-check"></i></a>
-                <a href="{% url 'quality:notification_update' notification.pk %}" class="btn btn-primary btn-sm edit"><i class="fa-solid fa-pen"></i></a>
-                <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-danger btn-sm delet"><i class="fa-solid fa-trash"></i></a>
+                <a href="{% url 'quality:notification_detail' notification.pk %}" class="btn btn-sm btn-primary  details"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Detalhes"><i class="fa-solid fa-list-check"></i></a>
+                <a href="{% url 'quality:notification_update' notification.pk %}" class="btn btn-sm btn-primary edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Editar"><i class="fa-solid fa-pen"></i></a>
+                <a href="{% url 'quality:notification_delete' notification.pk %}" class="btn btn-sm btn-primary delet"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Excluir"><i class="fa-solid fa-trash"></i></a>
             </span>
         </div>
         <div class="row">

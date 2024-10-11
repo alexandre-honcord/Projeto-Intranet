@@ -5,12 +5,17 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
-<h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %} SIPOC</h1>
+<style>
+    li.nav-item:nth-child(3) {
+    background-color: #eee !important;
+    border-radius: 6px 6px 0 0;
+}
+</style>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="card sipoc">
         <div class="card-body">
-            
+            <h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %} SIPOC</h1>
             {% if not form.instance.id %}
                 <h5>Cadastrar Novo Mapeamento SIPOC:</h5>
                 <div class="mapeamento">
@@ -109,7 +114,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary save"><i class="fa-solid fa-floppy-disk"></i></button>
+                <button type="submit" class="btn btn-sm btn-primary save">Salvar <i class="fa-solid fa-floppy-disk"></i></button>
             </div>
         </div>
         

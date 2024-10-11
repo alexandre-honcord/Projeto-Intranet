@@ -3,7 +3,12 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
-
+<style>
+    li.nav-item:nth-child(1) {
+        background-color: #eee !important;
+    border-radius: 6px 6px 0 0;
+}
+</style>
 <h2>Nova Oportunidade</h2>
 <form method="post">
     {% csrf_token %}
@@ -113,8 +118,8 @@
     
     <!-- Botões -->
     <div class="buttons">
-        <button type="submit" class="btn btn-primary save"><i class="fa-solid fa-floppy-disk"></i></button>
-        <a href="{% url 'quality:opportunity_list' %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></a>
+        <button type="submit" class="btn btn-primary save">Salvar<i class="fa-solid fa-floppy-disk"></i></button>
+        <a href="{% url 'quality:opportunity_list' %}" class="btn btn-sm btn-primary cancel"> Cancelar<i class="fa-solid fa-ban"></i></a>
     </div>
 </form>
 

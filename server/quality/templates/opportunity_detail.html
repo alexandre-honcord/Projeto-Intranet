@@ -2,6 +2,12 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/oportunity.css' %}">
+<style>
+    li.nav-item:nth-child(1) {
+        background-color: #eee !important;
+    border-radius: 6px 6px 0 0;
+}
+</style>
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">{{ opportunity.title }}</h5>

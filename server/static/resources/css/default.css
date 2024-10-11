@@ -102,6 +102,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 html {
@@ -150,6 +151,7 @@ body {
     border-radius: 6px;
     background-color: var(--list-bg-color);
     box-shadow: var(--box-shadow-effect);
+    
 }
 
 .sidebar-menu__honcord-button img {
@@ -610,14 +612,15 @@ form button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     top: -10px;
-    right: -10px;
-    padding: 4px;
+    left: -10px;
+    padding: 0;
+    margin: 0;
     border-radius: 50%;
     background-color: #b32325;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     font-weight: 600;
 }
 
@@ -632,3 +635,4 @@ form button:hover {
         transform: translateY(0);
     }
 }
+

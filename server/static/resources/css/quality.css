@@ -11,28 +11,76 @@
 }
 
 .navbar {
-    padding: 8px 0 0 0;
-    background-color: #e2e2e2 !important;
-}
 
+    padding: 8px 0 0 0;
+
+    
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
 .navbar .nav-link {
     font-weight: 600 !important;
     color: #343434 !important;
+    display: flex;
 
 }
+.nav-item a {
+    display: flex;
+    align-items: center; 
+}
 
-.nav-item:hover {
-    background-color: #fafafa;
-    border-radius: 8px 8px 0 0px;
+.nav-item:hover > a {
+    color: #b32325 !important;
 }
 
 .content {
     padding: 16px;
     height: 100%;
     overflow-y: scroll;
+    background-color: #eee;
 }
 
 
 .dropdown-item:hover {
     background-color: #d8d8d8;
+}
+
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+.content a:hover > i {
+    animation: jello-vertical 1s both;
+  }
+
+.content button:hover > i {
+    animation: jello-vertical 1s both;
+}
+
+.content .options span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }

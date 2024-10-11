@@ -5,6 +5,12 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
+<style>
+    li.nav-item:nth-child(3) {
+        background-color: #eee !important;
+    border-radius: 6px 6px 0 0;
+}
+</style>
 <h1>{% if form.instance.id %}Editar{% else %}Adicionar{% endif %}</h1>
 
 <form id="ferramentaForm" method="post">
@@ -68,7 +74,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary  save"><i class="fa-solid fa-floppy-disk"></i></button>
+            <button type="submit" class="btn btn-sm btn-primary save">Salvar <i class="fa-solid fa-floppy-disk"></i></button>
         </div>
     </div>
 </form>

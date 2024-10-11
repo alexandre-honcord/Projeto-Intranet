@@ -6,13 +6,19 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
+<style>
+    li.nav-item:nth-child(3) {
+        background-color: #eee !important;
+    border-radius: 6px 6px 0 0;
+}
+</style>
 <div class="delet-confirm">
     <div>
         <h3>Tem certeza que deseja excluir ? "{{ object }}"?</h3>
         <form method="post">
             {% csrf_token %}
-            <button type="submit" class="btn btn-sm btn-danger confirm"><i class="fa-solid fa-check"></i></button>
-            <a href="{% url 'qualityTools:ferramentaishikawa_list' %}" class="btn btn-sm btn-secondary cancel"><i class="fa-solid fa-ban"></i></a>
+            <button type="submit" class="btn btn-sm btn-primary confirm">Excluir <i class="fa-solid fa-check"></i></button>
+            <a href="{% url 'qualityTools:ferramentaishikawa_list' %}" class="btn btn-sm btn-primary cancel">Cancelar <i class="fa-solid fa-ban"></i></a>
         </form>
     </div>
 </div>
