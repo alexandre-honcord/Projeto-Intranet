@@ -72,10 +72,10 @@ urlpatterns = [
     path('5-porques/deletar/<int:pk>/', Ferramenta5PorquesDeleteView.as_view(), name='ferramenta5porques-delete'),
 
     # FerramentaSIPOC URLs
-    path('ferramenta-sipoc/', FerramentaSIPOCListView.as_view(), name='ferramentasipoc_list'),
-    path('ferramenta-sipoc/create/', FerramentaSIPOCCreateView.as_view(), name='ferramentasipoc_create'),
-    path('ferramenta-sipoc/update/<int:pk>/', FerramentaSIPOCUpdateView.as_view(), name='ferramentasipoc_update'),
-    path('ferramenta-sipoc/delete/<int:pk>/', FerramentaSIPOCDeleteView.as_view(), name='ferramentasipoc_delete'),
+    path('sipoc/', FerramentaSIPOCListView.as_view(), name='ferramentasipoc_list'),
+    path('sipoc/cadastrar/', FerramentaSIPOCCreateView.as_view(), name='ferramentasipoc-create'),
+    path('sipoc/editar/<int:pk>/', FerramentaSIPOCUpdateView.as_view(), name='ferramentasipoc-update'),
+    path('sipoc/deletar/<int:pk>/', FerramentaSIPOCDeleteView.as_view(), name='ferramentasipoc-delete'),
 
     
     # Incluindo as rotas da API

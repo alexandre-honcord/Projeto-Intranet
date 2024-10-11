@@ -10,11 +10,9 @@ class OpportunityForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
-            'deadline': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
             'tipo': forms.Select(attrs={'class': 'form-control'}),
             'prioridade': forms.Select(attrs={'class': 'form-control'}),
             'location': forms.Select(attrs={'class': 'form-control'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -23,8 +21,10 @@ class OpportunityForm(forms.ModelForm):
 
     def save(self, commit=True):
         instance = super().save(commit=False)
-        if self.user:
-            instance.created_by = self.user  # Atribui o usuário da sessão
+        if self.user and self.user.is_authenticated:
+            instance.created_by = self.user  # Atribui o usuário autenticado
+        else:
+            instance.created_by = None  # Armazena como anônimo se o usuário não estiver logado
         if commit:
             instance.save()
         return instance

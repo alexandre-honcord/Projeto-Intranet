@@ -56,7 +56,7 @@ class Opportunity(models.Model):
     
     title = models.CharField(max_length=100, verbose_name='Titulo')
     description = models.TextField( verbose_name='Descrição')
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Criado por:')
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Criado por:', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Data de Finalização')
     tipo = models.CharField(max_length=50,null=False, blank=False, choices=TIPO_CHOICES, default='Melhoria')
@@ -68,7 +68,7 @@ class Opportunity(models.Model):
         return self.title
     def save(self, *args, **kwargs):
         if not self.status_id:
-            pendente_status = Status.objects.get(name='Pendente')  # Busca o status 'Pendente'
+            pendente_status, created = Status.objects.get_or_create(name='Pendente')  # Busca ou cria o status 'Pendente'
             self.status = pendente_status
         super().save(*args, **kwargs)
     
@@ -88,6 +88,6 @@ class Notification(models.Model):
         return self.title
     def save(self, *args, **kwargs):
         if not self.status_id:
-            pendente_status = Status.objects.get(name='Pendente')  # Busca o status 'Pendente'
+            pendente_status, created = Status.objects.get_or_create(name='Pendente')  # Busca ou cria o status 'Pendente'
             self.status = pendente_status
         super().save(*args, **kwargs)

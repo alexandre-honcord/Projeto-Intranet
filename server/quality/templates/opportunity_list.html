@@ -26,7 +26,11 @@
             <div class="col-md-8">
                 <h5>{{ opportunity.title }}</h5>
                 <p>{{ opportunity.description }}</p>
-                <small class="text-muted">Criado por: {{ opportunity.created_by.username }}</small>
+                {% if opportunity.created_by %}
+                    <small class="text-muted">Criado por: {{ opportunity.created_by }}</small>
+                {% else %}
+                    <small class="text-muted">Usuário não Identificado</small>
+                {% endif %}
             </div>
 
         </div>
