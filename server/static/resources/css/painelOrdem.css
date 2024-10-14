@@ -82,7 +82,11 @@
     background-color: #49956b !important;
     border: 1px solid #49956b !important;
 }
-
+.button-ordem:hover {
+    background-color: #fafafa !important;
+    border: 1px solid #49956b !important;
+    color: #49956b !important;
+}
 .button-ordem i {
     font-size:1.1rem ;
 }
@@ -174,11 +178,11 @@ color: #49956b;
     position: absolute;
     height: 100%;
     top: 0;
-    left: -100%; /* Começa fora da tela */
+    left: -100%;
     width: 90px;
-    background: rgba(255, 255, 255, 0.9);
-    filter: blur(30px);
-    animation: shine-alt1 3s ease-in-out infinite; /* Duração da animação */
+    background: rgba(255, 255, 255, 1);
+    filter: blur(20px);
+    animation: shine-alt1 3s ease infinite;
 }
 
 #aberta-tab-pane .time,
@@ -229,15 +233,17 @@ color: #49956b;
     color: #f3f3f3;
 }
 
-.card-item__2,
+
+/* .card-item__2,
 .card-item__3 {
-    max-height: 100px; /* Define a altura máxima */
-    overflow: hidden; /* Oculta o texto que ultrapassar a altura */
-    text-overflow: ellipsis; /* Adiciona reticências */
-    display: -webkit-box; /* Para suporte a vários navegadores */
-    -webkit-box-orient: vertical; /* Para suporte a vários navegadores */
-    -webkit-line-clamp: 4; /* Número máximo de linhas a serem exibidas */
-}
+    max-height: 100px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 4; 
+} 
+*/
 
 .card-item__2 p,
 .card-item__3 p  {

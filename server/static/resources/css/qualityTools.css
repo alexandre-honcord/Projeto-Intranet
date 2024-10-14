@@ -222,11 +222,11 @@ border-color: #421c58!important;
     position: absolute;
     height: 100%;
     top: 0;
-    left: -100%; /* Começa fora da tela */
+    left: -100%;
     width: 90px;
     background: rgba(255, 255, 255, 0.9);
-    filter: blur(30px);
-    animation: shine-alt1 3s ease-in-out infinite; /* Duração da animação */
+    filter: blur(20px);
+    animation: shine-alt1 3s ease infinite;
 }
 
 
