@@ -4,9 +4,9 @@
 {% endblock %}
 {% load static %}
 {% block home %}
-<div class="content" data-block="home">
-    <p>User: {{ user.username }}</p>
-    <p>Authenticated: {{ user.is_authenticated }}</p>
+<link rel="stylesheet" href="{% static '/resources/css/home.css' %}">
+<div class="home" data-block="home">
+    <iframe src="https://www.honcord.com.br"></iframe>
 </div>
 
 {% endblock %}

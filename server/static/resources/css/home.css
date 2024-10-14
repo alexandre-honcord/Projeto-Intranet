@@ -1,0 +1,12 @@
+.home {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: calc(100dvh - 60px);   
+}
+
+.home iframe {
+    width: 100%;
+    height: 100%;
+}
