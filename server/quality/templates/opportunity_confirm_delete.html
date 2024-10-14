@@ -15,8 +15,8 @@
         <form method="post">
             {% csrf_token %}
             <div class="buttons">
-                <button type="submit" class="btn btn-sm btn-primary confirm">Confirmar <i class="fa-solid fa-check"></i></button>
-                <a href="{% url 'quality:opportunity_list' %}" class="btn btn-sm btn-primary cancel">Cancelar <i class="fa-solid fa-ban"></i></a>
+                <button type="submit" class="btn btn-sm btn-primary confirm"><span class="cancel-text">Confirmar</span> <i class="fa-solid fa-check"></i></button>
+                <a href="{% url 'quality:opportunity_list' %}" class="btn btn-sm btn-primary cancel"><span class="cancel-text">Cancelar</span><i class="fa-solid fa-ban"></i></a>
             </div>
         </form>
     </div>

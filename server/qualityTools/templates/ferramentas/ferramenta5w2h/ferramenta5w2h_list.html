@@ -18,7 +18,7 @@
 
             <thead>
                 <h1>5W2H</h1>
-                <a href="{% url 'qualityTools:ferramenta5w2h-create' %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i></a>
+                <a href="{% url 'qualityTools:ferramenta5w2h-create' %}" class="btn btn-sm btn-primary new"><span class="cancel-text">Novo</span><i class="fa-solid fa-plus"></i></a>
                 <tr>
                     <th>ID</th>
                     <th>Oportunidade de Melhoria</th>
@@ -47,8 +47,10 @@
                     <td>{{ ferramenta.how }}</td>
                     <td>R$ {{ ferramenta.how_much }}</td>
                     <td>
-                        <a href="{% url 'qualityTools:ferramenta5w2h-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Editar"><i class="fa-solid fa-pen"></i></a>
-                        <a href="{% url 'qualityTools:ferramenta5w2h-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Excluir"><i class="fa-solid fa-trash"></i></a>
+                        <p>
+                            <a href="{% url 'qualityTools:ferramenta5w2h-update' pk=ferramenta.pk %}" class="btn btn-sm btn-primary edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Editar"><span class="cancel-text">Editar</span><i class="fa-solid fa-pen"></i></a>
+                            <a href="{% url 'qualityTools:ferramenta5w2h-delete' pk=ferramenta.pk %}" class="btn btn-sm btn-danger delet"  data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Excluir"><span class="cancel-text">Excluir</span><i class="fa-solid fa-trash"></i></a>
+                        </p>
                     </td>
                 </tr>
                 {% endfor %}
