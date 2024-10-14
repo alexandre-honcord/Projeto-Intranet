@@ -63,22 +63,48 @@
 }
 
 .button-ordem {
-    background-color: #b32325;
-    box-shadow: 0 1.2px 4px rgba(0, 0, 0, 0.4);
-    padding: 8px;
-    border-radius: 6px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s ease;
+    font-size: 0.9rem;
     font-weight: 600;
-    color: #fafafa;
-    text-decoration: none;
+    color: #fafafa !important;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    width: 100px;
+    height: 35px;
+    background-color: #49956b !important;
+    border: 1px solid #49956b !important;
 }
 
+.button-ordem i {
+    font-size:1.1rem ;
+}
 
+.button-ordem:hover > .cancel-text {
+    display: none;
+}
+.button-ordem:hover > i {
+    display: flex;
+}
+.button-ordem > i {
+    display: none;
+}
+
+.button-ordem:hover > i {
+    animation: jello-vertical 1s both;
+  }
 
 .ordens ul li button {
     color: #5e2f32 !important;
+}
+.button-ordem {
+background-color: #fafafa;
+border-color: #49956b;
+color: #49956b;
 }
 
 .ordens ul li button.active {
@@ -88,7 +114,6 @@
     border: 2px solid #eeeeee !important;
     color: #B32325 !important;
     font-weight: 600;
-
 }
 
 #aberta-tab-pane,
@@ -126,31 +151,78 @@
     gap: 10px;
 }
 
-.time,
 .badges {
-    padding: 8px;
-    border-radius: 6px;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    color: #fafafa !important;
+    margin: 8px;
+    pointer-events: none; /* Consider changing this if you want the hover effect */
+    overflow: hidden; /* Para garantir que o brilho não saia do botão */
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
 }
+.badges::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    width: 90px;
+    background: rgba(255, 255, 255, 0.9);
+    filter: blur(30px);
+    animation: shine-alt1 3s ease-in-out infinite; /* Duração da animação */
+}
+
 #aberta-tab-pane .time,
 #aberta-tab-pane .badges {
-    background-color: #a8d6e96b;
-    color: #498fad;
+    background-color: #498fad;
 }
+
 #emProcesso-tab-pane .time,
 #emProcesso-tab-pane .badges {
-    background-color: #a8e9b46b;
-    color: #6ead49;
+    background-color: #6ead49;
 }
 #encerradas-tab-pane .time,
 #encerradas-tab-pane .badges {
-    background-color: #e9a8a86b;
-    color: #ad4949;
+    background-color: #ad4949;
 }
+
+@keyframes shine-alt1 {
+    0% {
+        opacity: 0.5;
+        transform: translateX(-100px) skewX(-15deg);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateX(300px) skewX(-15deg);
+    }
+    100% {
+        opacity: 0.5; /* Para fazer a animação voltar */
+        transform: translateX(400px) skewX(-15deg);
+    }
+}
+
+.time {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: #fafafa !important;
+    margin: 8px;
+    pointer-events: none; /* Consider changing this if you want the hover effect */
+    overflow: hidden; /* Para garantir que o brilho não saia do botão */
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    width: 120px;
+    height: 35px;
+    border-radius: 8px; 
+}
+
 .time i {
-    color: #2b2b2b;
+    color: #f3f3f3;
 }
 
 .card-item__2,
@@ -174,4 +246,29 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+
+@keyframes jello-vertical {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+        transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
