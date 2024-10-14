@@ -4,7 +4,7 @@
     Login
 {% endblock %}
 {% block login %}
-
+<link rel="stylesheet" href="{% static '/resources/css/login.css' %}">
 <div class="login-container" data-block="login">
     <form method="post">
         {% csrf_token %}
