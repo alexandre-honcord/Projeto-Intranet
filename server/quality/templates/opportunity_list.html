@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-8">
                 <h5>{{ opportunity.title }}</h5>
-                <p>{{ opportunity.description }}</p>
+                <p class="description">{{ opportunity.description }}</p>
                 {% if opportunity.created_by %}
                     <small class="text-muted">Criado por: {{ opportunity.created_by }}</small>
                 {% else %}
