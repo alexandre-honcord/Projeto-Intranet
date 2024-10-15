@@ -8,7 +8,7 @@ urlpatterns = [
     path('', include('default.urls')),
     path('qualidade/', include('quality.urls')),
     path('ferramentas/', include('qualityTools.urls')),
-    path("chat/", include("chat.urls")),
+    path('chat/', include('chat.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
