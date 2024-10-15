@@ -247,6 +247,8 @@ input[type='file'] button {
     font-weight: 800;
 }
 
+
+
 @keyframes jello-vertical {
     0% {
         transform: scale3d(1, 1, 1);
@@ -270,3 +272,4 @@ input[type='file'] button {
         transform: scale3d(1, 1, 1);
     }
 }
+

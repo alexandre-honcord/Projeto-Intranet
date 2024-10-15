@@ -384,6 +384,7 @@ cursor: pointer;
     justify-content: center;
     height: fit-content;
 }
+
 textarea {
     padding-left:6px ;
 }
