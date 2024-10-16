@@ -51,13 +51,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%; 
+    height: calc(100dvh - 60px); 
+    overflow-y: auto;
 }
 .accordion {
     padding-bottom: 16px !important; 
 }
 button.accordion-button {
-    background-color: var(--form-bg-color)!important;
+    background-color: #eee!important;
     box-shadow: var(--box-shadow-effect)!important;
     
 }
@@ -67,19 +68,19 @@ button.accordion-button {
 .accordion-button:focus-within,
 .accordion-button:focus-visible,
 .accordion-button:not(.collapsed) {
-    background-color: var(--form-bg-color) !important;
     color: var(--list-span-font-color) !important;
     font-weight: 700;
 }
+
 .accordion-button.collapsed {
     color: var(--list-span-font-color)!important;
     font-weight: 700;
 }
+
 div.accordion-body {
     background-color: var(--form-button-color)!important;
-
-    
 }
+
 ul.nav {
 
     border: none !important;
@@ -94,22 +95,94 @@ ul.nav li {
 }
 ul.nav button {
     border-radius: 8px !important;
-    color: var(--list-span-font-color);
-    background-color: var(--form-button-color) !important;
+    color: #3a3a3a;
+    font-weight: 500;
+    background-color: #adadad !important;
     box-shadow: var(--box-shadow-effect)!important;
-
-
 }
 
-
 ul.nav button.active {
-    background-color: #b32325 !important;
-
+    background-color: #B32325 !important;
 }
 
 ul.nav button:hover {
     background-color: var(--form-h1-color) !important;
     color: var(--body-bg-color) !important;
+}
+
+.button-holder button {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fafafa !important;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    width: 100px;
+    height: 35px;
+}
+
+.button-holder button i {
+    font-size:1.1rem ;
+}
+
+.button-holder button:hover > .cancel-text {
+    display: none;
+}
+.button-holder button:hover > i {
+    display: flex;
+}
+.button-holder button > i {
+    display: none;
+}
+
+.button-holder button:hover > i {
+    animation: jello-vertical 1s both;
+}
+
+.save {
+    background-color: #49956b !important;
+    border: 1px solid #49956b !important;
+}
+
+.save:hover {
+    background-color: #fafafa !important;
+    color: #49956b !important;
+    border: 1px solid #49956b !important;
+    outline: none !important;
+}
+.save:active,
+.save:focus
+.save:target,
+.save::selection {
+background-color: #236b43!important;
+border-color: #236b43!important;
+color: #fafafa !important;
+}
+
+.cancel {
+    background-color: #952b2b !important;
+    border: 1px solid #952b2b !important;
+}
+
+.cancel:hover {
+    background-color: #fafafa !important;
+    color: #952b2b !important;
+    border: 1px solid #952b2b !important;
+    outline: none !important;
+}
+.cancel:active,
+.cancel:focus
+.cancel:target,
+.cancel::selection {
+background-color: #6b2323!important;
+border-color: #6b2323!important;
+color: #fafafa !important;
+
 }
 
 #ordemServicoForm {
@@ -132,10 +205,9 @@ ul.nav button:hover {
 }
 
 .mb-3 {
-width: 100%;
-    background-color: var(--form-bg-color) !important;
-    padding: 16px !important;
-    box-shadow: var(--box-shadow-effect);    
+    width: 100%;
+    background-color: #eee !important; 
+    padding: 16px 16px;
 }
 
 .mb-3 input,
@@ -143,6 +215,12 @@ width: 100%;
     padding-bottom: 16px;
 }
 
+input[type='file'] {
+    padding: 6px !important;
+}
+input[type='file'] button {
+    background-color: #6b2323 !important;
+}
 .mb-3 input:active {
     box-shadow: none;
     border: none;
@@ -161,9 +239,37 @@ width: 100%;
     border: var(--border-effect) !important;
     box-shadow: none !important;
 }
-
+.button-holder {
+    padding-top: 16px;
+}
 .obrigatorio {
     color: #b32325;
     font-weight: 800;
+}
+
+
+
+@keyframes jello-vertical {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+        transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
 

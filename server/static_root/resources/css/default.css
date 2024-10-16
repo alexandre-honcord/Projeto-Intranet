@@ -99,228 +99,31 @@
     --img-filter: brightness(none);
 }
 
-
-
-.body {
-    background-color: var(--body-bg-color);
-    letter-spacing: 0.2px;
-    height: 100dvh;
-    transition: 1s ease;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    border-right: var(--border-effect);
-    background-color: var(--sidebar-bg-color);
-}
-
-.sidebar-menu {
-    position: relative;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border-bottom: var(--border-effect);
-}
-
-.sidebar-menu__honcord-button {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    padding: 4px;
-    border-radius: 6px;
-    background-color: var(--list-bg-color);
-    box-shadow: var(--box-shadow-effect);
-}
-
-.sidebar-menu__honcord-button img {
-    filter: var(--img-filter);
-    object-fit: contain;
-    width: 40px;
-}
-
-.sidebar-menu__label {
-    padding: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.sidebar-menu__label .company {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color:var(--list-span-font-color);
-}
-
-.sidebar-menu__label .function {
-    margin-top: -6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color:var(--list-span-font-color);
-}
-
-.sidebar-apps {
-    display: flex;
-    flex-direction: column;
-    height: 70%;
+* {
     margin: 0;
     padding: 0;
-    gap: 10px;
-    padding: 16px;
-    overflow-y:scroll;
-    scrollbar-width: none; 
-    --ms-overflow-style: none;
-    z-index: 999;
-}
-.sidebar-apps::-webkit-scrollbar {
-    display: none;
 }
 
-.sidebar-apps-item {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1;
+html {
+    font-family: Poppins, 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5rem;
 }
 
-.sidebar-apps-item__button {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    padding: 4px;
-    border-radius: 6px;
-    background-color: var(--list-bg-color);
-    box-shadow: var(--box-shadow-effect);
-    cursor: pointer;
-}
-
-.sidebar-apps-item__button img {
-    filter: var(--list-img-filter) ;
-}
-
-.function-name {
-    color: var(--list-span-font-color);
-    font-size: 0.8rem;
-    padding-left: 8px;
-    font-weight: 500;
-    white-space: nowrap;
-    cursor: none;
-    pointer-events: none;
-    user-select: none; /* Para navegadores modernos */
-    -webkit-user-select: none; /* Para navegadores baseados em WebKit */
-    -moz-user-select: none; /* Para navegadores Firefox */
-    -ms-user-select: none; /* Para navegadores antigos do Internet Explorer */
-}
-
-.sidebar-apps-item__button:hover {
-    transform: scale(1.1);
-    background-color: var(--list-bg-color-hover);
-}
-
-.sidebar-apps-item__button:active {
-    transform: scale(0.999);
-}
-
-.sidebar-apps-item__button:hover img {
-    filter: none;  
-}
-
-.move-sidebar {
-    position: absolute;
-    top: 50%;
-    right: -11px;
-    transform: translateY(-50%);
-    font-size: 0.7rem;
-    color: var(--sidebar-button-color);
-    background-color: var(--sidebar-button-bg-color);
-    padding: 6px;
-    border-radius: 4px;
-    cursor: pointer;
-    z-index: 10 !important;
-}
-
-.move-sidebar:hover {
-    outline: var(--sidebar-button-outline);
-    background-color: var(--sidebar-button-bg-color-hover);
-    color: var(--sidebar-button-color-hover);
-    transition: var(--transition-color2);
-}
-.sidebar.active {
-    width: 80px;
-    transition: var(--transition-width-close)
-}
-
-.sidebar:not(.active) {
-    transition: var(--transition-width-open);
-}
-
-.active .sidebar-menu__label {
-    opacity: 0;
-
-}
-
-.active .function-name {
-    display: none;
-}
-
-.active + section {
-    margin-left: 80px;
-    width: calc(100% - 80px);
-}
-
-.theme-mode {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    padding: 16px;
-}
-
-.theme {
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 997;
-    transition: var(--transition-color2);
-}
-
-.fa-moon {
-    color: #547dd5;
-    background-color: #ddd;
-    padding: 10px;
-    width: 40px;
-    border-radius: 8px;
-}
-.fa-sun {
-    color: #fbe569;
-    background-color: #473d4f;
-    padding: 10px;
-    width: 40px;
-    border-radius: 8px;
-}
-
-.sidebar.action + section {
-    transition: var(--transition-width-open);
-}
-
-.sidebar:not(.action) + section {
-    transition: var(--transition-width-close);
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
 section {
-    margin-left: 200px;
-    width: calc(100% - 200px);
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
 }
 
 .header {
@@ -385,136 +188,8 @@ section {
 .journalHoncord {
     display: none;
     width: 100%;
+    object-fit: fill;
     height: calc(100dvh - 60px);
-}
-
-.main-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99;
-}
-
-.login-container {
-    width: 450px;
-    height: 480px;
-    border-radius: 8px;
-    background-color: var(--form-bg-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: fadeIn 1s ease;
-    box-shadow: var(--box-shadow-effect);
-}
-
-form h1 {
-    color: var(--form-h1-color);
-    text-align: center;
-    cursor: default;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-form p {
-    text-align: center;
-    color: var(--form-p-color);
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: default;
-}
-
-form input {
-    width: 350px;
-    height: 50px;
-    border-radius: 4px;
-    border: var(--border-effect);
-    padding-left: 35px;
-    padding-right: 30px;
-    outline: none;
-    margin-bottom: 16px;
-    font-size: 14px;
-}
-form input::placeholder {
-    color: var(--form-input-placeholder-color);
-}
-form input:focus {
-    border-color: var(--form-icons-color);
-}
-
-form .user-group {
-    position: relative;
-}
-
-form .user-group i {
-    color: var(--form-icons-color);
-    font-size: 18px;
-    cursor: pointer;
-}
-
-form .fa-user,
-form .fa-lock {
-    position: absolute;
-    top: 25%;
-    left: 3%;
-    cursor: default;
-    color: var(--form-icons-color);
-}
-
-form .fa-user:hover {
-    cursor: default;
-}
-
-form .fa-lock:hover {
-    cursor: default;
-}
-
-form .password-view {
-    position: relative;
-}
-
-form .fa-eye {
-    position: absolute;
-    top: 25%;
-    right: 3%;
-    cursor: pointer;
-    color: var(--form-icons-color);
-    
-}
-
-form .fa-eye-slash {
-    position: absolute;
-    top: 25%;
-    right: 3%;
-    margin-right: -1px;
-    cursor: pointer;
-    color: var(--form-icons-color);
-    
-}
-
-form button {
-    width: 350px;
-    height: 50px;
-    background-color: var(--form-button-background);
-    margin-top: 10px;
-    color: var(--form-button-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-form button:hover {
-    background: var(--form-button-bg-color-hover);
-    border: var(--form-button-outline-color-hover);
-    color: var(--form-button-color-hover);
-}
-
-.error-message {
-    color: #b32325; /* Ou qualquer cor que você preferir */
-    margin-top: 10px;
 }
 
 
@@ -624,14 +299,15 @@ form button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     top: -10px;
-    right: -10px;
-    padding: 4px;
+    left: -10px;
+    padding: 0;
+    margin: 0;
     border-radius: 50%;
     background-color: #b32325;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     font-weight: 600;
 }
 
@@ -646,3 +322,4 @@ form button:hover {
         transform: translateY(0);
     }
 }
+

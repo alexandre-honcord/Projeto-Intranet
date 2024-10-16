@@ -1,28 +1,103 @@
 .quality-holder {
     display: flex;
     flex-direction: column;
-    width: 100dvw;
+    width: 100%;
     height: calc(100dvh - 60px);
     background-color: #fafafa;
+    overflow-y: auto;
 }
 .container {
     display: flex;
     margin: 0;
+
 }
 
 .navbar {
 
-    background-color: #e2e2e2 !important;
-    border-bottom: 0.5px solid rgba(17, 34, 85, 0.1);   
-}
+    padding: 8px 0 0 0;
 
+    
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
 .navbar .nav-link {
-    font-weight: 800 !important;
+    font-weight: 600 !important;
     color: #343434 !important;
+    display: flex;
 
 }
+.nav-item a {
+    display: flex;
+    align-items: center; 
+}
+
+.nav-item:hover > a {
+    color: #b32325 !important;
+}
+
 .content {
     padding: 16px;
     height: 100%;
     overflow-y: scroll;
+    background-color: #eee;
+}
+
+
+.dropdown-item:hover {
+    background-color: #d8d8d8;
+}
+
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+.content a:hover > i {
+    animation: jello-vertical 1s both;
+  }
+
+.content button:hover > i {
+    animation: jello-vertical 1s both;
+}
+
+.content .options span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+div.alert {
+    position: absolute;
+    background-color: #49956B;
+    color: #fafafa;
+    top: 219px;
+    left: 50%;
+    z-index: 9999;
+    width: 50%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
 }

@@ -1,5 +1,5 @@
 .notifications-holder {
-width: 96%;
+width: 100%;
 height: calc(100dvh - 60px);
 }
 
@@ -8,12 +8,8 @@ height: calc(100dvh - 60px);
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-radius: 8px;
     width:  100%;
     padding: 16px;
-    border: 0.5px solid rgba(17, 34, 85, 0.1);
-    background-color: #e2e2e2;
-
 }
 
 .notifications_cards {
@@ -28,12 +24,12 @@ height: calc(100dvh - 60px);
     background-color: #fafafa;
     cursor: default;
     transition: all 0.4s ease;
-    
+    overflow: hidden;
 }
 
 .notifications_cards:hover {
-    transform: translateY(-10px);
-    color: #3623b3;
+    transform: translateY(-4px);
+    color: #4c37d3;
     box-shadow: 0 0 0 2px rgba(54, 35, 179, 0.25);
 }
 
@@ -68,8 +64,5 @@ height: calc(100dvh - 60px);
     object-fit: cover; 
     display: block; 
     border-radius: 50%;
-}
-
-.card_content p {
-
+    cursor: default;
 }

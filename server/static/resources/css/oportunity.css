@@ -46,10 +46,6 @@
     gap: 6px;
 }
 
-.checkbox label {
-    position: relative;
-    top: -8px;
-}
 #id_anonymous {
     display: flex;
     width: 18px;

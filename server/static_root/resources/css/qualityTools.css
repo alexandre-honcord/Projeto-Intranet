@@ -1,18 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-
-.content {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(180deg, rgba(250,250,250,1) 53%, rgba(235,235,235,1) 100%);
-}
-
 
 .card {
     background-color: #f1f1f1;
@@ -29,7 +15,6 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
     height: 100%;
-    
 }
 
 th {
@@ -47,10 +32,7 @@ tr {
     padding: 0;
     border: none;
     box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
-
-
 }
-
 
 td {
     white-space: nowrap;
@@ -79,174 +61,268 @@ tr:hover > td{
 }
 
 td:last-child{
-    overflow: visible;
-    white-space: wrap;
-    
+    width: 50px !important;
 }
-.content a {
-    width: fit-content;
-    font-size:0.8rem;
+td:last-child p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+td:last-child .edit,
+td:last-child .delet{
+    width: 60px !important;
+    height: 35px !important;
+}
+
+.content a,
+.content button {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s ease;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #fafafa;
+    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
+    width: 100px;
+    height: 35px;
+}
+.content a i,
+.content button i {
+    font-size:1.1rem ;
+}
+
+.content a:hover > .cancel-text {
+    display: none;
+}
+.content a:hover > i {
+    display: flex;
+}
+.content a > i {
+    display: none;
+}
+
+.content a:hover > i {
+    animation: jello-vertical 1s both;
+}
+
+.content .buttons {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 16px 16px 16px 0;
+    gap: 10px;
+}
+
+.content button:hover > .cancel-text {
+    display: none;
+}
+.content button:hover > i {
+    display: flex;
+}
+.content button > i {
+    display: none;
+}
+
+.content button:hover > i {
+    animation: jello-vertical 1s both;
+  }
+
+
+.new {
     background-color: #49956b;
     border: 1px solid #49956b;
-    margin-bottom: 16px;
-    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
-    transition: all 0.4s ease;
-    text-align: center;
-    vertical-align: middle;
 }
-.content a::before {
-    content: 'Novo ';
-}
-.content a:hover {
+
+
+.new:hover {
     background-color: #fafafa;
     border-color: #49956b;
     color: #49956b;
 }
-.content a:active,
-.content a:focus,
-.content a:target {
+
+
+
+.new:active,
+.new:focus,
+.new:target {
     background-color: #236b43 !important;
     border-color: #236b43 !important;
 }
-a.edit::before {
-    content: '';
-}
 
-a.edit {
-    color: #fafafa !important;
+.edit {
     background-color: #496795 !important;
     border: 1px solid #496795 !important;
-    margin: 8px;
 }
 
-a.edit:hover {
+.edit:hover {
     background-color: #fafafa !important;
     color: #496795 !important;
 }
-a.edit:active,
-a.edit:focus,
-a.edit:target,
-a.edit::selection {
+
+.edit:active,
+.edit:focus,
+.edit:target,
+.edit::selection {
 background-color: #232f6b!important;
 border-color: #232f6b!important;
-color: #fafafa !important;
 }
 
-a.delet::before {
-    content: '';
-}
-a.delet {
-    color: #fafafa !important;
+.delet {
     background-color: #952b2b !important;
     border: 1px solid #952b2b !important;
-    margin: 0;
 }
 
-a.delet:hover {
-    background-color: #fafafa !important;
+.delet:hover {
     color: #952b2b !important;
+    background-color: #fafafa !important;
 }
-a.delet:active,
-a.delet:focus,
-a.delet:target,
-a.delet::selection {
+.delet:active,
+.delet:focus,
+.delet:target,
+.delet::selection {
 background-color: #6b2323!important;
 border-color: #6b2323!important;
+}
+
+.details {
+    background-color: #794995 !important;
+    border: 1px solid #794995 !important;
+}
+
+.details:hover {
+    color: #794995 !important;
+    background-color: #fafafa !important;
+}
+.details:active,
+.details:focus,
+.details:target,
+.details::selection {
+background-color: #421c58!important;
+border-color: #421c58!important;
+}
+
+.content .badges {
+    position: relative;
+    color: #fafafa !important;
+    background-color: rgb(209, 143, 88) !important;
+    border: 1px solid #d18f58 !important;
+    margin: 8px;
+    pointer-events: none; /* Consider changing this if you want the hover effect */
+    overflow: hidden; /* Para garantir que o brilho não saia do botão */
+}
+.content .badges::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    width: 90px;
+    background: rgba(255, 255, 255, 0.9);
+    filter: blur(20px);
+    animation: shine-alt1 3s ease infinite;
+}
+
+
+@keyframes shine-alt1 {
+    0% {
+        opacity: 0.5;
+        transform: translateX(-100px) skewX(-15deg);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateX(300px) skewX(-15deg);
+    }
+    100% {
+        opacity: 0.5; /* Para fazer a animação voltar */
+        transform: translateX(400px) skewX(-15deg);
+    }
+}
+
+.back {
+    background-color: #794995 !important;
+    border: 1px solid #794995 !important;
+}
+
+.back:hover {
+    background-color: #fafafa !important;
+    color: #794995 !important;
+}
+.back:active,
+.back:focus,
+.back:target,
+.back::selection {
+background-color: #421c58!important;
+border-color: #421c58!important;
 color: #fafafa !important;
 }
 
-button.confirm::before {
-    content: 'Excluir ';
-}
-button.confirm {
-    color: #fafafa !important;
+.confirm {
     background-color: #49956b !important;
     border: 1px solid #49956b !important;
-    width: fit-content;
-    height: 30px !important;
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
-    margin: 0;
 }
 
-button.confirm:hover {
+.confirm:hover {
     background-color: #fafafa !important;
     color: #49956b !important;
 }
-button.confirm:active,
-button.confirm:focus
-button.confirm:target,
-button.confirm::selection {
+.confirm:active,
+.confirm:focus
+.confirm:target,
+.confirm::selection {
 background-color: #236b43!important;
 border-color: #236b43!important;
 color: #fafafa !important;
 }
 
-button.save::before {
-    content: 'Salvar ';
-}
-button.save {
-    color: #fafafa !important;
+.save {
     background-color: #49956b !important;
     border: 1px solid #49956b !important;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
-    margin: 0;
 }
 
-button.save:hover {
+.save:hover {
     background-color: #fafafa !important;
     color: #49956b !important;
 }
-button.save:active,
-button.save:focus
-button.save:target,
-button.save::selection {
+.save:active,
+.save:focus
+.save:target,
+.save::selection {
 background-color: #236b43!important;
 border-color: #236b43!important;
 color: #fafafa !important;
 }
-
-a.cancel::before {
-    content: 'Cancelar ';
+.content h2 {
+    padding-top: 16px !important;
+    padding-bottom: 32px !important;
+    color: #3b0505 !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
 }
-a.cancel {
-    color: #fafafa !important;
+
+
+.cancel {
     background-color: #952b2b !important;
     border: 1px solid #952b2b !important;
-    width: fit-content;
-    height: 30px ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: 0 1.2px 4px rgba(0,0,0,0.2);
-    margin: 0;
 }
 
-a.cancel:hover {
+.cancel:hover {
     background-color: #fafafa !important;
     color: #952b2b !important;
 }
-a.cancel:active,
-a.cancel:focus
-a.cancel:target,
-a.cancel::selection {
+.cancel:active,
+.cancel:focus
+.cancel:target,
+.cancel::selection {
 background-color: #6b2323!important;
 border-color: #6b2323!important;
 color: #fafafa !important;
 }
-
 .form-check {
     display: flex;
     align-items: center;
@@ -296,9 +372,7 @@ cursor: pointer;
     border-radius: 16px;
     padding: 32px;
 }
-.delet-confirm div h3 {
 
-}
 .delet-confirm  div form {
     display: flex;
     gap: 10px;
@@ -309,6 +383,10 @@ cursor: pointer;
     align-items: center;
     justify-content: center;
     height: fit-content;
+}
+
+textarea {
+    padding-left:6px ;
 }
 textarea,
 select {
@@ -332,7 +410,6 @@ select {
 input[type='text'], 
 input[type='number'],
 input[type='date']  {
-    box-shadow: none !important;
     border: 0.5px solid rgba(17, 34, 85, .3) !important;
     height: 40px !important;
     color: #404040 !important;
@@ -341,10 +418,12 @@ input[type='date']  {
 }
 
 .card-footer {
-    background-color: #fff !important;
+    padding: 16px;
+    background-color: transparent !important;
     display: flex;
     align-items: center;
     justify-content: left;
+    border-radius: 0 0 8px 8px;
 }
 
 h5 {
@@ -353,4 +432,160 @@ h5 {
     font-size: 1rem;
     font-weight: 500;
     color: #343434 !important;
+}
+
+.sipoc input,
+.sipoc textarea {
+    border-radius: 4px;
+}
+
+.mapeamento {
+    display: flex;
+    gap: 60px;
+    justify-content: space-around;
+    padding: 16px;
+    border-radius: 8px;
+
+}
+.colum-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.colum-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.colum-2 label {
+    position: relative;
+    top: 16px;
+}
+
+.mapeamento1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mapeamento1 div {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+}
+.mapeamento1 div textarea,
+.mapeamento2 div textarea{
+    height: 100px;
+
+}
+.mapeamento2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mapeamento2 div {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;   
+}
+
+.mapeamento3 {
+    display: flex;
+    gap: 10px;
+
+}
+
+.mapeamento3 div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;   
+    width: 250px !important;
+    height: 350px !important;
+    min-height: 250px;
+    min-width: auto;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+.mapeamento3 div textarea {
+    height: 100%;
+}
+
+.mapeamento3 div:nth-child(3) {
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none;
+}
+
+
+.mapeamento3 div:nth-child(3) img {
+    position: absolute;
+    top: 20px;
+    border-radius: 4px;
+    width: 100%;
+    height: 82%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.mapeamento3 div:nth-child(3) #button-img {
+    position: absolute;
+    top: 318px;
+    height: 10px !important;
+}
+.card-body {
+    box-shadow: 0 1.2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-body h5 {
+    padding-bottom: 16px;
+}
+.card-body p {
+    text-align: left;
+}
+
+.card-body h1,
+.col h1 {
+padding-top: 16px !important;
+padding-bottom: 32px !important;
+color: #3b0505 !important;
+border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+text-transform: capitalize;
+font-weight: 600;
+}
+
+
+@keyframes jello-vertical {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+        transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
