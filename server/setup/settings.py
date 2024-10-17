@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'quality',
     'qualityTools',
     'chat',
+    'ramal',
 ]
 
 MIDDLEWARE = [
