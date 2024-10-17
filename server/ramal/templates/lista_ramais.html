@@ -9,47 +9,16 @@
     
     <!-- Barra de pesquisa -->
     <form method="GET" class="form-inline justify-content-center mb-4">
-        <input type="text" id="search" class="form-control mr-2" placeholder="Pesquisar por nome..." value="{{ query }}">
-        <button type="button" class="btn btn-primary">Pesquisar</button>
+        <input type="text" id="search" class="form-control mr-2" placeholder="Pesquisar por nome...">
     </form>
     
     <!-- Tabela de ramais -->
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
-            <tr>
-                <th scope="col">
-                    <a href="#" class="sort" data-sort="nome">Nome
-                        {% if order_by == 'nome' %}
-                            {% if order_direction == 'asc' %}
-                                <i class="fas fa-sort-up"></i>
-                            {% else %}
-                                <i class="fas fa-sort-down"></i>
-                            {% endif %}
-                        {% endif %}
-                    </a>
-                </th>
-                <th scope="col">
-                    <a href="#" class="sort" data-sort="departamento">Departamento
-                        {% if order_by == 'departamento' %}
-                            {% if order_direction == 'asc' %}
-                                <i class="fas fa-sort-up"></i>
-                            {% else %}
-                                <i class="fas fa-sort-down"></i>
-                            {% endif %}
-                        {% endif %}
-                    </a>
-                </th>
-                <th scope="col">
-                    <a href="#" class="sort" data-sort="ramal">Ramal
-                        {% if order_by == 'ramal' %}
-                            {% if order_direction == 'asc' %}
-                                <i class="fas fa-sort-up"></i>
-                            {% else %}
-                                <i class="fas fa-sort-down"></i>
-                            {% endif %}
-                        {% endif %}
-                    </a>
-                </th>
+            <tr class="table-dark">
+                <th scope="col">Nome</th>
+                <th scope="col">Departamento</th>
+                <th scope="col">Ramal</th>
             </tr>
         </thead>
         <tbody id="ramais-table">
@@ -84,7 +53,7 @@
     document.getElementById('search').addEventListener('input', function() {
         const query = this.value;
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `{% url 'lista_ramais' %}?q=` + query, true);
+        xhr.open('GET', `{% url 'ajax_lista_ramais' %}?q=` + query, true);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onload = function() {
             if (xhr.status === 200) {
@@ -93,28 +62,6 @@
             }
         };
         xhr.send();
-    });
-
-    // Função para capturar a ordenação
-    document.querySelectorAll('.sort').forEach(function(header) {
-        header.addEventListener('click', function(e) {
-            e.preventDefault();
-            const sort = this.getAttribute('data-sort');
-            const currentOrder = '{{ order_by }}';
-            let direction = '{{ order_direction }}';
-
-            // Alternar a direção de ordenação
-            if (currentOrder === sort && direction === 'asc') {
-                direction = 'desc';
-            } else {
-                direction = 'asc';
-            }
-
-            // Redirecionar para a URL com os parâmetros de ordenação
-            const query = document.getElementById('search').value;
-            const url = `{% url 'lista_ramais' %}?q=${query}&order_by=${sort}&order_direction=${direction}`;
-            window.location.href = url;
-        });
     });
 </script>
 {% endblock %}
