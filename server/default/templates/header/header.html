@@ -15,7 +15,6 @@
                 data-bs-custom-class="custom-tooltip"
                 data-bs-title="Funcionalidades"></i>
                 <div class="apps">
-                   
                     <div class="apps-item">
                         {% for app in apps %}
                         <a class="app_item" href="{{ app.links }}" target="{{ app.target }}"><img src="{{ app.image.url }}" alt="{{ app.name }}" data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -39,19 +38,27 @@
             </li>
             <li class="perfil">
                 <a class="user-photo-holder" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Foto de Perfil" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    data-bs-custom-class="custom-tooltip"
-                    data-bs-title="Perfil">
+                    {% if request.session.foto_usuario %}
+                        <img src="data:image/jpeg;base64,{{ request.session.foto_usuario }}" alt="Foto de Perfil" loading="lazy" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Perfil">
+                    {% else %}
+                        <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Imagem Padrão" loading="lazy" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Perfil">
+                    {% endif %}
                 </a>
                 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">
                         <a class="user-photo-holder off" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                            <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Foto de Perfil">
+                            {% if request.session.foto_usuario %}
+                                <img src="data:image/jpeg;base64,{{ request.session.foto_usuario }}" alt="Foto de Perfil" loading="lazy">
+                            {% else %}
+                                <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Imagem Padrão" loading="lazy">
+                            {% endif %}
                         </a>
-                      </h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <a href="{% url 'intra:logout' %}">Sair</a>
@@ -63,7 +70,7 @@
                             </a>
                         </div>
                     </div>
-                  </div>
+                </div>
             </li>
             <!-- <li class="alx">
                 <span class="alx-coin"><i class="fa-solid fa-coins"></i>0</span>

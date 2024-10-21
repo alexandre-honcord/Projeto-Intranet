@@ -6,7 +6,7 @@
 {% block login %}
 <link rel="stylesheet" href="{% static '/resources/css/login.css' %}">
 <div class="login-container" data-block="login">
-    <form method="post">
+    <form method="post" onsubmit="return handleSubmit()">
         {% csrf_token %}
         <h1>Bem Vindo</h1> 
 
@@ -23,11 +23,25 @@
             </div>
         </div>
 
-        <button type="submit">ENTRAR</button>
+        <button type="submit" id="submit-button">ENTRAR</button>
 
         {% if error_message %}
             <p class="error-message">{{ error_message }}</p>
         {% endif %}
     </form>
 </div>
+<script>
+    function handleSubmit() {
+        console.log("Formulário enviado!"); // Teste de log
+        const submitButton = document.getElementById('submit-button');
+        // Adiciona a classe de botão desativado
+        submitButton.classList.add('disabled-button');
+        // Desativa o botão
+        submitButton.disabled = true;
+        // Troca o texto do botão pelo ícone de carregamento
+        submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
+        // O formulário continuará o envio
+        return true;
+    }
+</script>
 {% endblock %}

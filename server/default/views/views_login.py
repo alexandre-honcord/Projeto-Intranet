@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
 from default.models.models_links import Tool
 from default.utils import exists_ad
+from default.utils import buscar_foto_usuario
 import logging
 from django.utils import timezone
 
@@ -13,6 +14,7 @@ logger = logging.getLogger(__name__)
 @csrf_protect
 def login_view(request):
     tools = Tool.objects.all()
+
     if request.user.is_authenticated:
         return redirect(reverse('intra:home'))
 
@@ -32,6 +34,13 @@ def login_view(request):
             # Atualiza o último login
             django_user.last_login = timezone.now()
             django_user.save()
+
+            # Buscar a foto e converter para base64
+            foto_base64 = buscar_foto_usuario(username)
+            
+            # Armazenar a foto na sessão
+            if foto_base64:
+                request.session['foto_usuario'] = foto_base64
 
             # Faz o login do usuário
             django_login(request, django_user)
