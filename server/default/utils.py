@@ -27,27 +27,26 @@ def exists_ad(username, password):
         logger.error(f"LDAP authentication failed for user {username}: {e}")
         return None
     
-def buscar_foto_usuario(username):
+def buscar_dados_usuario(username):
     # Configurar a conexão manual ao banco Oracle
     dsn_tns = cx_Oracle.makedsn('10.0.1.12', '1521', service_name='dbprod')  # Verifique a porta e service_name
     connection = cx_Oracle.connect(user='AUGUSTO', password='Mudar@123', dsn=dsn_tns)
     cursor = connection.cursor()
+
+    query = """
+        SELECT cd_pessoa_fisica as IDtasy, TASY.OBTER_NOME_PF(cd_pessoa_fisica) as name, im_pessoa_fisica as foto
+        FROM TASY.PESSOA_FISICA_FOTO
+        WHERE nm_usuario = :username
+    """
     
-    # Consulta para buscar o código hexadecimal da foto
-    cursor.execute('SELECT im_pessoa_fisica FROM TASY.PESSOA_FISICA_FOTO WHERE nm_usuario = :username', [username])
-    
-    row = cursor.fetchone()
-    if row:
-        foto_binaria = row[0]  # Os dados já são binários
-        
-        # Codificar a imagem em base64
-        foto_base64 = base64.b64encode(foto_binaria).decode('utf-8')
-        
-        cursor.close()
-        connection.close()
-        
-        return foto_base64
-    else:
-        cursor.close()
-        connection.close()
-        return None
+    cursor.execute(query, username=username)
+    result = cursor.fetchone()
+    cursor.close()
+    connection.close()
+
+    if result:
+        idtasy, name, foto = result
+        # Se houver uma foto, converte para base64
+        foto_base64 = base64.b64encode(foto).decode('utf-8') if foto else None
+        return {'IDtasy': idtasy, 'name': name, 'foto': foto_base64}
+    return None

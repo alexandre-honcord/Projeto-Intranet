@@ -4,7 +4,6 @@ from default.models.models_links import Tool, AppsTool
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
-
 @login_required
 def ordemServico_view(request):
     tools = Tool.objects.all()

@@ -16,7 +16,15 @@
         {% for tool in tools %}
         <li class="sidebar-apps-item">
             <a class="sidebar-apps-item__button"
-            href="{{ tool.links }}"
+            href="{% if tool.name == 'Qualidade' %}
+                    {% if is_gestor %}
+                        {% url 'quality:opportunity_list' %}
+                    {% else %}
+                        {{ tool.links }}
+                    {% endif %}
+                {% else %}
+                    {{ tool.links }}
+                {% endif %}"
             target="{{ tool.target }}"
             data-bs-toggle="tooltip" data-bs-placement="top"
             data-bs-custom-class="custom-tooltip"
@@ -27,4 +35,5 @@
         </li>
         {% endfor %}
     </ul>
+    
 </aside>
