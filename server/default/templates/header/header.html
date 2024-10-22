@@ -38,27 +38,27 @@
             </li>
             <li class="perfil">
                 <a class="user-photo-holder" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    {% if request.session.foto_usuario %}
-                        <img src="data:image/jpeg;base64,{{ request.session.foto_usuario }}" alt="Foto de Perfil" loading="lazy" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip" data-bs-title="Perfil">
+                    {% if user.foto %}
+                        <img src="{{ user.foto.url }}" alt="Foto de Perfil" loading="lazy" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Perfil">
                     {% else %}
                         <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Imagem Padrão" loading="lazy" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip" data-bs-title="Perfil">
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Perfil">
                     {% endif %}
                 </a>
-                
+            
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                        <a class="user-photo-holder off" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                            {% if request.session.foto_usuario %}
-                                <img src="data:image/jpeg;base64,{{ request.session.foto_usuario }}" alt="Foto de Perfil" loading="lazy">
-                            {% else %}
-                                <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Imagem Padrão" loading="lazy">
-                            {% endif %}
-                        </a>
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                            <a class="user-photo-holder off" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                {% if user.foto %}
+                                    <img src="{{ user.foto.url }}" alt="Foto de Perfil" loading="lazy">
+                                {% else %}
+                                    <img src="{% static 'resources/images/testnaldo.jpg' %}" alt="Imagem Padrão" loading="lazy">
+                                {% endif %}
+                            </a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <a href="{% url 'intra:logout' %}">Sair</a>
@@ -96,3 +96,27 @@
         {% endif %}
     </ul>
 </header>
+<script>
+    // Função para verificar a foto do usuário
+    function verificarFotoUsuario() {
+        // Aqui você faria uma requisição AJAX para verificar a foto
+        fetch('/load/')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log("Foto do usuário verificada com sucesso.");
+                } else {
+                    console.log("Não foi possível verificar a foto do usuário.");
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao verificar a foto do usuário:", error);
+            });
+    }
+
+    // Executa a verificação se o login foi bem-sucedido
+    if (sessionStorage.getItem('login_success')) {
+        verificarFotoUsuario();
+        sessionStorage.removeItem('login_success'); // Remove o estado após a verificação
+    }
+</script>
