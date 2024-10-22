@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ferramenta Kanban{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/resources/css/qualityTools.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<main class="kanban">
+    <!-- COLUMN 1 -->
+    <div class="kanban-column" data-id="1">
+        <div class="kanban-title">
+            <h2>Pendente</h2>
+            <button class="add-card">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="kanban-cards">
+            <div class="kanban-card" draggable="true">
+                <div class="badge medium">
+                    <span>Média prioridade</span>
+                </div>
+                <p class="card-title">Revisar documento do projeto</p>
+                <div class="card-infos">
+                    <div class="card-icons">
+                        <p><i class="fa-regular fa-comment"></i> 1</p>
+                        <p><i class="fa-solid fa-paperclip"></i> 1</p>
+                    </div>
+                    <div class="user">
+                        <img src="{% static 'images/avatar2.png' %}" alt="Avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="{% static 'javascript/script.js' %}"></script>
+{% endblock %}

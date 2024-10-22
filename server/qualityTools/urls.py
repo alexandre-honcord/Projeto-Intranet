@@ -33,7 +33,11 @@ from qualityTools.views.views_sipoc import (
     FerramentaSIPOCUpdateView,
     FerramentaSIPOCDeleteView,
 )
-
+from qualityTools.views.views_kanban import (
+    BoardView,
+    ColumnView,
+    CardView,
+)
 # Views da API usando Django REST Framework
 from qualityTools.views.views_5w2h import Ferramenta5W2HViewSet
 from qualityTools.views.views_ishikawa import FerramentaIshikawaViewSet
@@ -77,6 +81,13 @@ urlpatterns = [
     path('sipoc/editar/<int:pk>/', FerramentaSIPOCUpdateView.as_view(), name='ferramentasipoc-update'),
     path('sipoc/deletar/<int:pk>/', FerramentaSIPOCDeleteView.as_view(), name='ferramentasipoc-delete'),
 
+    #Ferramenta kanban URLs
+    path('kanban/', BoardView.as_view(), name='board_list'),
+    path('kanban/cadastrar/', BoardView.as_view(), name='board_create'),
+    path('kanban/<int:board_id>/colunas/', ColumnView.as_view(), name='column_list'),
+    path('kanban/<int:board_id>/colunas/cadastrar/', ColumnView.as_view(), name='column_create'),
+    path('kanban/colunas/<int:column_id>/cartoes/', CardView.as_view(), name='card_list'),
+    path('kanban/colunas/<int:column_id>/cartoes/cadastrar/', CardView.as_view(), name='card_create'),
     
     # Incluindo as rotas da API
     path('api/', include(router.urls)),
