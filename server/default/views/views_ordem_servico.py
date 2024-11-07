@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from default.models.models_links import Tool, AppsTool
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from default.models.models_tasy import User
+from datetime import datetime, timedelta
 import cx_Oracle
 
 @login_required
@@ -18,17 +18,141 @@ def ordemServico_view(request):
         'user': user
     })
 
-
+@login_required
 def painelOrdemServico_view(request):
+    solicitante_id = str(request.user.IDtasy)
+
+    dsn_tns = cx_Oracle.makedsn('10.0.1.20', '1521', service_name='dbtest')
+    connection = cx_Oracle.connect(user='tasy', password='honbdt_exhemo', dsn=dsn_tns)
+
+    # dsn_tns = cx_Oracle.makedsn('10.0.1.12', '1521', service_name='dbprod')
+    # connection = cx_Oracle.connect(user='AUGUSTO', password='Mudar@123', dsn=dsn_tns)
+
+    try:
+        cursor = connection.cursor()
+
+        # Consulta para contar as OS por status
+        query_status_count = """
+        SELECT 
+            ie_status_ordem as status,
+            COUNT(*) as quantidade
+        FROM 
+            TASY.MAN_ORDEM_SERVICO
+        WHERE
+            cd_pessoa_solicitante = :solicitante
+        GROUP BY 
+            ie_status_ordem
+        """
+
+        cursor.execute(query_status_count, {'solicitante': solicitante_id})
+        resultados_count = cursor.fetchall()
+
+        quantidade_abertas = 0
+        quantidade_em_processo = 0
+        quantidade_encerradas = 0
+
+        for status, quantidade in resultados_count:
+            status = int(status)
+            if status == 1:
+                quantidade_abertas = quantidade
+            elif status == 2:
+                quantidade_em_processo = quantidade
+            elif status == 3:
+                quantidade_encerradas = quantidade
+
+        # Consulta para buscar detalhes das OS com ordenação
+        query_detalhes_os = """
+        SELECT
+            nr_sequencia as sequencia,
+            dt_ordem_servico as dataAbertura,
+            ds_dano_breve as descricao,
+            ds_dano as dano,
+            TASY.OBTER_VALOR_DOMINIO(1149, ie_classificacao) as classificacao,
+            dt_fim_real as dataFim,
+            ie_status_ordem as status,
+            TRIM(REGEXP_SUBSTR(TASY.OBTER_DESC_GRUPO_PLANEJ(NR_GRUPO_PLANEJ), '[^ ]+$')) as grupo
+        FROM 
+            TASY.MAN_ORDEM_SERVICO
+        WHERE
+            cd_pessoa_solicitante = :solicitante
+        ORDER BY 
+            dt_ordem_servico DESC
+        """
+
+        cursor.execute(query_detalhes_os, {'solicitante': solicitante_id})
+        resultados_os = cursor.fetchall()
+
+        os_abertas = []
+        os_em_processo = []
+        os_encerradas = []
+
+        for sequencia, dataAbertura, descricao, dano, classificacao, dataFim, status, grupo in resultados_os:
+            status = int(status)
+            dataFim = dataFim or datetime.now()  # Usa a data atual se dataFim for None
+            duracao = dataFim - dataAbertura  # Calcula a diferença de tempo
+
+            # Formatação personalizada da duração
+            if duracao < timedelta(days=1):
+                horas_totais = int(duracao.total_seconds() // 3600)
+                minutos = int((duracao.total_seconds() % 3600) // 60)
+
+                if horas_totais > 0:
+                    duracao_formatada = f"{horas_totais}h {minutos}min"
+                elif minutos > 0:
+                    duracao_formatada = f"{minutos}min"
+                else:
+                    duracao_formatada = "Menos de 1 minuto"
+            else:
+                dias = duracao.days
+                duracao_formatada = f"{dias} dias"
+
+            os_data = {
+                'sequencia': sequencia,
+                'dataAbertura': dataAbertura,
+                'descricao': descricao,
+                'dano': dano,
+                'classificacao': classificacao,
+                'dataFim': dataFim,
+                'duracao': duracao_formatada,
+                'grupo': grupo
+            }
+
+            if status == 1:
+                os_abertas.append(os_data)
+            elif status == 2:
+                os_em_processo.append(os_data)
+            elif status == 3:
+                os_encerradas.append(os_data)
+
+    except cx_Oracle.DatabaseError as e:
+        error, = e.args
+        print("Erro ORA:", error.message)
+        quantidade_abertas = quantidade_em_processo = quantidade_encerradas = 0
+        os_abertas = os_em_processo = os_encerradas = []
+
+    finally:
+        if 'cursor' in locals() and cursor is not None:
+            cursor.close()
+        if 'connection' in locals() and connection is not None:
+            connection.close()
+
     tools = Tool.objects.all()
     apps = AppsTool.objects.all()
     user = request.user
 
-    return render(request, 'ordemServico/painelOrdemServico.html', {
+    context = {
         'tools': tools,
         'apps': apps,
-        'user': user
-    })
+        'user': user,
+        'quantidade_abertas': quantidade_abertas,
+        'quantidade_em_processo': quantidade_em_processo,
+        'quantidade_encerradas': quantidade_encerradas,
+        'os_abertas': os_abertas,
+        'os_em_processo': os_em_processo,
+        'os_encerradas': os_encerradas,
+    }
+
+    return render(request, 'ordemServico/painelOrdemServico.html', context)
 
 @csrf_exempt
 @login_required

@@ -10,26 +10,20 @@
     <div class="cards-holder">
         <div class="cards">
             <span>
-                <span>05</span>
+                <span>{{ quantidade_abertas }}</span>
                 Ordens de Serviço Abertas
             </span>
         </div>
         <div class="cards">
             <span>
-                <span>05</span>
+                <span>{{ quantidade_em_processo }}</span>
                 Ordens de Serviço Em Processo
             </span>
         </div>
         <div class="cards">
             <span>
-                <span>05</span>
+                <span>{{ quantidade_encerradas }}</span>
                 Ordens de Serviço Encerradas
-            </span>
-        </div>
-        <div class="cards">
-            <span>
-                <span>05</span>
-                Ordens de Serviço Não Avaliadas (NPS)
             </span>
         </div>
     </div>
@@ -50,66 +44,95 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="aberta-tab-pane" role="tabpanel" aria-labelledby="aberta-tab" tabindex="0">
-                <a class="card">
-                    <span class="card-item__1">
-                        <h4>Ordem de Serviço Nº 20058</h4>
-                        <div class="badges-hold">
-                            <span class="badges">Solicitação</span>
-                            <span class="time"><i class="fa-solid fa-stopwatch"></i> 20 minutos</span>
-                        </div>
-                    </span>
-                    <span class="card-item__2">
-                        <p>Aberto em: 01/01/1900 10:37</p>
-                        <h5>Descrição</h5>
-                        <p>Cont000 years old. Richard McClintock, a Latin professorthe word in classction 1.10.32.</p>
-                    </span>
-                    <span class="card-item__3">
-                        <h5>Dano</h5>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                    </span>
-                </a>
-            </div>    
-
+                {% if os_abertas %}
+                    {% for os in os_abertas %}
+                    <a class="card">
+                        <span class="card-item__1">
+                            <h4>Ordem de Serviço Nº {{ os.sequencia }}</h4>
+                            <div class="badges-hold">
+                                <span class="badges">{{ os.grupo }}</span>
+                                <span class="badges">{{ os.classificacao }}</span>
+                                <span class="time"><i class="fa-solid fa-stopwatch"></i> {{ os.duracao }}</span>
+                            </div>
+                        </span>
+                        <span class="card-item__2">
+                            <span class="ini-fim">
+                                <p>Aberto em: {{ os.dataAbertura }}</p>
+                            </span>
+                            <h5>Descrição</h5>
+                            <p>{{ os.descricao }}</p>
+                        </span>
+                        <span class="card-item__3">
+                            <h5>Dano</h5>
+                            <p>{{ os.dano }}</p>
+                        </span>
+                    </a>
+                    {% endfor %}
+                {% else %}
+                    <p>Você não possui Ordens de Serviço nessa etapa</p>
+                {% endif %}
+            </div>
+        
             <div class="tab-pane fade" id="emProcesso-tab-pane" role="tabpanel" aria-labelledby="emProcesso-tab" tabindex="0">
-                <a class="card">
-                    <span class="card-item__1">
-                        <h4>Ordem de Serviço Nº 20058</h4>
-                        <div class="badges-hold">
-                            <span class="badges">Solicitação</span>
-                            <span class="time"><i class="fa-solid fa-stopwatch"></i> 20 minutos</span>
-                        </div>
-                    </span>
-                    <span class="card-item__2">
-                        <p>Aberto em: 01/01/1900 10:37</p>
-                        <h5>Descrição</h5>
-                        <p>Cont000 years old. Richard McClintock, a Latin professorthe word in classction 1.10.32.</p>
-                    </span>
-                    <span class="card-item__3">
-                        <h5>Dano</h5>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                    </span>
-                </a>
-            </div>          
+                {% if os_em_processo %}
+                    {% for os in os_em_processo %}
+                    <a class="card">
+                        <span class="card-item__1">
+                            <h4>Ordem de Serviço Nº {{ os.sequencia }}</h4>
+                            <div class="badges-hold">
+                                <span class="badges">{{ os.grupo }}</span>
+                                <span class="badges">{{ os.classificacao }}</span>
+                                <span class="time"><i class="fa-solid fa-stopwatch"></i> {{ os.duracao }}</span>
+                            </div>
+                        </span>
+                        <span class="card-item__2">
+                            <span class="ini-fim">
+                                <p>Aberto em: {{ os.dataAbertura }}</p>
+                            </span>
+                            <h5>Descrição</h5>
+                            <p>{{ os.descricao }}</p>
+                        </span>
+                        <span class="card-item__3">
+                            <h5>Dano</h5>
+                            <p>{{ os.dano }}</p>
+                        </span>
+                    </a>
+                    {% endfor %}
+                {% else %}
+                    <p>Você não possui Ordens de Serviço nessa etapa</p>
+                {% endif %}
+            </div>
+        
             <div class="tab-pane fade" id="encerradas-tab-pane" role="tabpanel" aria-labelledby="encerradas-tab" tabindex="0">
-                <a class="card">
-                    <span class="card-item__1">
-                        <h4>Ordem de Serviço Nº 20058</h4>
-                        <div class="badges-hold">
-                            <span class="badges">Solicitação</span>
-                            <span class="time"><i class="fa-solid fa-stopwatch"></i> 20 minutos</span>
-                        </div>
-                    </span>
-                    <span class="card-item__2">
-                        <span class="ini-fim"><p>Aberta em: 01/01/1900 10:37</p><p>Finalizada em: 01/01/1900 10:37</p></span>
-                        <h5>Descrição</h5>
-                        <p>Cont000 years old. Richard McClintock, a Latin professorthe word in classction 1.10.32.</p>
-                    </span>
-                    <span class="card-item__3">
-                        <h5>Dano</h5>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                    </span>
-                </a>
-            </div>          
+                {% if os_encerradas %}
+                    {% for os in os_encerradas %}
+                    <a class="card">
+                        <span class="card-item__1">
+                            <h4>Ordem de Serviço Nº {{ os.sequencia }}</h4>
+                            <div class="badges-hold">
+                                <span class="badges">{{ os.grupo }}</span>
+                                <span class="badges">{{ os.classificacao }}</span>
+                                <span class="time"><i class="fa-solid fa-stopwatch"></i> {{ os.duracao }}</span>
+                            </div>
+                        </span>
+                        <span class="card-item__2">
+                            <span class="ini-fim">
+                                <p>Aberto em: {{ os.dataAbertura }}</p>
+                                <p>Finalizada em: {{ os.dataFim }}</p>
+                            </span>
+                            <h5>Descrição</h5>
+                            <p>{{ os.descricao }}</p>
+                        </span>
+                        <span class="card-item__3">
+                            <h5>Dano</h5>
+                            <p>{{ os.dano }}</p>
+                        </span>
+                    </a>
+                    {% endfor %}
+                {% else %}
+                    <p>Você não possui Ordens de Serviço nessa etapa</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
