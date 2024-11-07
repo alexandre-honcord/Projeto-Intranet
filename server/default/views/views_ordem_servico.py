@@ -26,7 +26,7 @@ def painelOrdemServico_view(request):
     connection = cx_Oracle.connect(user='tasy', password='honbdt_exhemo', dsn=dsn_tns)
 
     # dsn_tns = cx_Oracle.makedsn('10.0.1.12', '1521', service_name='dbprod')
-    # connection = cx_Oracle.connect(user='AUGUSTO', password='Mudar@123', dsn=dsn_tns)
+    # connection = cx_Oracle.connect(user='tasy', password='honbdt_exhemo', dsn=dsn_tns)
 
     try:
         cursor = connection.cursor()
@@ -190,6 +190,9 @@ def processar_ordem_servico(request):
         # Configuração da conexão com o Oracle
         dsn_tns = cx_Oracle.makedsn('10.0.1.20', '1521', service_name='dbtest')
         connection = cx_Oracle.connect(user='tasy', password='honbdt_exhemo', dsn=dsn_tns)
+
+        # dsn_tns = cx_Oracle.makedsn('10.0.1.12', '1521', service_name='dbprod')
+        # connection = cx_Oracle.connect(user='tasy', password='honbdt_exhemo', dsn=dsn_tns)
 
         try:
             # Criar um cursor para executar comandos SQL
