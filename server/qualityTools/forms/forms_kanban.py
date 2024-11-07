@@ -1,5 +1,5 @@
 from django import forms
-from qualityTools.models import Board, Column, Card
+from qualityTools.models.models_kanban import Board, Column, Card
 
 class BoardForm(forms.ModelForm):
     class Meta:

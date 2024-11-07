@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
-from qualityTools.models import Board, Column, Card
-from qualityTools.forms import BoardForm, ColumnForm, CardForm
+from qualityTools.models.models_kanban import Board, Column, Card
+from qualityTools.forms.forms_kanban import BoardForm, ColumnForm, CardForm
 
 class BoardView(View):
+    model = BoardForm
+    template_name = 'ferramentas/ferramenta_kanban/ferramenta_kanban_list.html'
+    context_object_name = 'ferramentas_kanban'
     def get(self, request):
         boards = Board.objects.all()
-        return render(request, 'qualityTools/board_list.html', {'boards': boards})
+        return render(request, 'ferramentas/ferramenta_kankan/ferramenta_kanban_list.html', {'boards': boards})
 
     def post(self, request):
         form = BoardForm(request.POST)
