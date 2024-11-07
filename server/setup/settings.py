@@ -84,7 +84,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'oracle': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'dbtest',
+        'USER': 'tasy',
+        'PASSWORD': 'honbdt_exhemo',
+        'HOST': '10.0.1.20',
+        'PORT': '1521',
+    },
 }
 
 

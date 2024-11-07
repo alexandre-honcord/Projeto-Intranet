@@ -82,30 +82,36 @@ div.accordion-body {
 }
 
 ul.nav {
-
     border: none !important;
-    outline: none!important;
+    outline: none !important;
     box-shadow: none !important;
 }
+
 ul.nav li {
     padding: 8px;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
-ul.nav button {
+
+ul.nav button,
+ul.nav a {
     border-radius: 8px !important;
     color: #3a3a3a;
     font-weight: 500;
     background-color: #adadad !important;
-    box-shadow: var(--box-shadow-effect)!important;
+    box-shadow: var(--box-shadow-effect) !important;
+    text-decoration: none; /* Remove underline do link */
+    display: inline-block; /* Para garantir o mesmo comportamento de botão */
 }
 
-ul.nav button.active {
+ul.nav button.active,
+ul.nav a.active {
     background-color: #B32325 !important;
 }
 
-ul.nav button:hover {
+ul.nav button:hover,
+ul.nav a:hover {
     background-color: var(--form-h1-color) !important;
     color: var(--body-bg-color) !important;
 }

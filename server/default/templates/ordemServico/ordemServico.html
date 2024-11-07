@@ -18,22 +18,27 @@
                 <div class="accordion-body">
                     <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm" id="pillNav2" role="tablist" >
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="ti" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="22" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
                                 <i class="fa-solid fa-computer"></i> Tecnologia da Informação
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="mkt" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="27" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
                                 <i class="fa-solid fa-palette"></i> Marketing
                             </button>
-                          </li>
+                        </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="mpredial" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="21" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
                                 <i class="fa-solid fa-screwdriver-wrench"></i> Manutenção Predial
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="mveicular" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
+                            <a class="nav-link rounded-5 button-link" href="https://seoh.neovero.com/" target="_blank" role="tab" aria-selected="false">
+                                <i class="fa-solid fa-gear"></i> Engenharia Clinica
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="30" type="button" role="tab" aria-selected="false" onclick="toggleTipoOrdem(this)"> 
                                 <i class="fa-solid fa-car-rear"></i> Manutenção Veícular
                             </button>
                         </li>
@@ -54,16 +59,16 @@
                 <div class="accordion-body">
                     <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm" role="tablist" >
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="defeito" type="button" role="tab" aria-selected="false" >Defeito</button>
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="E" type="button" role="tab" aria-selected="false" >Defeito</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="Dúvida" type="button" role="tab" aria-selected="false" >Dúvida</button>
-                          </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="Solicitação" type="button" role="tab" aria-selected="false" >Solicitação</button>
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="D" type="button" role="tab" aria-selected="false" >Dúvida</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="Sugestão" type="button" role="tab" aria-selected="false" >Sugestão</button>
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="S" type="button" role="tab" aria-selected="false" >Solicitação</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="T" type="button" role="tab" aria-selected="false" >Sugestão</button>
                         </li>
                     </ul>
                 </div>
@@ -82,29 +87,44 @@
                 <div class="accordion-body">
                     <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm" role="tablist" >
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="acessos" type="button" role="tab" aria-selected="false">Acessos</button>
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="21" type="button" role="tab" aria-selected="false">
+                                Acessos</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="infraestrutura" type="button" role="tab" aria-selected="false">Infraestrutura</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="docmanager" type="button" role="tab" aria-selected="false">Doc Manager</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="weknowbi" type="button" role="tab" aria-selected="false">Weknow BI</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="relatorios" type="button" role="tab" aria-selected="false">Relatórios</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="sistematasy" type="button" role="tab" aria-selected="false">Sistema Tasy</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="desenvolvimento" type="button" role="tab" aria-selected="false">Desenvolvimento</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="suporte" type="button" role="tab" aria-selected="false">Suporte</button>
-                          </li>
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="75" type="button" role="tab" aria-selected="false">
+                                Desenvolvimento</button>
+                            </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="23" type="button" role="tab" aria-selected="false">
+                                Infraestrutura
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="20" type="button" role="tab" aria-selected="false">
+                                Doc Manager
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="20" type="button" role="tab" aria-selected="false">
+                                Weknow BI
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="18" type="button" role="tab" aria-selected="false">
+                                Relatórios
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="22" type="button" role="tab" aria-selected="false">
+                                Sistema Tasy
+                            </button>
+                        </li>
+                        
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-5" data-bs-toggle="tab" data-value="13" type="button" role="tab" aria-selected="false">
+                                Suporte
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
