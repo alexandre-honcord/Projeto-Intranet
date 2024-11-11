@@ -15,7 +15,7 @@ class AppsTool(models.Model):
     description = models.TextField()
     links = models.TextField()
     image = models.ImageField(upload_to='default/AppTools/images/')
-    target = models.TextField()
+    target = models.TextField(default='_self')
 
     def __str__(self):
         return self.name

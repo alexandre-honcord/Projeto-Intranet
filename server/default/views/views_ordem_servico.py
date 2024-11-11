@@ -101,7 +101,7 @@ def painelOrdemServico_view(request):
                 elif minutos > 0:
                     duracao_formatada = f"{minutos}min"
                 else:
-                    duracao_formatada = "Menos de 1 minuto"
+                    duracao_formatada = "< 1 minuto"
             else:
                 dias = duracao.days
                 duracao_formatada = f"{dias} dias"
@@ -225,7 +225,17 @@ def processar_ordem_servico(request):
                     :grupo_trabalho,
                     :solicitante,
                     :usuario,
-                    49,
+                    (
+                        SELECT NVL(
+                            (SELECT MAX(Y.NR_SEQUENCIA) 
+                            FROM TASY.MAN_LOCALIZACAO Y 
+                            WHERE Y.CD_SETOR = X.CD_SETOR_ATENDIMENTO AND Y.IE_SITUACAO='A'),
+                            49
+                        ) AS nr_seq_localizacao
+                        FROM TASY.USUARIO X
+                        WHERE X.IE_SITUACAO = 'A'
+                        AND X.CD_PESSOA_FISICA = :solicitante
+                    ),
                     :classificacao,
                     'M',
                     'N',
