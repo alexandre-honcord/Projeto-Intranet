@@ -2,7 +2,6 @@ import cx_Oracle
 from django.conf import settings
 
 def connect_to_db():
-    # Extrai as configurações do banco de dados Oracle a partir do settings
     oracle_db = settings.DATABASES['oracle']
     
     dsn_tns = cx_Oracle.makedsn(

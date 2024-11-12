@@ -24,13 +24,11 @@ def painelOrdemServico_view(request):
     solicitante_id = str(request.user.IDtasy)
 
     try:
-        # Obter contagens de OS por status
         status_counts = get_status_counts(solicitante_id)
         quantidade_abertas = status_counts['abertas']
         quantidade_em_processo = status_counts['em_processo']
         quantidade_encerradas = status_counts['encerradas']
 
-        # Obter detalhes das OS
         resultados_os = get_os_details(solicitante_id)
         os_abertas, os_em_processo, os_encerradas = categorize_os_details(resultados_os)
 
