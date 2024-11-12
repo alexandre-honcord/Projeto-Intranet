@@ -9,14 +9,10 @@
 .container {
     display: flex;
     margin: 0;
-
+    padding-left: 0 !important;
 }
-
 .navbar {
-
     padding: 8px 0 0 0;
-
-    
 }
 .navbar-nav {
     display: flex;

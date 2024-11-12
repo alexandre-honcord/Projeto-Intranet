@@ -41,7 +41,7 @@ document.querySelectorAll('#accordionFlushExample .nav-link').forEach(item => {
         tipoOrdemItem.style.display = 'none'; // Esconde tipo de ordem ao selecionar nova ordem
 
         // Se "Tecnologia da Informação" for selecionada, mostra a seção de tipo de ordem
-        if (selectedValues.ordem === '22') {
+        if (selectedValues.ordem === 'ti') {
             showTipoOrdem(); // Chama a função para mostrar o tipo de ordem
         }
     });
@@ -78,11 +78,10 @@ document.getElementById('ordemServicoForm').addEventListener('submit', function(
 
     // Envia os dados para o Django usando fetch
     const formData = new FormData(this);
-    formData.append('ordem', selectedValues.ordem);
+    formData.append('tipo_ordem', selectedValues.tipoOrdem);
     formData.append('classificacao_ordem', selectedValues.classificacao);
     formData.append('descricao_ordem', selectedValues.descricao);
     formData.append('dano_ordem', selectedValues.dano);
-    formData.append('tipo_ordem', selectedValues.tipoOrdem);
 
     fetch('/processar-ordem/', {
         method: 'POST',
@@ -93,13 +92,7 @@ document.getElementById('ordemServicoForm').addEventListener('submit', function(
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Resposta do Django:", data);
-        if (data.status === 'sucesso') {
-            // Chama a função para limpar variáveis e redirecionar
-            limparERedirecionar();
-        } else {
-            alert(data.mensagem); // Exibe a mensagem de erro, se houver
-        }
+        console.log("Resposta do Django:", data); // Log para verificar a resposta
     })
     .catch(error => console.error('Erro:', error));
 });

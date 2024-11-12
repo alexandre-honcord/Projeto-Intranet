@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     align-self: start;
-    width: 250px;
+    width: 80px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -45,6 +45,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    opacity: 0
 }
 
 .sidebar-menu__label .company {
@@ -93,16 +94,17 @@
     justify-content: center;
     padding: 4px;
     border-radius: 6px;
-    background-color: var(--list-bg-color);
+    background-color: var(--list-bg-color-hover);
     box-shadow: var(--box-shadow-effect);
     cursor: pointer;
 }
 
 .sidebar-apps-item__button img {
-    filter: var(--list-img-filter) ;
+    
 }
 
 .function-name {
+display: none;
     color: var(--list-span-font-color);
     font-size: 0.8rem;
     padding-left: 8px;
@@ -150,14 +152,13 @@
     transition: var(--transition-color2);
 }
 .sidebar.active {
-    width: 80px;
+    width: 220px;
 }
 
 .active .sidebar-menu__label {
-    opacity: 0;
-
+    opacity: 1;
 }
 
 .active .function-name {
-    display: none;
+    display: block;
 }

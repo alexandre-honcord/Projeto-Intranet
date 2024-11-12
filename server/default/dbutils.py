@@ -1,9 +1,22 @@
 import cx_Oracle
-from datetime import datetime, timedelta
+from django.conf import settings
 
 def connect_to_db():
-    dsn_tns = cx_Oracle.makedsn('10.0.1.20', '1521', service_name='dbtest')
-    connection = cx_Oracle.connect(user='tasy', password='honbdt_exhemo', dsn=dsn_tns)
+    # Extrai as configurações do banco de dados Oracle a partir do settings
+    oracle_db = settings.DATABASES['oracle']
+    
+    dsn_tns = cx_Oracle.makedsn(
+        host=oracle_db['HOST'],
+        port=oracle_db['PORT'],
+        service_name=oracle_db['NAME']
+    )
+    
+    connection = cx_Oracle.connect(
+        user=oracle_db['USER'],
+        password=oracle_db['PASSWORD'],
+        dsn=dsn_tns
+    )
+    
     return connection
 
 def get_status_counts(solicitante_id):
